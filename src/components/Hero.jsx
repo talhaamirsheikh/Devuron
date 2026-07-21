@@ -274,7 +274,7 @@ export default function Hero({ heroData, loading }) {
             <div className="flex flex-col gap-2">
               <Link to="/" className="flex shrink-0 items-center gap-2">
                 <img
-                  src="https://vantage.itnextro.com/wp-content/uploads/2025/11/VP-png-1-1.png"
+                  src="https://png.pngtree.com/png-clipart/20190611/original/pngtree-wolf-logo-png-image_2306634.jpg"
                   alt="Logo"
                   className="h-14 md:h-16 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
                   loading="eager"
@@ -375,7 +375,7 @@ export default function Hero({ heroData, loading }) {
       </nav>
 
       {/* Content */}
-      <div className="relative z-10 section-container pt-14 md:pt-16 pb-64 sm:pb-56 lg:pb-64 text-white">
+      <div className="relative z-10 section-container pt-0 md:pt-0 pb-20 sm:pb-10 lg:pb-20 text-white">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -411,7 +411,7 @@ export default function Hero({ heroData, loading }) {
                   hidden: { opacity: 0, y: 26 },
                   visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.16, 1, 0.3, 1] } },
                 }}
-                className="relative block text-[clamp(2.5rem,7vw,5.25rem)] font-black uppercase leading-[0.98] tracking-tight text-white"
+                className="relative block text-[50px] font-black uppercase leading-[0.98] tracking-tight text-white"
               >
                 {slide?.title || "Welcome"}
               </motion.span>
@@ -439,7 +439,7 @@ export default function Hero({ heroData, loading }) {
                 hidden: { opacity: 0, y: 14 },
                 visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.16, 1, 0.3, 1] } },
               }}
-              className="mt-7 max-w-xl md:max-w-2xl text-base sm:text-lg md:text-xl leading-relaxed text-white/65"
+              className="mt-7 max-w-xl md:max-w-2xl text-base sm:text-md md:text-md leading-relaxed text-white/65"
             >
               {slide?.description || slide?.content || ""}
             </motion.p>
@@ -472,20 +472,20 @@ export default function Hero({ heroData, loading }) {
         </AnimatePresence>
 
         {/* Info card — inline flow on small/medium screens so it never overlaps content */}
-        <div className="mt-14 lg:hidden">
+        <div className="mt-14 lg:hidden ">
           <InfoBox slide={slide} variant="inline" />
         </div>
       </div>
 
       {/* Slide Indicators — timecode chapter strip */}
-      <div className="absolute bottom-10 md:bottom-12 left-1/2 z-20 flex -translate-x-1/2 items-end gap-6 md:gap-9">
+      <div className="absolute bottom-10 md:bottom-12 left-1/2 z-20 flex -translate-x-1/2 items-end gap-2 md:gap-2 cursor-pointer ">
         {slides.map((s, index) => {
           const active = index === currentSlide;
           return (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className="group relative flex flex-col items-center gap-2 focus:outline-none"
+              className="group relative flex flex-col items-center gap-2 focus:outline-none cursor-pointer"
               aria-label={`Go to slide ${index + 1}`}
               aria-current={active}
             >
@@ -494,7 +494,7 @@ export default function Hero({ heroData, loading }) {
                   active ? "text-white/85" : "text-white/35 group-hover:text-white/60"
                 }`}
               >
-                {chapterLabel(s, index)}
+                {/* {chapterLabel(s, index)} */}
               </span>
               <span className="relative h-[3px] w-9 md:w-12 overflow-hidden bg-white/15">
                 {active && (
