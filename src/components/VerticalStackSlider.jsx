@@ -169,7 +169,7 @@ const VerticalStackSlider = () => {
       </div> */}
 
       {/* Custom Animations */}
-      <style jsx>{`
+      <style jsx="true">{`
         @keyframes fadeInUp {
           from {
             opacity: 0;

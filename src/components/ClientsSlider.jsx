@@ -99,10 +99,8 @@ function ClientsGrid() {
   );
 }
 
+export default ClientsGrid;
 
 
 
 
-
-
-// nzxnx

@@ -43,7 +43,7 @@ const Navbar = () => {
               alt="Logo"
               className={`object-contain ${isHome ? "h-14 md:h-16" : "h-10 md:h-12"}`}
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </Link>
 
@@ -98,7 +98,7 @@ const Navbar = () => {
               alt="Logo"
               className={`object-contain ${isHome ? "h-10" : "h-8"}`}
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
             />
           </Link>
           <div className="flex items-center gap-2">

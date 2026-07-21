@@ -226,7 +226,7 @@ export default function Hero({ heroData, loading }) {
                 alt="Logo"
                 className="h-14 md:h-16 object-contain"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </Link>
 
@@ -258,7 +258,7 @@ export default function Hero({ heroData, loading }) {
                 alt="Logo"
                 className="h-10 object-contain"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </Link>
             <button

@@ -62,7 +62,7 @@ export default function GlobalHero({
                 alt="Logo"
                 className="h-14 md:h-16 object-contain"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </Link>
 
@@ -94,7 +94,7 @@ export default function GlobalHero({
                 alt="Logo"
                 className="h-10 object-contain"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </Link>
             <button
