@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { Target, Bot, Workflow, BarChart3, Sparkles } from "lucide-react";
+import { Target, Bot, Workflow, BarChart3, Sparkles, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 /* Brand accent palette — cycled per phase so the four columns read as
@@ -130,7 +130,7 @@ const ProcessSection = () => {
       <div className="section-container w-full">
         {/* TOP CONTENT */}
         <motion.div
-          className="max-w-2xl mb-14 md:mb-20"
+          className=" mb-14 md:mb-20 mx-20 md:mx-40 text-center"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -151,8 +151,14 @@ const ProcessSection = () => {
             production agent — architected, integrated, and continuously
             tuned against real usage data.
           </p>
-          <Link to="/services" className="btn-primary mt-8 inline-block">
+          
+          {/* View Complete Process Button - Red background, white text on hover */}
+          <Link
+            to="/services"
+            className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] mt-8"
+          >
             View Complete Process
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </motion.div>
 

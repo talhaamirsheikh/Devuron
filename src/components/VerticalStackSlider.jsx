@@ -103,7 +103,7 @@ const VerticalStackSlider = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center"
         >
-          <div className="mb-4 flex justify-center mt-16">
+          <div className="mb-4 flex justify-center ">
             <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 backdrop-blur-sm mt-16">
               <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
               <span className="section-eyebrow font-mono tracking-[0.22em] text-black/70">

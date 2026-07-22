@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Sparkles } from "lucide-react";
+import { Link } from "react-router-dom";
+
 const HomeForm = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -32,20 +34,19 @@ const HomeForm = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-8"
         >
-          {/* <p className="section-eyebrow mb-2 text-neutral-500">
-            Start a project
-          </p> */}
-           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[rgba(241,58,52,0.25)] bg-[rgba(241,58,52,0.07)] px-4 py-2">
-                    <Sparkles className="h-3 w-3 text-[var(--color-primary)]" />
-                    <span className="section-eyebrow text-[var(--color-primary)]">
+          {/* Eyebrow - Updated to match Hero.jsx style */}
+         <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+                     <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+                     <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
                        Start a project
-                    </span>
-                  </div>
+                     </span>
+                   </div>
+
           <h2 className="section-heading text-neutral-900 mb-3">
-            Tell us what you’re building
+            Tell us what you're building
           </h2>
           <p className="section-subtitle max-w-xl">
-            Share a bit about your brand, timelines, and goals. We’ll come back
+            Share a bit about your brand, timelines, and goals. We'll come back
             with a clear plan, transparent pricing, and the right next step.
           </p>
 
@@ -92,7 +93,7 @@ const HomeForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Alex Smith"
-                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all"
+                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#F13A34] focus:border-transparent transition-all"
                   required
                 />
               </div>
@@ -108,7 +109,7 @@ const HomeForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@company.com"
-                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all"
+                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#F13A34] focus:border-transparent transition-all"
                   required
                 />
               </div>
@@ -124,7 +125,7 @@ const HomeForm = () => {
                   onChange={handleChange}
                   placeholder="Share a short overview of your brand, timeline, and what success looks like..."
                   rows="4"
-                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all resize-none"
+                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#F13A34] focus:border-transparent transition-all resize-none"
                   required
                 />
               </div>
@@ -134,7 +135,7 @@ const HomeForm = () => {
                 <input
                   type="checkbox"
                   id="agreement"
-                  className="mt-1 rounded border-neutral-300 text-[var(--color-primary)] focus:ring-[var(--color-primary)]"
+                  className="mt-1 rounded border-neutral-300 text-[#F13A34] focus:ring-[#F13A34]"
                   required
                 />
                 <label htmlFor="agreement">
@@ -143,25 +144,31 @@ const HomeForm = () => {
                 </label>
               </div>
 
-              {/* Submit */}
+              {/* Submit Button - Updated to match Hero.jsx style */}
               <div className="pt-1">
-                <button type="submit" className="btn-primary w-full justify-center">
-                  <span className="flex items-center gap-2 text-sm">
-                    Request a strategy call
-                    <svg
-                      className="w-4 h-4"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </span>
+                <button 
+                  type="submit" 
+                  className="group relative inline-flex w-full items-center justify-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white  cursor-pointer
+                  
+                  
+            group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] "
+        
+                  
+                >
+                  <span>Request a strategy call</span>
+                  <svg
+                    className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M17 8l4 4m0 0l-4 4m4-4H3"
+                    />
+                  </svg>
                 </button>
               </div>
 
@@ -177,9 +184,6 @@ const HomeForm = () => {
 };
 
 export default HomeForm;
-
-
-
 
 
 

@@ -71,12 +71,12 @@ const Testimonials = ({ testimonialsData, loading }) => {
             Client results
           </p> */}
 
-           <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[rgba(241,58,52,0.25)] bg-[rgba(241,58,52,0.07)] px-4 py-2">
-                    <Sparkles className="h-3 w-3 text-[var(--color-primary)]" />
-                    <span className="section-eyebrow text-[var(--color-primary)]">
-                      Client results
-                    </span>
-                  </div>
+            <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+                     <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+                     <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
+                       Start a project
+                     </span>
+                   </div>
           <h2 className="section-heading text-neutral-900 mb-4">
             Brands that trust our team
           </h2>

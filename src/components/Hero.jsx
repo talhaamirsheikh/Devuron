@@ -13,6 +13,7 @@ import {
   Menu,
   X,
 } from "lucide-react";
+import logo from "../../public/logo.png"
 
 /* =========================
    Design direction: "Studio Monitor"
@@ -40,13 +41,6 @@ const LiveTimecode = () => {
   };
 
   return (
-    // <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] text-white/50">
-    //   <span className="relative flex h-1.5 w-1.5">
-    //     <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F13A34] opacity-60" />
-    //     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#F13A34]" />
-    //   </span>
-    //   LIVE&nbsp;&middot;&nbsp;{format(elapsed)}
-    // </div>
     <>
     
     </>
@@ -345,7 +339,7 @@ const MobileOffCanvas = ({ open, onClose, navLinks, isActive }) => {
               <Link
                 to="/join-us"
                 onClick={onClose}
-                className="group flex w-full items-center justify-center gap-2 bg-[#F13A34] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-black"
+                className="group flex w-full items-center justify-center gap-2 bg-[#F13A34] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]"
               >
                 Join Us
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -502,9 +496,9 @@ export default function Hero({ heroData, loading }) {
           {/* Desktop Navigation */}
           <div className="hidden md:flex w-full items-center gap-6">
             <div className="flex flex-shrink-0 flex-col gap-2">
-              <Link to="/" className="flex shrink-0 items-center gap-2">
+              <Link to="/" className="flex shrink-0 items-center gap-2 ml-5">
                 <img
-                  src="https://png.pngtree.com/png-clipart/20190611/original/pngtree-wolf-logo-png-image_2306634.jpg"
+                  src={logo}
                   alt="Logo"
                   className="h-14 md:h-16 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
                   loading="eager"
@@ -584,7 +578,7 @@ export default function Hero({ heroData, loading }) {
             <div className="flex flex-shrink-0 items-center">
               <Link
                 to="/join-us"
-                className="group inline-flex items-center gap-2 bg-[#F13A34] px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_30px_-8px_rgba(241,58,52,0.6)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                className="group inline-flex items-center gap-2 mr-5 bg-[#F13A34] px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] "
               >
                 Join Us
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -630,7 +624,7 @@ export default function Hero({ heroData, loading }) {
       </nav>
 
       {/* Content */}
-      <div className="relative z-10 section-container pt-0 md:pt-0 pb-20 sm:pb-10 lg:pb-20 text-white">
+      <div className="relative z-10 section-container pt-0 md:pt-0 pb-20 sm:pb-10 lg:pb-20 text-white ml-5">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentSlide}
@@ -706,9 +700,12 @@ export default function Hero({ heroData, loading }) {
               }}
               className="mt-10 sm:mt-12 flex flex-wrap gap-4"
             >
+              {/* View Projects Button - Red background, white text on hover */}
               <Link
                 to="/portfolio"
-                className="btn-primary group relative gap-2 !rounded-md shadow-[0_10px_30px_-10px_rgba(241,58,52,0.6)] transition-all duration-300 hover:shadow-[0_14px_36px_-8px_rgba(241,58,52,0.75)] hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]
+                
+                "
               >
                 <span className="relative flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
@@ -716,11 +713,16 @@ export default function Hero({ heroData, loading }) {
                   <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
                 </span>
               </Link>
+
+              {/* Get Started Button - White background, red text on hover */}
               <Link
                 to="/contact"
-                className="btn-secondary relative !rounded-md border-white/25 bg-black/30 font-mono tracking-[0.08em] text-white backdrop-blur-md transition-all duration-300 hover:border-white/50 hover:bg-white/[0.08] hover:-translate-y-0.5"
+                className="group relative inline-flex items-center gap-2 bg-white px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-all duration-300  hover:bg-transparent hover:text-white hover:border-1 hover:border-white
+                
+                "
               >
                 Get Started
+                <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </motion.div>
           </motion.div>

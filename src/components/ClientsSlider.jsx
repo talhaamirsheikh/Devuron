@@ -21,14 +21,21 @@ function ClientsGrid() {
 
   return (
     <section className="bg-[#F6F4EF] section-padding overflow-hidden">
-      <div className="section-container mb-10">
+      <div className="section-container mb-10 ">
         {/* <p className="section-eyebrow mb-3">Trusted by brands</p> */}
-         <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[rgba(241,58,52,0.25)] bg-[rgba(241,58,52,0.07)] px-4 py-2">
+         {/* <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[rgba(241,58,52,0.25)] bg-[rgba(241,58,52,0.07)] px-4 py-2">
                     <Sparkles className="h-3 w-3 text-[var(--color-primary)]" />
                     <span className="section-eyebrow text-[var(--color-primary)]">
                      Trusted by brands
                     </span>
-                  </div>
+                  </div> */}
+                  <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+                              <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+                              <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
+                               Trusted by brands
+                              </span>
+                            </div>
+                  
         <h2 className="section-heading text-neutral-900 mb-4">
           We partner with <br className="hidden md:block" />
           ambitious teams
