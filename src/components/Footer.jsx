@@ -1,90 +1,208 @@
-import { Mail, Phone, MapPin } from "lucide-react";
+import { useState } from "react";
+import { Mail, Phone, MapPin, ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import { services } from "../constants/services";
 import logo from "../assets/logo.png";
 
-export default function Footer() {
-  return (
-    <footer className="bg-black text-white px-6 md:px-20 pt-16 pb-8 rounded-t-[48px] mt-20">
-      {/* Top Section */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start gap-12">
-        {/* Quick Links */}
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6">
-            Quick Links
-          </h4>
-          <ul className="space-y-3 text-white text-sm">
-            <li><Link to="/" className="hover:text-[var(--color-primary)] transition-colors">Home</Link></li>
-            <li><Link to="/about" className="hover:text-[var(--color-primary)] transition-colors">About us</Link></li>
-            <li><Link to="/services" className="hover:text-[var(--color-primary)] transition-colors">Services</Link></li>
-            <li><Link to="/portfolio" className="hover:text-[var(--color-primary)] transition-colors">Portfolio</Link></li>
-            <li><Link to="/contact" className="hover:text-[var(--color-primary)] transition-colors">Contact Us</Link></li>
-          </ul>
-        </div>
+const SOCIALS = [
+  { icon: Linkedin, label: "LinkedIn", href: "#" },
+  { icon: Github, label: "GitHub", href: "#" },
+  { icon: Twitter, label: "X", href: "#" },
+];
 
-        {/* Center Logo */}
-        <div className="flex justify-center md:justify-center w-full md:w-auto">
-          <Link to="/" className="block">
-            <img
-              src={logo}
-              alt="Footer Logo"
-              className="h-32 md:h-40 object-contain opacity-100 transition"
-              loading="lazy"
-              decoding="async"
-            />
+const COMPANY_LINKS = [
+  { label: "Home", to: "/" },
+  { label: "About Us", to: "/about" },
+  { label: "Portfolio", to: "/portfolio" },
+  { label: "Contact Us", to: "/contact" },
+];
+
+export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleSubscribe = (e) => {
+    e.preventDefault();
+    if (!email) return;
+    setSubscribed(true);
+    setEmail("");
+  };
+
+  return (
+    <footer className="relative bg-[#08080a] text-white px-6 md:px-20 pt-20 pb-8 rounded-t-[48px] mt-20 overflow-hidden">
+      {/* Ambient accent glow + grain, matching the rest of the site's dark surfaces */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div
+          className="absolute -top-1 left-0 right-0 h-px"
+          style={{
+            background:
+              "linear-gradient(90deg, transparent, #F13A34, #FF7A45, #FFB020, transparent)",
+            opacity: 0.6,
+          }}
+        />
+        <div
+          className="absolute -top-24 left-1/4 w-[36vw] h-[36vw] max-w-[480px] max-h-[480px] rounded-full opacity-[0.10] blur-[110px]"
+          style={{ background: "radial-gradient(circle, #F13A34, transparent 70%)" }}
+        />
+        <div
+          className="absolute top-1/2 -right-24 w-[30vw] h-[30vw] max-w-[420px] max-h-[420px] rounded-full opacity-[0.08] blur-[100px]"
+          style={{ background: "radial-gradient(circle, #FFB020, transparent 70%)" }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* CTA Row */}
+        <div className="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-10 pb-14 border-b border-white/10">
+          <div className="max-w-xl">
+            <span className="font-mono text-xs tracking-[0.22em] uppercase text-white/50">
+              Let&apos;s work together
+            </span>
+            <h3 className="mt-3 text-xl md:text-[30px]  font-black  leading-[1.05] tracking-tight">
+              Have a project or an agent
+              <br className="hidden md:block" /> worth building?
+            </h3>
+          </div>
+
+          <Link
+            to="/contact"
+            className="group shrink-0 inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-md text-sm font-mono font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+          >
+            Start a Conversation
+            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </Link>
         </div>
 
-        {/* Services */}
-        <div>
-          <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6">
-            Services
-          </h4>
-          <ul className="space-y-3 text-white text-sm max-w-xs">
-            {services.map((service) => (
-              <li key={service.id}>
-                <Link to={`/services/${service.slug}`} className="hover:text-[var(--color-primary)] transition-colors">
-                  {service.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
+        {/* Main Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1.2fr] gap-12 py-14">
+          {/* Logo + blurb + socials */}
+          <div>
+            <Link to="/" className="inline-block mb-5">
+              <img
+                src={logo}
+                alt="Footer Logo"
+                className="h-14 object-contain"
+                loading="lazy"
+                decoding="async"
+              />
+            </Link>
+            <p className="text-sm text-white/55 leading-relaxed max-w-xs">
+              An IT partner building automation, AI agents, and digital
+              products that hold up in production — not just in demos.
+            </p>
+            <div className="flex items-center gap-3 mt-6">
+              {SOCIALS.map(({ icon: Icon, label, href }) => (
+                <a
+                  key={label}
+                  href={href}
+                  aria-label={label}
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-white/60 hover:text-white hover:border-[var(--color-primary)] transition-colors"
+                >
+                  <Icon size={16} />
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
+              Company
+            </h4>
+            <ul className="space-y-3 text-sm text-white/70">
+              {COMPANY_LINKS.map(({ label, to }) => (
+                <li key={label}>
+                  <Link to={to} className="hover:text-[var(--color-primary)] transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
+              Services
+            </h4>
+            <ul className="space-y-3 text-sm text-white/70">
+              {services.map((service) => (
+                <li key={service.id}>
+                  <Link
+                    to={`/services/${service.slug}`}
+                    className="hover:text-[var(--color-primary)] transition-colors"
+                  >
+                    {service.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Newsletter */}
+          <div>
+            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
+              Stay in the loop
+            </h4>
+            <p className="text-sm text-white/55 mb-4 max-w-xs">
+              Occasional notes on what we&apos;re shipping. No noise.
+            </p>
+            {subscribed ? (
+              <p className="text-sm text-[var(--color-primary)] font-medium">
+                You&apos;re on the list — thank you.
+              </p>
+            ) : (
+              <form onSubmit={handleSubscribe} className="flex items-center gap-2">
+                <input
+                  type="email"
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@company.com"
+                  className="w-full min-w-0 bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[var(--color-primary)] transition-colors"
+                />
+                <button
+                  type="submit"
+                  aria-label="Subscribe"
+                  className="shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-white text-black hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+                >
+                  <ArrowRight size={16} />
+                </button>
+              </form>
+            )}
+          </div>
         </div>
-      </div>
 
-      {/* Divider */}
-      <div className="max-w-7xl mx-auto border-t border-white/10 my-10" />
+        {/* Contact strip */}
+        <div className="flex flex-col md:flex-row flex-wrap justify-between gap-6 py-8 border-t border-white/10 text-sm text-white/70">
+          <a href="mailto:info@hashtaginterior.com" className="flex items-center gap-3 hover:text-white transition-colors">
+            <Mail size={18} className="text-[var(--color-primary)]" />
+            <span>info@hashtaginterior.com</span>
+          </a>
 
-      {/* Contact Info */}
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between gap-6 text-white text-sm">
-        <div className="flex items-center gap-3">
-          <Mail size={18} />
-          <span>info@hashtaginterior.com</span>
+          <a href="tel:+971483580444" className="flex items-center gap-3 hover:text-white transition-colors">
+            <Phone size={18} className="text-[var(--color-primary)]" />
+            <span>+971 48358044</span>
+          </a>
+
+          <div className="flex items-start gap-3 max-w-md">
+            <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[var(--color-primary)]" />
+            <span>Suite 506, The Binary by Omniyat, Business Bay, Dubai, UAE</span>
+          </div>
         </div>
 
-        <div className="flex items-center gap-3">
-          <Phone size={18} />
-          <span>+971 48358044</span>
-        </div>
+        {/* Bottom Bar */}
+        <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between text-xs text-white/50 gap-4">
+          <span>© {new Date().getFullYear()} All rights reserved</span>
 
-        <div className="flex items-start gap-3 max-w-md">
-          <MapPin size={18} className="mt-0.5 flex-shrink-0" />
-          <span>
-            Suite 506, The Binary by Omniyat, Business Bay, Dubai, UAE
-          </span>
-        </div>
-      </div>
-
-      {/* Bottom Bar */}
-      <div className="max-w-7xl mx-auto border-t border-white/10 mt-8 pt-4 flex flex-col md:flex-row justify-between text-xs text-white gap-4">
-        <span>© 2025 All rights reserved</span>
-
-        <div className="flex flex-wrap gap-3">
-          <span>Terms &amp; Conditions</span>
-          <span>|</span>
-          <span>Privacy Policy</span>
-          <span>|</span>
-          <Link to="/contact" className="hover:text-[var(--color-primary)] transition-colors">Contact Us</Link>
+          <div className="flex flex-wrap items-center gap-3">
+            <span className="hover:text-white transition-colors cursor-pointer">Terms &amp; Conditions</span>
+            <span>|</span>
+            <span className="hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
+            <span>|</span>
+            <Link to="/contact" className="hover:text-[var(--color-primary)] transition-colors">
+              Contact Us
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

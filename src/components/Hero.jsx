@@ -3,9 +3,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import {
   ChevronRight,
-  Instagram,
-  Video,
-  Calendar,
+  ChevronDown,
+  Globe,
+  Smartphone,
+  Bot,
+  Palette,
+  TrendingUp,
   ArrowRight,
   Menu,
   X,
@@ -37,13 +40,16 @@ const LiveTimecode = () => {
   };
 
   return (
-    <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] text-white/50">
-      <span className="relative flex h-1.5 w-1.5">
-        <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F13A34] opacity-60" />
-        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#F13A34]" />
-      </span>
-      LIVE&nbsp;&middot;&nbsp;{format(elapsed)}
-    </div>
+    // <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] text-white/50">
+    //   <span className="relative flex h-1.5 w-1.5">
+    //     <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F13A34] opacity-60" />
+    //     <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#F13A34]" />
+    //   </span>
+    //   LIVE&nbsp;&middot;&nbsp;{format(elapsed)}
+    // </div>
+    <>
+    
+    </>
   );
 };
 
@@ -80,6 +86,43 @@ const MonitorTexture = () => (
     />
   </div>
 );
+
+/* =========================
+   Services data — shared by the desktop mega menu and the
+   mobile off-canvas accordion
+========================= */
+const SERVICES = [
+  {
+    icon: Globe,
+    title: "Website & Web Development",
+    description: "Business sites, custom web apps & SaaS platforms.",
+    href: "/services#web-development",
+  },
+  {
+    icon: Smartphone,
+    title: "Mobile App Development",
+    description: "Native Android, iOS & cross-platform apps.",
+    href: "/services#mobile-apps",
+  },
+  {
+    icon: Bot,
+    title: "AI Solutions & Automation",
+    description: "AI agents, chatbots & workflow automation.",
+    href: "/services#ai-automation",
+  },
+  {
+    icon: Palette,
+    title: "Graphic Design & Video Editing",
+    description: "Bold visuals and video that tell your story.",
+    href: "/services#design-video",
+  },
+  {
+    icon: TrendingUp,
+    title: "SEO & Digital Marketing",
+    description: "Data-driven SEO & campaigns that grow reach.",
+    href: "/services#seo-marketing",
+  },
+];
 
 /* =========================
    Info Box — "clip preview" monitor card
@@ -145,19 +188,192 @@ const InfoBox = ({ slide, variant = "floating" }) => {
 };
 
 /* =========================
+   Services Mega Menu — desktop, glassmorphism panel
+========================= */
+const ServicesMegaMenu = ({ open, onClose }) => (
+  <AnimatePresence>
+    {open && (
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -10 }}
+        transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+        className="absolute left-1/2 top-full z-40 hidden md:block w-[94vw] max-w-6xl xl:max-w-7xl -translate-x-1/2 pt-3"
+      >
+        <div className="overflow-hidden rounded-2xl border border-white/15 bg-black/70 shadow-[0_30px_80px_-20px_rgba(0,0,0,0.7)] backdrop-blur-2xl">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-px bg-white/[0.06]">
+            {SERVICES.map((service) => {
+              const SIcon = service.icon;
+              return (
+                <Link
+                  key={service.title}
+                  to={service.href}
+                  onClick={onClose}
+                  className="group flex flex-col gap-4 bg-black/70 p-6 xl:p-7 transition-colors duration-300 hover:bg-white/[0.06]"
+                >
+                  <span className="flex h-11 w-11 items-center justify-center border border-white/15 text-[#F13A34] transition-colors duration-300 group-hover:border-[#F13A34]/60">
+                    <SIcon className="h-5 w-5" />
+                  </span>
+                  <span className="font-mono text-[11.5px] font-semibold uppercase tracking-[0.14em] text-white">
+                    {service.title}
+                  </span>
+                  <span className="text-[13px] leading-relaxed text-white/55">
+                    {service.description}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+);
+
+/* =========================
+   Mobile off-canvas menu — slides in from the right
+========================= */
+const MobileOffCanvas = ({ open, onClose, navLinks, isActive }) => {
+  const [servicesOpen, setServicesOpen] = useState(false);
+
+  return (
+    <AnimatePresence>
+      {open && (
+        <>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25 }}
+            onClick={onClose}
+            className="fixed inset-0 z-[60] bg-black/70 backdrop-blur-sm md:hidden"
+          />
+          <motion.div
+            initial={{ x: "100%" }}
+            animate={{ x: 0 }}
+            exit={{ x: "100%" }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="fixed inset-y-0 right-0 z-[70] w-[85%] max-w-sm overflow-y-auto border-l border-white/10 bg-[#08090A]/98 backdrop-blur-2xl md:hidden"
+          >
+            <div className="flex items-center justify-between border-b border-white/10 px-5 py-5">
+              <span className="font-mono text-[11px] tracking-[0.2em] text-white/50">
+                MENU
+              </span>
+              <button
+                onClick={onClose}
+                className="border border-white/15 bg-black/40 p-2 text-white transition-colors hover:border-[#F13A34]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                aria-label="Close navigation"
+              >
+                <X size={20} />
+              </button>
+            </div>
+
+            <nav className="flex flex-col px-3 py-3">
+              {navLinks.map((link) => {
+                if (link.isServices) {
+                  return (
+                    <div key={link.href} className="border-b border-white/[0.06]">
+                      <button
+                        onClick={() => setServicesOpen((prev) => !prev)}
+                        className={`flex w-full items-center justify-between px-3 py-3.5 font-mono text-[13px] font-medium tracking-[0.18em] uppercase transition-colors ${
+                          isActive(link.href)
+                            ? "text-white"
+                            : "text-white/70 hover:text-white"
+                        }`}
+                        aria-expanded={servicesOpen}
+                      >
+                        {link.label}
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform duration-300 ${
+                            servicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                      <AnimatePresence>
+                        {servicesOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, height: 0 }}
+                            animate={{ opacity: 1, height: "auto" }}
+                            exit={{ opacity: 0, height: 0 }}
+                            transition={{ duration: 0.25, ease: "easeOut" }}
+                            className="overflow-hidden pb-2"
+                          >
+                            {SERVICES.map((service) => {
+                              const SIcon = service.icon;
+                              return (
+                                <Link
+                                  key={service.title}
+                                  to={service.href}
+                                  onClick={onClose}
+                                  className="flex items-center gap-3 px-3 py-2.5 text-white/60 transition-colors hover:text-white"
+                                >
+                                  <SIcon className="h-4 w-4 shrink-0 text-[#F13A34]" />
+                                  <span className="text-[12.5px] font-medium tracking-wide">
+                                    {service.title}
+                                  </span>
+                                </Link>
+                              );
+                            })}
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
+                return (
+                  <Link
+                    key={link.href}
+                    to={link.href}
+                    onClick={onClose}
+                    className={`flex items-center justify-between border-b border-white/[0.06] px-3 py-3.5 font-mono text-[13px] font-medium tracking-[0.18em] uppercase transition-colors ${
+                      isActive(link.href)
+                        ? "text-white"
+                        : "text-white/70 hover:text-white"
+                    }`}
+                  >
+                    {link.label}
+                    {isActive(link.href) && (
+                      <span className="h-[3px] w-[3px] bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]" />
+                    )}
+                  </Link>
+                );
+              })}
+            </nav>
+
+            <div className="px-6 py-5">
+              <Link
+                to="/join-us"
+                onClick={onClose}
+                className="group flex w-full items-center justify-center gap-2 bg-[#F13A34] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-black"
+              >
+                Join Us
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div>
+          </motion.div>
+        </>
+      )}
+    </AnimatePresence>
+  );
+};
+
+/* =========================
    Main Hero Component
 ========================= */
 export default function Hero({ heroData, loading }) {
   const location = useLocation();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
   const sectionRef = useRef(null);
+  const closeTimer = useRef(null);
 
   const navLinks = useMemo(
     () => [
       { href: "/", label: "Home" },
       { href: "/about", label: "About Us" },
-      { href: "/services", label: "Services" },
+      { href: "/services", label: "Services", isServices: true },
       { href: "/portfolio", label: "Portfolio" },
       { href: "/blog", label: "Blog" },
       { href: "/contact", label: "Contact Us" },
@@ -168,45 +384,59 @@ export default function Hero({ heroData, loading }) {
   const isActive = (path) =>
     location.pathname === path || location.pathname.startsWith(path + "/");
 
+  // Close the mega menu on route change
+  useEffect(() => {
+    setIsServicesOpen(false);
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  const openServices = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setIsServicesOpen(true);
+  };
+  const scheduleCloseServices = () => {
+    closeTimer.current = setTimeout(() => setIsServicesOpen(false), 120);
+  };
+
   const defaultSlides = [
     {
-      title: "SOCIAL MEDIA",
-      subtitle: "STRATEGY & MANAGEMENT",
+      title: "WEB DEVELOPMENT",
+      subtitle: "CUSTOM SITES & SAAS PLATFORMS",
       description:
-        "Transform your digital presence with data-driven social media strategies that engage audiences and drive growth.",
-      category: "Social Media",
-      icon: Instagram,
+        "We design and build fast, scalable business websites, custom web applications and SaaS platforms engineered to grow with you.",
+      category: "Website & Web Development",
+      icon: Globe,
       bgImage:
-        "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       infoImage:
-        "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      projectDescription: "Global brand campaign achieving 2.4M impressions",
+        "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      projectDescription: "SaaS platform shipped and running at 99.9% uptime",
     },
     {
-      title: "CONTENT CREATION",
-      subtitle: "STORYTELLING & PRODUCTION",
+      title: "MOBILE APPS",
+      subtitle: "ANDROID · iOS · CROSS-PLATFORM",
       description:
-        "Craft compelling narratives and high-quality content that resonates with your audience.",
-      category: "Content Creation",
-      icon: Video,
+        "From native Android and iOS builds to cross-platform apps, we design and ship mobile experiences your users will love.",
+      category: "Mobile App Development",
+      icon: Smartphone,
       bgImage:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       infoImage:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      projectDescription: "Video series with 500K+ views in first month",
+        "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      projectDescription: "Cross-platform app that passed 100K+ downloads",
     },
     {
-      title: "EVENT MANAGEMENT",
-      subtitle: "PLANNING & EXECUTION",
+      title: "AI & AUTOMATION",
+      subtitle: "AGENTS · CHATBOTS · WORKFLOWS",
       description:
-        "Create unforgettable experiences with seamless event planning and execution.",
-      category: "Event Management",
-      icon: Calendar,
+        "We build AI agents, intelligent chatbots and workflow automations that cut manual work and scale your operations.",
+      category: "AI Solutions & Automation",
+      icon: Bot,
       bgImage:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
       infoImage:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-      projectDescription: "500+ attendees virtual conference with 98% satisfaction",
+        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+      projectDescription: "Automation workflow saving 30+ hours every week",
     },
   ];
 
@@ -227,7 +457,7 @@ export default function Hero({ heroData, loading }) {
   };
 
   const slide = slides[currentSlide] || slides[0];
-  const Icon = slide?.icon || Instagram;
+  const Icon = slide?.icon || Globe;
 
   const chapterLabel = (s, i) =>
     (s?.category || s?.tag || `Slide ${i + 1}`).toString().toUpperCase();
@@ -235,7 +465,7 @@ export default function Hero({ heroData, loading }) {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen overflow-hidden bg-[#08090A]"
+      className="relative min-h-[92vh] md:min-h-[88vh] overflow-hidden bg-[#08090A]"
     >
       {/* Background with crossfade + slow zoom */}
       <AnimatePresence mode="wait">
@@ -247,7 +477,7 @@ export default function Hero({ heroData, loading }) {
               slide?.bgImage ||
               slide?.background_image ||
               slide?.image ||
-              "https://images.unsplash.com/photo-1611605698335-8b1569810432?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
+              "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80"
             })`,
           }}
           initial={{ opacity: 0, scale: 1.08 }}
@@ -266,12 +496,12 @@ export default function Hero({ heroData, loading }) {
       <MonitorTexture />
       <ViewfinderFrame />
 
-      {/* Navbar — position and structure unchanged */}
-      <nav className="relative z-50 bg-transparent">
-        <div className="section-container flex items-center justify-between py-6 md:py-8">
+      {/* Navbar — now horizontal: logo left, links centered, Join Us on the right */}
+      <nav className="relative z-50 bg-transparent" onMouseLeave={scheduleCloseServices}>
+        <div className="section-container flex items-center justify-between pt-8 pb-4 md:pt-10 md:pb-5">
           {/* Desktop Navigation */}
-          <div className="hidden md:flex w-full items-center justify-between">
-            <div className="flex flex-col gap-2">
+          <div className="hidden md:flex w-full items-center gap-6">
+            <div className="flex flex-shrink-0 flex-col gap-2">
               <Link to="/" className="flex shrink-0 items-center gap-2">
                 <img
                   src="https://png.pngtree.com/png-clipart/20190611/original/pngtree-wolf-logo-png-image_2306634.jpg"
@@ -284,28 +514,61 @@ export default function Hero({ heroData, loading }) {
               <LiveTimecode />
             </div>
 
-            {/* Vertical nav — right side, unchanged position, "console" styling */}
-            <div className="flex items-center">
-              <div className="relative flex flex-col items-end gap-2.5 border-r-2 border-[#F13A34]/70 pr-5">
+            {/* Horizontal nav — centered in the remaining space */}
+            <div className="flex flex-1 items-center justify-center">
+              <div className="relative flex items-center gap-8">
                 {navLinks.map((link) => {
                   const active = isActive(link.href);
+
+                  if (link.isServices) {
+                    return (
+                      <button
+                        key={link.href}
+                        onMouseEnter={openServices}
+                        onClick={() => setIsServicesOpen((prev) => !prev)}
+                        className="group relative flex items-center gap-1.5 font-mono text-[12px] font-medium tracking-[0.2em] uppercase transition-all duration-300"
+                        aria-expanded={isServicesOpen}
+                      >
+                        <span
+                          className={`transition-colors duration-300 ${
+                            active || isServicesOpen
+                              ? "text-white"
+                              : "text-white/45 group-hover:text-white/85"
+                          }`}
+                        >
+                          {link.label}
+                        </span>
+                        <ChevronDown
+                          className={`h-3.5 w-3.5 text-white/50 transition-transform duration-300 ${
+                            isServicesOpen ? "rotate-180" : ""
+                          }`}
+                        />
+                        <span
+                          className={`absolute -bottom-2 left-0 h-[3px] w-[3px] transition-all duration-300 ${
+                            active || isServicesOpen
+                              ? "scale-100 bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]"
+                              : "scale-0 bg-white/50"
+                          }`}
+                        />
+                      </button>
+                    );
+                  }
+
                   return (
                     <Link
                       key={link.href}
                       to={link.href}
-                      className="group relative flex items-center gap-2.5 font-mono text-[12px] font-medium tracking-[0.2em] uppercase transition-all duration-300"
+                      className="group relative flex items-center font-mono text-[12px] font-medium tracking-[0.2em] uppercase transition-all duration-300"
                     >
                       <span
                         className={`transition-colors duration-300 ${
-                          active
-                            ? "text-white"
-                            : "text-white/45 group-hover:text-white/85"
+                          active ? "text-white" : "text-white/45 group-hover:text-white/85"
                         }`}
                       >
                         {link.label}
                       </span>
                       <span
-                        className={`h-[3px] w-[3px] transition-all duration-300 ${
+                        className={`absolute -bottom-2 left-0 h-[3px] w-[3px] transition-all duration-300 ${
                           active
                             ? "scale-100 bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]"
                             : "scale-0 bg-white/50"
@@ -315,6 +578,17 @@ export default function Hero({ heroData, loading }) {
                   );
                 })}
               </div>
+            </div>
+
+            {/* Join Us — end of the navbar */}
+            <div className="flex flex-shrink-0 items-center">
+              <Link
+                to="/join-us"
+                className="group inline-flex items-center gap-2 bg-[#F13A34] px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-black hover:shadow-[0_10px_30px_-8px_rgba(241,58,52,0.6)] focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              >
+                Join Us
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
 
@@ -340,38 +614,19 @@ export default function Hero({ heroData, loading }) {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <AnimatePresence>
-          {isMobileMenuOpen && (
-            <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="md:hidden overflow-hidden border-t border-white/10 bg-black/95 backdrop-blur-xl"
-            >
-              <nav className="section-container flex flex-col space-y-1 py-4">
-                {navLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    to={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={`flex items-center justify-between px-3.5 py-3 font-mono text-[13px] font-medium tracking-[0.18em] uppercase transition-colors ${
-                      isActive(link.href)
-                        ? "bg-white/10 text-white"
-                        : "text-white/70 hover:bg-white/[0.06] hover:text-white"
-                    }`}
-                  >
-                    {link.label}
-                    {isActive(link.href) && (
-                      <span className="h-[3px] w-[3px] bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]" />
-                    )}
-                  </Link>
-                ))}
-              </nav>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        {/* Mobile off-canvas menu */}
+        <MobileOffCanvas
+          open={isMobileMenuOpen}
+          onClose={() => setIsMobileMenuOpen(false)}
+          navLinks={navLinks}
+          isActive={isActive}
+        />
+
+        {/* Mega menu — mounted at nav level so its width isn't limited by the nav-links row */}
+        <ServicesMegaMenu
+          open={isServicesOpen}
+          onClose={() => setIsServicesOpen(false)}
+        />
       </nav>
 
       {/* Content */}
@@ -517,6 +772,3 @@ export default function Hero({ heroData, loading }) {
     </section>
   );
 }
-
-
-// ..
