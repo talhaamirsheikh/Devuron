@@ -63,9 +63,10 @@ export default function Footer() {
             </h3>
           </div>
 
+          {/* Button - Updated to match Hero.jsx style */}
           <Link
             to="/contact"
-            className="group shrink-0 inline-flex items-center gap-2 bg-white text-black px-7 py-3.5 rounded-md text-sm font-mono font-semibold uppercase tracking-[0.1em] transition-all duration-300 hover:-translate-y-0.5 active:scale-95"
+            className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-7 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#F13A34] hover-border-1 border-[1px] border-[#F13A34] "
           >
             Start a Conversation
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -85,7 +86,7 @@ export default function Footer() {
                 decoding="async"
               />
             </Link>
-            <p className="text-sm text-white/55 leading-relaxed max-w-xs">
+            <p className="text-sm text-white leading-relaxed max-w-xs">
               An IT partner building automation, AI agents, and digital
               products that hold up in production — not just in demos.
             </p>
@@ -95,7 +96,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-white/60 hover:text-white hover:border-[var(--color-primary)] transition-colors"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-white/60 hover:text-white hover:border-[#F13A34] transition-all duration-300 hover:scale-105"
                 >
                   <Icon size={16} />
                 </a>
@@ -111,7 +112,10 @@ export default function Footer() {
             <ul className="space-y-3 text-sm text-white/70">
               {COMPANY_LINKS.map(({ label, to }) => (
                 <li key={label}>
-                  <Link to={to} className="hover:text-[var(--color-primary)] transition-colors">
+                  <Link 
+                    to={to} 
+                    className="hover:text-[#F13A34] transition-all duration-300 text-white hover:translate-x-1 inline-block"
+                  >
                     {label}
                   </Link>
                 </li>
@@ -129,7 +133,7 @@ export default function Footer() {
                 <li key={service.id}>
                   <Link
                     to={`/services/${service.slug}`}
-                    className="hover:text-[var(--color-primary)] transition-colors"
+                    className="hover:text-[#F13A34] transition-all duration-300 text-white hover:translate-x-1 inline-block"
                   >
                     {service.title}
                   </Link>
@@ -143,11 +147,11 @@ export default function Footer() {
             <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
               Stay in the loop
             </h4>
-            <p className="text-sm text-white/55 mb-4 max-w-xs">
+            <p className="text-sm text-white mb-4 max-w-xs">
               Occasional notes on what we&apos;re shipping. No noise.
             </p>
             {subscribed ? (
-              <p className="text-sm text-[var(--color-primary)] font-medium">
+              <p className="text-sm text-[#F13A34] font-medium">
                 You&apos;re on the list — thank you.
               </p>
             ) : (
@@ -158,14 +162,14 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@company.com"
-                  className="w-full min-w-0 bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[var(--color-primary)] transition-colors"
+                  className="w-full min-w-0 bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[#F13A34] transition-colors"
                 />
                 <button
                   type="submit"
                   aria-label="Subscribe"
-                  className="shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-white text-black hover:bg-[var(--color-primary)] hover:text-white transition-colors"
+                  className="shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-[#F13A34] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
                 >
-                  <ArrowRight size={16} />
+                  <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
               </form>
             )}
@@ -174,18 +178,18 @@ export default function Footer() {
 
         {/* Contact strip */}
         <div className="flex flex-col md:flex-row flex-wrap justify-between gap-6 py-8 border-t border-white/10 text-sm text-white/70">
-          <a href="mailto:info@hashtaginterior.com" className="flex items-center gap-3 hover:text-white transition-colors">
-            <Mail size={18} className="text-[var(--color-primary)]" />
-            <span>info@hashtaginterior.com</span>
+          <a href="mailto:info@hashtaginterior.com" className="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1 group">
+            <Mail size={18} className="text-[#F13A34] transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white">info@hashtaginterior.com</span>
           </a>
 
-          <a href="tel:+971483580444" className="flex items-center gap-3 hover:text-white transition-colors">
-            <Phone size={18} className="text-[var(--color-primary)]" />
-            <span>+971 48358044</span>
+          <a href="tel:+971483580444" className="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1 group">
+            <Phone size={18} className="text-[#F13A34] transition-transform duration-300 group-hover:scale-110" />
+            <span className="text-white">+971 48358044</span>
           </a>
 
-          <div className="flex items-start gap-3 max-w-md">
-            <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[var(--color-primary)]" />
+          <div className="flex items-start gap-3 max-w-md hover:text-white transition-all duration-300 group">
+            <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[#F13A34] transition-transform duration-300 group-hover:scale-110" />
             <span>Suite 506, The Binary by Omniyat, Business Bay, Dubai, UAE</span>
           </div>
         </div>
@@ -195,11 +199,14 @@ export default function Footer() {
           <span>© {new Date().getFullYear()} All rights reserved</span>
 
           <div className="flex flex-wrap items-center gap-3">
-            <span className="hover:text-white transition-colors cursor-pointer">Terms &amp; Conditions</span>
+            <span className="hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-0.5">Terms &amp; Conditions</span>
             <span>|</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
+            <span className="hover:text-white transition-all duration-300 cursor-pointer hover:translate-x-0.5">Privacy Policy</span>
             <span>|</span>
-            <Link to="/contact" className="hover:text-[var(--color-primary)] transition-colors">
+            <Link 
+              to="/contact" 
+              className="hover:text-[#F13A34] transition-all duration-300 hover:translate-x-0.5"
+            >
               Contact Us
             </Link>
           </div>
