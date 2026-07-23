@@ -82,7 +82,7 @@ const ServiceCard = memo(({ service, index, isVisible }) => {
             >
               <div className="text-[var(--color-primary)]">{service.icon || <Palette className="h-5 w-5" />}</div>
             </motion.div>
-            <h3 className="text-xl font-bold text-white hover:text-[var(--color-primary)] transition-colors truncate">
+            <h3 className="font-mono text-[14px] font-bold uppercase tracking-[0.1em] text-white hover:text-[var(--color-primary)] transition-colors truncate">
               <Link to={`/services/${service.slug || ''}`}>{service.title}</Link>
             </h3>
           </div>
@@ -96,24 +96,24 @@ const ServiceCard = memo(({ service, index, isVisible }) => {
             <div className="flex items-center gap-1.5">
               <DollarSign className="h-3.5 w-3.5 text-[var(--color-primary)] flex-shrink-0" />
               <div>
-                <div className="text-[10px] text-gray-500">From</div>
-                <div className="text-sm font-semibold text-white truncate">{service.price || "Contact"}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500">From</div>
+                <div className="font-mono text-[12px] font-medium text-white truncate">{service.price || "Contact"}</div>
               </div>
             </div>
             
             <div className="flex items-center gap-1.5">
               <Clock className="h-3.5 w-3.5 text-[var(--color-primary)] flex-shrink-0" />
               <div>
-                <div className="text-[10px] text-gray-500">Timeline</div>
-                <div className="text-sm font-semibold text-white truncate">{service.timeline || "Varies"}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500">Timeline</div>
+                <div className="font-mono text-[12px] font-medium text-white truncate">{service.timeline || "Varies"}</div>
               </div>
             </div>
             
             <div className="flex items-center gap-1.5">
               <Users className="h-3.5 w-3.5 text-[var(--color-primary)] flex-shrink-0" />
               <div>
-                <div className="text-[10px] text-gray-500">Projects</div>
-                <div className="text-sm font-semibold text-white truncate">{service.projects || "50+"}</div>
+                <div className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500">Projects</div>
+                <div className="font-mono text-[12px] font-medium text-white truncate">{service.projects || "50+"}</div>
               </div>
             </div>
           </div>
@@ -127,7 +127,7 @@ const ServiceCard = memo(({ service, index, isVisible }) => {
                   className="flex items-center gap-1.5 p-1.5 rounded-lg hover:bg-gray-800/30 transition-colors"
                 >
                   <CheckCircle className="h-3 w-3 text-[var(--color-primary)] flex-shrink-0" />
-                  <span className="text-xs text-gray-300 truncate">{feature}</span>
+                  <span className="text-[12px] text-gray-300 truncate">{feature}</span>
                 </div>
               ))}
             </div>
@@ -318,7 +318,7 @@ const ServicesList = ({ servicesData, loading }) => {
             </span>
           </div>
 
-          <h2 className="section-heading text-white mb-2 text-start text-4xl md:text-5xl font-bold">
+          <h2 className="section-heading text-white mb-2 text-start">
             Our Works
           </h2>
           <p className="section-subtitle max-w-2xl text-gray-400 text-start text-base">

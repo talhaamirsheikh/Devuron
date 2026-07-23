@@ -101,7 +101,7 @@ const Testimonials = ({ testimonialsData, loading }) => {
                 <p className="section-eyebrow text-white/70">
                   Social proof
                 </p>
-                <h3 className="text-2xl font-semibold leading-snug">
+                <h3 className="font-mono text-[20px] font-bold uppercase leading-snug tracking-tight">
                   90% of our clients extend beyond their first engagement.
                 </h3>
                 <p className="text-sm text-neutral-200 leading-relaxed">
@@ -109,7 +109,7 @@ const Testimonials = ({ testimonialsData, loading }) => {
                   every campaign feels managed, not micro-managed.
                 </p>
               </div>
-              <div className="relative z-10 mt-6 pt-4 border-t border-white/15 flex items-center justify-between text-xs text-neutral-300">
+              <div className="relative z-10 mt-6 pt-4 border-t border-white/15 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-300">
                 <span>Average NPS: 9.4 / 10</span>
                 <span>Retention: 18+ months</span>
               </div>
@@ -172,10 +172,10 @@ const Testimonials = ({ testimonialsData, loading }) => {
                       </div>
 
                       <div>
-                        <h3 className="text-sm font-semibold text-neutral-900">
+                        <h3 className="font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-neutral-900">
                           {t.name || t.author}
                         </h3>
-                        <p className="text-xs text-neutral-500">{t.role || t.position || t.company}</p>
+                        <p className="text-[12px] text-neutral-500">{t.role || t.position || t.company}</p>
                         <div className="flex mt-1">
                           {[1, 2, 3, 4, 5].map((i) => (
                             <svg

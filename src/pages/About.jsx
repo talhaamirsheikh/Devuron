@@ -67,11 +67,17 @@ const About = () => {
             {...fadeUp(0.1)}
             className="max-w-4xl mx-auto text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f13a34]/10 border border-[#f13a34]/20 mb-6">
+            {/* <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#f13a34]/10 border border-[#f13a34]/20 mb-6">
               <span className="text-sm font-semibold text-[#f13a34] uppercase tracking-widest">
                 Who We Are
               </span>
-            </div>
+            </div> */}
+             <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+                        <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+                        <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
+                          Who We Are
+                        </span>
+                      </div>
             
             <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
               {whoWeAreData?.title || "We Build Brands That Stand Out"}
@@ -384,7 +390,10 @@ const About = () => {
             </p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-[#f13a34] text-white px-8 py-3 rounded-lg font-medium hover:bg-[#d32f2f] transition-colors duration-300"
+              className="inline-flex items-center gap-2 bg-[#f13a34] text-white px-8 py-3 font-medium hover:bg-[#d32f2f]  border-1 border-[#F13A34]
+              
+              
+              group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] "
             >
               Contact Us
             </Link>

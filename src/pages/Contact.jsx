@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Clock, Send, CheckCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, Send, CheckCircle, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Home } from "lucide-react";
 import GlobalHero from "../utils/GlobalHero";
@@ -31,7 +31,6 @@ const Contact = () => {
     e.preventDefault();
     
     try {
-      // Mock submit
       await new Promise(resolve => setTimeout(resolve, 500));
       setSubmitStatus("success");
       setFormData({
@@ -47,10 +46,39 @@ const Contact = () => {
     }
   };
 
-  // Custom breadcrumbs for contact page
   const contactBreadcrumbs = [
     { label: "Home", icon: Home, href: "/" },
     { label: "Contact", href: "/contact", current: true },
+  ];
+
+  // Contact info cards data
+  const contactInfo = [
+    {
+      icon: Phone,
+      label: "Phone",
+      value: infoData?.phone || "+1 (234) 567-890",
+      href: infoData?.phone ? `tel:${infoData.phone.replace(/\s/g, "")}` : "tel:+1234567890",
+      helper: infoData?.phone_helper || "Mon–Fri, 9:00–18:00",
+    },
+    {
+      icon: Mail,
+      label: "Email",
+      value: infoData?.email || "hello@yourstudio.com",
+      href: infoData?.email ? `mailto:${infoData.email}` : "mailto:hello@yourstudio.com",
+      helper: infoData?.email_helper || "We reply within one business day",
+    },
+    {
+      icon: MapPin,
+      label: "Office Location",
+      value: infoData?.address || "123 Business Street, City, Country",
+      helper: infoData?.address_helper || "Available for in-person sessions by appointment",
+    },
+    {
+      icon: Clock,
+      label: "Working Hours",
+      value: infoData?.working_hours || "Mon–Fri: 9:00–18:00",
+      helper: infoData?.working_hours_helper || "Weekends by appointment",
+    },
   ];
 
   return (
@@ -73,315 +101,317 @@ const Contact = () => {
       <div className="section-container max-w-7xl mx-auto py-20 px-4 sm:px-6 lg:px-8">
         {/* Contact Section */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mb-20">
-          {/* Contact Info Cards */}
+          {/* Contact Form - White Theme with Studio Monitor Elements */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="lg:col-span-1 space-y-6"
+            className="lg:col-span-2"
           >
-            <h2 className="text-2xl font-bold text-neutral-900 mb-6">
-              How to Reach Us
-            </h2>
-            
-            {[
-              {
-                icon: Phone,
-                label: "Phone",
-                value: infoData?.phone || "+1 (234) 567-890",
-                href: infoData?.phone ? `tel:${infoData.phone.replace(/\s/g, '')}` : "tel:+1234567890",
-                helper: infoData?.phone_helper || "Mon–Fri, 9:00–18:00",
-                bgColor: "bg-gradient-to-br from-[#f13a34]/5 to-transparent",
-                borderColor: "border-[#f13a34]/20",
-                hoverEffect: "hover:border-[#f13a34]/40 hover:shadow-lg hover:shadow-[#f13a34]/10"
-              },
-              {
-                icon: Mail,
-                label: "Email",
-                value: infoData?.email || "hello@yourstudio.com",
-                href: infoData?.email ? `mailto:${infoData.email}` : "mailto:hello@yourstudio.com",
-                helper: infoData?.email_helper || "We reply within one business day",
-                bgColor: "bg-gradient-to-br from-[#f13a34]/5 to-transparent",
-                borderColor: "border-[#f13a34]/20",
-                hoverEffect: "hover:border-[#f13a34]/40 hover:shadow-lg hover:shadow-[#f13a34]/10"
-              },
-              {
-                icon: MapPin,
-                label: "Office Location",
-                value: infoData?.address || "123 Business Street, City, Country",
-                helper: infoData?.address_helper || "Available for in-person sessions by appointment",
-                bgColor: "bg-gradient-to-br from-[#f13a34]/5 to-transparent",
-                borderColor: "border-[#f13a34]/20",
-                hoverEffect: "hover:border-[#f13a34]/40 hover:shadow-lg hover:shadow-[#f13a34]/10"
-              },
-              {
-                icon: Clock,
-                label: "Working Hours",
-                value: infoData?.working_hours || "Mon–Fri: 9:00–18:00",
-                helper: infoData?.working_hours_helper || "Weekends by appointment",
-                bgColor: "bg-gradient-to-br from-[#f13a34]/5 to-transparent",
-                borderColor: "border-[#f13a34]/20",
-                hoverEffect: "hover:border-[#f13a34]/40 hover:shadow-lg hover:shadow-[#f13a34]/10"
-              },
-            ].map(({ icon: Icon, label, value, href, helper, bgColor, borderColor, hoverEffect }) => (
-              <div
-                key={label}
-                className={`group relative ${bgColor} rounded-2xl p-6 border ${borderColor} transition-all duration-500 ${hoverEffect}`}
-              >
-                {/* Hover Effect Background */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-[#f13a34]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                
-                <div className="relative z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 rounded-xl bg-gradient-to-br from-[#f13a34]/10 to-[#f13a34]/5 border border-[#f13a34]/20 group-hover:from-[#f13a34]/20 group-hover:to-[#f13a34]/10 transition-all duration-300">
-                      <Icon className="w-5 h-5 text-[#f13a34]" />
-                    </div>
-                    <h3 className="text-sm font-semibold text-neutral-900 uppercase tracking-[0.18em]">
-                      {label}
-                    </h3>
-                  </div>
-                  
-                  {href ? (
-                    <a
-                      href={href}
-                      className="block text-sm font-medium text-neutral-900 hover:text-[#f13a34] transition-colors duration-300 group-hover:scale-[1.02] transform"
-                    >
-                      {value}
-                    </a>
-                  ) : (
-                    <p className="text-sm font-medium text-neutral-900 group-hover:text-[#f13a34] transition-colors duration-300">
-                      {value}
-                    </p>
-                  )}
-                  
-                  {helper && (
-                    <p className="mt-2 text-xs text-neutral-500 group-hover:text-neutral-600 transition-colors duration-300">
-                      {helper}
-                    </p>
-                  )}
-                </div>
-                
-                {/* Animated border on hover */}
-                <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-[#f13a34]/10 transition-all duration-500"></div>
+            <div className="relative border border-neutral-200 bg-white p-8 md:p-10  transition-colors duration-500 hover:border-[#F13A34]/40">
+              {/* Corner brackets */}
+              <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-400" />
+              <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-400" />
+              <div className="absolute -bottom-px -left-px h-4 w-4 border-l border-b border-neutral-400" />
+              <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-neutral-400" />
+
+              {/* Top tab */}
+              <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+                <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
+                  FORM
+                </span>
               </div>
-            ))}
+
+              <div className="pt-4">
+                <h2 className="font-mono text-[clamp(1.2rem,2vw,1.8rem)] font-black uppercase tracking-tight text-neutral-900">
+                  Send us a message
+                </h2>
+                <p className="text-[15px] text-neutral-600 mt-2 mb-8">
+                  Fill out the form below and we'll get back to you as soon as possible.
+                </p>
+                
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="group">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                        First name
+                      </label>
+                      <input
+                        type="text"
+                        name="first_name"
+                        value={formData.first_name}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        placeholder="Alex"
+                      />
+                    </div>
+
+                    <div className="group">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                        Last name
+                      </label>
+                      <input
+                        type="text"
+                        name="last_name"
+                        value={formData.last_name}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        placeholder="Smith"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="group">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                        Work email
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        placeholder="you@company.com"
+                      />
+                    </div>
+
+                    <div className="group">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                        Subject
+                      </label>
+                      <input
+                        type="text"
+                        name="subject"
+                        value={formData.subject}
+                        onChange={handleChange}
+                        required
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        placeholder="How can we help?"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="group">
+                    <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                      Project details
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows="6"
+                      className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400 resize-none"
+                      placeholder="Share a brief overview of your project, timeline, and expectations..."
+                    />
+                  </div>
+
+                  {/* Submit Status Messages */}
+                  {submitStatus === "success" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 border border-emerald-300 bg-emerald-50 flex items-center gap-3"
+                    >
+                      <CheckCircle className="w-5 h-5 text-emerald-600" />
+                      <div>
+                        <p className="text-sm font-medium text-emerald-800">
+                          Message sent successfully!
+                        </p>
+                        <p className="text-xs text-emerald-600 mt-1">
+                          We'll get back to you within 24 hours.
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+                  
+                  {submitStatus === "error" && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="p-4 border border-red-300 bg-red-50 flex items-center gap-3"
+                    >
+                      <CheckCircle className="w-5 h-5 text-red-600" />
+                      <div>
+                        <p className="text-sm font-medium text-red-800">
+                          Something went wrong
+                        </p>
+                        <p className="text-xs text-red-600 mt-1">
+                          Please try again or contact us directly.
+                        </p>
+                      </div>
+                    </motion.div>
+                  )}
+
+                  <button
+                    type="submit"
+                    disabled={contactMutation.isPending}
+                    className="group relative w-full bg-[#F13A34] text-white px-8 py-4 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34] disabled:opacity-60 disabled:cursor-not-allowed"
+                  >
+                    <span className="relative flex items-center justify-center gap-2">
+                      {contactMutation.isPending ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                          Sending...
+                        </>
+                      ) : (
+                        <>
+                          Send message
+                          <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                        </>
+                      )}
+                    </span>
+                  </button>
+
+                  <p className="text-xs text-neutral-400 text-center pt-4 border-t border-neutral-200">
+                    By submitting this form, you agree to our privacy policy and consent to being contacted.
+                  </p>
+                </form>
+              </div>
+            </div>
           </motion.div>
 
-          {/* Contact Form */}
+          {/* Contact Info Cards - White Theme with Studio Monitor Elements */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.4 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
-            className="lg:col-span-2"
+            className="space-y-5"
           >
-            <div className="bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-8 md:p-10 border border-neutral-200 shadow-xl">
-              <h2 className="text-2xl font-bold text-neutral-900 mb-2">
-                Send us a message
-              </h2>
-              <p className="text-neutral-600 mb-8">
-                Fill out the form below and we'll get back to you as soon as possible.
-              </p>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="group">
-                    <label className="block text-sm font-semibold uppercase tracking-[0.1em] text-neutral-600 mb-2 group-hover:text-[#f13a34] transition-colors duration-300">
-                      First name
-                    </label>
-                    <input
-                      type="text"
-                      name="first_name"
-                      value={formData.first_name}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all duration-300 hover:border-neutral-400"
-                      placeholder="Alex"
-                    />
+            {contactInfo.map((item, index) => (
+              <div
+                key={index}
+                className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#F13A34]/40"
+              >
+                <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
+                <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
+                <div className="absolute -bottom-px -left-px h-3 w-3 border-l border-b border-neutral-400" />
+                <div className="absolute -bottom-px -right-px h-3 w-3 border-r border-b border-neutral-400" />
+
+                <div className="flex items-start gap-4">
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
+                    <item.icon className="h-5 w-5 text-[#F13A34]" />
                   </div>
-
-                  <div className="group">
-                    <label className="block text-sm font-semibold uppercase tracking-[0.1em] text-neutral-600 mb-2 group-hover:text-[#f13a34] transition-colors duration-300">
-                      Last name
-                    </label>
-                    <input
-                      type="text"
-                      name="last_name"
-                      value={formData.last_name}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all duration-300 hover:border-neutral-400"
-                      placeholder="Smith"
-                    />
-                  </div>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="group">
-                    <label className="block text-sm font-semibold uppercase tracking-[0.1em] text-neutral-600 mb-2 group-hover:text-[#f13a34] transition-colors duration-300">
-                      Work email
-                    </label>
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all duration-300 hover:border-neutral-400"
-                      placeholder="you@company.com"
-                    />
-                  </div>
-
-                  <div className="group">
-                    <label className="block text-sm font-semibold uppercase tracking-[0.1em] text-neutral-600 mb-2 group-hover:text-[#f13a34] transition-colors duration-300">
-                      Subject
-                    </label>
-                    <input
-                      type="text"
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      required
-                      className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all duration-300 hover:border-neutral-400"
-                      placeholder="How can we help?"
-                    />
-                  </div>
-                </div>
-
-                <div className="group">
-                  <label className="block text-sm font-semibold uppercase tracking-[0.1em] text-neutral-600 mb-2 group-hover:text-[#f13a34] transition-colors duration-300">
-                    Project details
-                  </label>
-                  <textarea
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows="6"
-                    className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all duration-300 hover:border-neutral-400 resize-none"
-                    placeholder="Share a brief overview of your project, timeline, and expectations..."
-                  ></textarea>
-                </div>
-
-                {/* Submit Status Messages */}
-                {submitStatus === "success" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="p-4 rounded-xl bg-gradient-to-r from-emerald-50 to-emerald-100 border border-emerald-200 flex items-center gap-3"
-                  >
-                    <CheckCircle className="w-5 h-5 text-emerald-600" />
-                    <div>
-                      <p className="text-sm font-medium text-emerald-800">
-                        Message sent successfully!
-                      </p>
-                      <p className="text-xs text-emerald-600 mt-1">
-                        We'll get back to you within 24 hours.
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-                
-                {submitStatus === "error" && (
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="p-4 rounded-xl bg-gradient-to-r from-red-50 to-red-100 border border-red-200 flex items-center gap-3"
-                  >
-                    <CheckCircle className="w-5 h-5 text-red-600" />
-                    <div>
-                      <p className="text-sm font-medium text-red-800">
-                        Something went wrong
-                      </p>
-                      <p className="text-xs text-red-600 mt-1">
-                        Please try again or contact us directly.
-                      </p>
-                    </div>
-                  </motion.div>
-                )}
-
-                <button
-                  type="submit"
-                  disabled={contactMutation.isPending}
-                  className="group relative w-full bg-gradient-to-r from-[#f13a34] via-[#d32f2f] to-[#f13a34] text-white px-8 py-4 rounded-xl text-sm font-medium hover:shadow-xl hover:shadow-[#f13a34]/30 transition-all duration-300 hover:scale-[1.02] active:scale-95 overflow-hidden disabled:opacity-60 disabled:cursor-not-allowed"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-                  <span className="relative flex items-center justify-center gap-2">
-                    {contactMutation.isPending ? (
-                      <>
-                        <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
-                        Sending...
-                      </>
+                  <div className="flex-1 min-w-0">
+                    <h4 className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                      {item.label}
+                    </h4>
+                    {item.href ? (
+                      <a
+                        href={item.href}
+                        className="mt-1 block font-mono text-[15px] font-medium text-neutral-900 transition-colors duration-300 hover:text-[#F13A34] truncate"
+                      >
+                        {item.value}
+                      </a>
                     ) : (
-                      <>
-                        Send message
-                        <Send className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </>
+                      <p className="mt-1 text-[15px] font-medium text-neutral-900">
+                        {item.value}
+                      </p>
                     )}
-                  </span>
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#f13a34]/20 via-transparent to-[#f13a34]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                </button>
+                    <p className="mt-1.5 text-[12px] text-neutral-500">
+                      {item.helper}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
 
-                <p className="text-xs text-neutral-500 text-center pt-4 border-t border-neutral-100">
-                  By submitting this form, you agree to our privacy policy and consent to being contacted.
-                  We respect your privacy and never share your information.
-                </p>
-              </form>
+            {/* CTA Card */}
+            <div className="group relative border border-neutral-200 bg-white p-6 shadow-sm transition-colors duration-500 hover:border-[#F13A34]/40">
+              <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
+              <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
+              <div className="absolute -bottom-px -left-px h-3 w-3 border-l border-b border-neutral-400" />
+              <div className="absolute -bottom-px -right-px h-3 w-3 border-r border-b border-neutral-400" />
+
+              <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                Start a Project
+              </h4>
+              <p className="mt-2 text-[14px] text-neutral-600">
+                Let's build something amazing together.
+              </p>
+              <Link
+                to="/contact"
+                className="group/btn mt-4 inline-flex items-center gap-2 bg-[#F13A34] px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+              >
+                Get Started
+                <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
+              </Link>
             </div>
           </motion.div>
         </div>
 
-        {/* Map Section */}
+        {/* Map Section - White Theme with Studio Monitor Elements */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="mb-20"
         >
-          <div className="bg-gradient-to-br from-white to-neutral-50 rounded-3xl p-8 border border-neutral-200 shadow-xl">
-            <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
-              <div>
-                <h2 className="text-2xl font-bold text-neutral-900 mb-2">
-                  Visit Our Office
-                </h2>
-                <p className="text-neutral-600">
-                  Come see us in person or explore our location virtually
-                </p>
-              </div>
-              <div className="mt-4 md:mt-0">
-                <a
-                  href="https://maps.google.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium text-[#f13a34] hover:text-white bg-white border border-[#f13a34]/30 hover:bg-[#f13a34] rounded-full transition-all duration-300 hover:scale-105 group"
-                >
-                  <MapPin className="w-4 h-4" />
-                  Get directions
-                </a>
-              </div>
+          <div className="relative border border-neutral-200 bg-white p-8 shadow-sm transition-colors duration-500 hover:border-[#F13A34]/40">
+            {/* Corner brackets */}
+            <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-300" />
+            <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-300" />
+            <div className="absolute -bottom-px -left-px h-4 w-4 border-l border-b border-neutral-300" />
+            <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-neutral-300" />
+
+            {/* Top tab */}
+            <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+              <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
+                LOCATION
+              </span>
             </div>
-            
-            <div className="rounded-2xl overflow-hidden border border-neutral-200 h-80 md:h-96">
-              {infoData?.map_url ? (
-                <div
-                  dangerouslySetInnerHTML={{ __html: infoData.map_url }}
-                  className="w-full h-full"
-                />
-              ) : (
-                <iframe
-                  width="100%"
-                  height="100%"
-                  frameBorder="0"
-                  title="Google Maps"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6307385842567!2d-74.00597!3d40.712776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a31008ccd97%3A0x8e9a2a2f8f8a8c8d!2s123%20Business%20St!5e0!3m2!1sen!2sus!4v1234567890"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full"
-                ></iframe>
-              )}
+
+            <div className="pt-4">
+              <div className="flex flex-col md:flex-row md:items-center justify-between mb-6">
+                <div>
+                  <h2 className="font-mono text-[clamp(1.2rem,2vw,1.8rem)] font-black uppercase tracking-tight text-neutral-900">
+                    Visit Our Office
+                  </h2>
+                  <p className="text-[15px] text-neutral-600 mt-1">
+                    Come see us in person or explore our location virtually
+                  </p>
+                </div>
+                <div className="mt-4 md:mt-0">
+                  <a
+                    href="https://maps.google.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white bg-[#F13A34] transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+                  >
+                    <MapPin className="w-4 h-4" />
+                    Get directions
+                  </a>
+                </div>
+              </div>
+              
+              <div className="overflow-hidden border border-neutral-200 h-80 md:h-96">
+                {infoData?.map_url ? (
+                  <div
+                    dangerouslySetInnerHTML={{ __html: infoData.map_url }}
+                    className="w-full h-full"
+                  />
+                ) : (
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    frameBorder="0"
+                    title="Google Maps"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.6307385842567!2d-74.00597!3d40.712776!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a31008ccd97%3A0x8e9a2a2f8f8a8c8d!2s123%20Business%20St!5e0!3m2!1sen!2sus!4v1234567890"
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="w-full h-full"
+                  />
+                )}
+              </div>
             </div>
           </div>
         </motion.div>

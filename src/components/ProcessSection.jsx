@@ -183,7 +183,7 @@ const ProcessSection = () => {
                   <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 mb-4 transform transition-all duration-400 group-hover:scale-105 group-hover:rotate-3">
                     {service.icon}
                   </div>
-                  <h4 className="text-lg font-semibold transform transition-all duration-300 group-hover:translate-x-1">
+                  <h4 className="font-mono text-[12px] font-semibold uppercase tracking-[0.2em] transform transition-all duration-300 group-hover:translate-x-1">
                     {title}
                   </h4>
                   <ul className="mt-3 space-y-1.5">
@@ -212,7 +212,7 @@ const ProcessSection = () => {
                   <PhaseGraphic index={index} accent={accent} />
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 z-20">
-                  <div className="inline-flex items-center rounded-full bg-black/65 px-4 py-1 text-xs font-medium text-white">
+                  <div className="inline-flex items-center rounded-full bg-black/65 px-4 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white">
                     {title}
                   </div>
                 </div>

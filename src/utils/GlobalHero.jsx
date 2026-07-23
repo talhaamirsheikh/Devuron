@@ -1,11 +1,11 @@
 import React, { useState, useMemo, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronRight, Home, Menu, X } from "lucide-react";
+import { ChevronRight, Home, Menu, X, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-
+import logo from "../../public/logo.png"
 /* =========================
    Same "Studio Monitor" design system as the homepage Hero —
-   console-style vertical nav, tally-red accents, mono labels,
+   console-style horizontal nav, tally-red accents, mono labels,
    viewfinder corner brackets. No grid/scanline texture here.
 ========================= */
 
@@ -88,7 +88,7 @@ export default function GlobalHero({
     location.pathname === path || location.pathname.startsWith(path + "/");
 
   return (
-    <section className="relative min-h-[92vh] md:min-h-[88vh] overflow-hidden bg-[#08090A]">
+    <section className="relative min-h-[80vh] md:min-h-[75vh] overflow-hidden bg-[#08090A]">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -106,34 +106,33 @@ export default function GlobalHero({
 
       <ViewfinderFrame />
 
-      {/* Navbar - Inside Hero Section */}
+      {/* Navbar - Horizontal like Home Hero */}
       <nav className="relative z-50 bg-transparent">
-        <div className="section-container flex items-start justify-between pt-10 pb-4 md:pt-14 md:pb-5">
-          {/* Desktop Navigation - Vertical on right */}
-          <div className="hidden md:flex w-full items-start justify-between">
-            <div className="flex flex-col gap-2">
-              <Link to="/" className="flex shrink-0 items-center gap-2">
+        <div className="section-container flex items-center justify-between pt-8 pb-4 md:pt-10 md:pb-5">
+          {/* Desktop Navigation - Horizontal */}
+          <div className="hidden md:flex w-full items-center gap-6">
+            <div className="flex flex-shrink-0 flex-col gap-2">
+              <Link to="/" className="flex shrink-0 items-center gap-2 ml-5">
                 <img
-                  src="https://vantage.itnextro.com/wp-content/uploads/2025/11/VP-png-1-1.png"
+                  src={logo}
                   alt="Logo"
                   className="h-14 md:h-16 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
                   loading="eager"
                   fetchPriority="high"
                 />
               </Link>
-              <LiveTimecode />
             </div>
 
-            {/* Vertical nav — console styling, matches homepage Hero */}
-            <div className="flex items-center mt-3 md:mt-4">
-              <div className="relative flex flex-col items-end gap-2.5 border-r-2 border-[#F13A34]/70 pr-5">
+            {/* Horizontal nav — centered in the remaining space */}
+            <div className="flex flex-1 items-center justify-center">
+              <div className="relative flex items-center gap-8">
                 {navLinks.map((link) => {
                   const active = isActive(link.href);
                   return (
                     <Link
                       key={link.href}
                       to={link.href}
-                      className="group relative flex items-center gap-2.5 font-mono text-[12px] font-medium tracking-[0.2em] uppercase transition-all duration-300"
+                      className="group relative flex items-center font-mono text-[12px] font-medium tracking-[0.2em] uppercase transition-all duration-300"
                     >
                       <span
                         className={`transition-colors duration-300 ${
@@ -145,7 +144,7 @@ export default function GlobalHero({
                         {link.label}
                       </span>
                       <span
-                        className={`h-[3px] w-[3px] transition-all duration-300 ${
+                        className={`absolute -bottom-2 left-0 h-[3px] w-[3px] transition-all duration-300 ${
                           active
                             ? "scale-100 bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]"
                             : "scale-0 bg-white/50"
@@ -155,6 +154,17 @@ export default function GlobalHero({
                   );
                 })}
               </div>
+            </div>
+
+            {/* Join Us — end of the navbar */}
+            <div className="flex flex-shrink-0 items-center">
+              <Link
+                to="/join-us"
+                className="group inline-flex items-center gap-2 mr-5 bg-[#F13A34] px-5 py-2.5 border-1 border-[#F13A34] font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+              >
+                Join Us
+                <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
             </div>
           </div>
 
@@ -218,7 +228,7 @@ export default function GlobalHero({
       <div
         className={`relative z-10 h-full flex items-center ${
           centered ? "justify-center" : "justify-start"
-        } section-container pb-20 text-white`}
+        } section-container pb-20 pt-4 text-white`}
       >
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -259,6 +269,28 @@ export default function GlobalHero({
             >
               {description}
             </p>
+
+            {/* CTA Buttons - Matching Home Hero */}
+            {/* <div className="mt-10 sm:mt-12 flex flex-wrap gap-4">
+              <Link
+                to="/portfolio"
+                className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+              >
+                <span className="relative flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
+                  View Projects
+                  <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </span>
+              </Link>
+
+              <Link
+                to="/contact"
+                className="group relative inline-flex items-center gap-2 bg-white px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-black transition-all duration-300 hover:bg-transparent hover:text-white hover:border hover:border-white"
+              >
+                Get Started
+                <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+              </Link>
+            </div> */}
 
             {/* Breadcrumbs — console-style, matches homepage Hero's mono labels */}
             {breadcrumbs && breadcrumbs.length > 0 && (

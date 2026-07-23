@@ -54,7 +54,7 @@ const Navbar = () => {
                 <Link
                   key={link.href}
                   to={link.href}
-                  className={`text-[13px] md:text-[14px] font-medium tracking-[0.15em] uppercase transition-colors duration-200 ${
+                  className={`font-mono text-[12px] font-medium tracking-[0.2em] uppercase transition-colors duration-200 ${
                     isActive(link.href) ? activeColor : `${textColor} ${hoverColor}`
                   }`}
                 >
@@ -73,7 +73,7 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     to={link.href}
-                    className={`text-[13px] md:text-[14px] font-medium tracking-[0.15em] uppercase transition-all duration-200 ${
+                    className={`font-mono text-[12px] font-medium tracking-[0.2em] uppercase transition-all duration-200 ${
                       isActive(link.href) ? "text-white" : "text-white/80 hover:text-white"
                     }`}
                   >
@@ -126,7 +126,7 @@ const Navbar = () => {
                 key={link.href}
                 to={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`py-2.5 px-3 text-sm font-medium tracking-[0.15em] uppercase rounded-md transition-colors ${
+                className={`py-2.5 px-3 font-mono text-[12px] font-medium tracking-[0.2em] uppercase rounded-md transition-colors ${
                   isActive(link.href)
                     ? `${activeColor} ${isLightBackground ? "bg-red-50" : "bg-white/10"}`
                     : `${textColorMuted} ${hoverColor}`

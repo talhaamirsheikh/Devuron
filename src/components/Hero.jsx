@@ -339,7 +339,7 @@ const MobileOffCanvas = ({ open, onClose, navLinks, isActive }) => {
               <Link
                 to="/join-us"
                 onClick={onClose}
-                className="group flex w-full items-center justify-center gap-2 bg-[#F13A34] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]"
+                className="group flex w-full items-center  justify-center gap-2 bg-[#F13A34] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]"
               >
                 Join Us
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -578,7 +578,7 @@ export default function Hero({ heroData, loading }) {
             <div className="flex flex-shrink-0 items-center">
               <Link
                 to="/join-us"
-                className="group inline-flex items-center gap-2 mr-5 bg-[#F13A34] px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] "
+                className="group inline-flex items-center border-1 border-[#F13A34] gap-2 mr-5 bg-[#F13A34] px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] "
               >
                 Join Us
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -703,7 +703,7 @@ export default function Hero({ heroData, loading }) {
               {/* View Projects Button - Red background, white text on hover */}
               <Link
                 to="/portfolio"
-                className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]
+                className="group relative inline-flex border-1 border-[#F13A34] items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]
                 
                 "
               >

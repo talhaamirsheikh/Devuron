@@ -57,7 +57,7 @@ export default function Footer() {
             <span className="font-mono text-xs tracking-[0.22em] uppercase text-white/50">
               Let&apos;s work together
             </span>
-            <h3 className="mt-3 text-xl md:text-[30px]  font-black  leading-[1.05] tracking-tight">
+            <h3 className="mt-3 text-xl md:text-[30px] font-mono uppercase font-black leading-[1.05] tracking-tight">
               Have a project or an agent
               <br className="hidden md:block" /> worth building?
             </h3>
@@ -106,7 +106,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
+            <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
               Company
             </h4>
             <ul className="space-y-3 text-sm text-white/70">
@@ -125,7 +125,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
+            <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
               Services
             </h4>
             <ul className="space-y-3 text-sm text-white/70">
@@ -144,7 +144,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h4 className="text-sm font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
+            <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] mb-6 text-white/80">
               Stay in the loop
             </h4>
             <p className="text-sm text-white mb-4 max-w-xs">

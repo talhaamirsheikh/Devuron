@@ -52,20 +52,20 @@ const HomeForm = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4 pt-4 text-sm">
             <div className="rounded-2xl bg-white shadow-sm border border-neutral-200 px-4 py-4">
-              <div className="text-xl font-semibold text-neutral-900">500+</div>
-              <div className="text-xs text-neutral-500 mt-1">
+              <div className="font-mono text-[24px] font-bold tracking-tight text-neutral-900">500+</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500 mt-1">
                 projects shipped
               </div>
             </div>
             <div className="rounded-2xl bg-white shadow-sm border border-neutral-200 px-4 py-4">
-              <div className="text-xl font-semibold text-neutral-900">98%</div>
-              <div className="text-xs text-neutral-500 mt-1">
+              <div className="font-mono text-[24px] font-bold tracking-tight text-neutral-900">98%</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500 mt-1">
                 client satisfaction
               </div>
             </div>
             <div className="rounded-2xl bg-white shadow-sm border border-neutral-200 px-4 py-4">
-              <div className="text-xl font-semibold text-neutral-900">24h</div>
-              <div className="text-xs text-neutral-500 mt-1">
+              <div className="font-mono text-[24px] font-bold tracking-tight text-neutral-900">24h</div>
+              <div className="font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-500 mt-1">
                 average response time
               </div>
             </div>
@@ -84,7 +84,7 @@ const HomeForm = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name */}
               <div>
-                <label className="block text-xs font-semibold tracking-[0.18em] uppercase text-neutral-600 mb-2">
+                <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2">
                   Your name
                 </label>
                 <input
@@ -93,14 +93,14 @@ const HomeForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Alex Smith"
-                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#F13A34] focus:border-transparent transition-all"
+                  className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
                   required
                 />
               </div>
 
               {/* Email */}
               <div>
-                <label className="block text-xs font-semibold tracking-[0.18em] uppercase text-neutral-600 mb-2">
+                <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2">
                   Work email
                 </label>
                 <input
@@ -109,14 +109,14 @@ const HomeForm = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="you@company.com"
-                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#F13A34] focus:border-transparent transition-all"
+                  className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
                   required
                 />
               </div>
 
               {/* Message */}
               <div>
-                <label className="block text-xs font-semibold tracking-[0.18em] uppercase text-neutral-600 mb-2">
+                <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2">
                   Project details
                 </label>
                 <textarea
@@ -125,7 +125,7 @@ const HomeForm = () => {
                   onChange={handleChange}
                   placeholder="Share a short overview of your brand, timeline, and what success looks like..."
                   rows="4"
-                  className="w-full rounded-xl border border-neutral-200 bg-neutral-50 px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#F13A34] focus:border-transparent transition-all resize-none"
+                  className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400 resize-none"
                   required
                 />
               </div>
@@ -148,12 +148,7 @@ const HomeForm = () => {
               <div className="pt-1">
                 <button 
                   type="submit" 
-                  className="group relative inline-flex w-full items-center justify-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white  cursor-pointer
-                  
-                  
-            group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] "
-        
-                  
+                  className="group relative inline-flex w-full items-center justify-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34] cursor-pointer"
                 >
                   <span>Request a strategy call</span>
                   <svg
