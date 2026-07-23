@@ -1,6 +1,9 @@
 import React, { useState, memo } from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+
+import { Link } from "react-router-dom";
+import { Target, Bot, Workflow, BarChart3, Sparkles, ArrowRight } from "lucide-react";
+
 const logos = [
   "https://dummyimage.com/180x80/ffffff/000000&text=Arabian+Ranches",
   "https://dummyimage.com/180x80/ffffff/000000&text=Brilliance",
@@ -21,31 +24,32 @@ function ClientsGrid() {
 
   return (
     <section className="bg-[#F6F4EF] section-padding overflow-hidden">
-      <div className="section-container mb-10 ">
-        {/* <p className="section-eyebrow mb-3">Trusted by brands</p> */}
-         {/* <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[rgba(241,58,52,0.25)] bg-[rgba(241,58,52,0.07)] px-4 py-2">
-                    <Sparkles className="h-3 w-3 text-[var(--color-primary)]" />
-                    <span className="section-eyebrow text-[var(--color-primary)]">
-                     Trusted by brands
-                    </span>
-                  </div> */}
-                  <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-                              <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
-                              <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
-                               Trusted by brands
-                              </span>
-                            </div>
-                  
-        <h2 className="section-heading text-neutral-900 mb-4">
-          We partner with <br className="hidden md:block" />
-          ambitious teams
-        </h2>
-        <p className="section-subtitle max-w-xl">
-          A growing network of brands that trust us to manage, grow, and
-          protect their presence across social and digital.
-        </p>
-      </div>
-
+         <div
+                className=" mb-14 md:mb-20 mx-20 md:mx-40 text-center"
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.4 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+              >
+                <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+                  <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+                  <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
+Trusted by brands
+                  </span>
+                </div>
+      
+                <h2 className="section-heading text-neutral-900">
+                   We partner with 
+          ambitiou teams
+                </h2>
+                <p className="section-subtitle mt-4">
+                            From ambitious startups to established businesses, brands trust us to strengthen their identity, accelerate growth, and protect their digital presence through innovative solutions.
+                </p>
+                
+                {/* View Complete Process Button - Red background, white text on hover */}
+                
+              </div>
+      
       {/* Grid Layout */}
       <div className="section-container">
         <motion.div
@@ -107,7 +111,3 @@ function ClientsGrid() {
 }
 
 export default ClientsGrid;
-
-
-
-
