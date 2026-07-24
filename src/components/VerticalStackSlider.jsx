@@ -34,16 +34,22 @@ const VerticalStackSlider = () => {
 
   const ACCENTS = ["#F13A34", "#FF7A45", "#FFB020"];
 
-  // Icons mapping
   const serviceIcons = [
-    Globe,      // Website & Web Development
-    Smartphone, // Mobile App Development
-    Bot,        // AI Solutions & Automation
-    TrendingUp, // SEO & Digital Marketing
-    Palette     // Graphic Design & Video Editing
+    Globe,
+    Smartphone,
+    Bot,
+    TrendingUp,
+    Palette
   ];
 
-  // Tab descriptions - short versions
+  const serviceImages = [
+    "https://images.pexels.com/photos/8117416/pexels-photo-8117416.jpeg",
+    "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?_gl=1*1ybnu1h*_ga*MzgzMTkxODU3LjE3ODQ4OTk4MTA.*_ga_8JE65Q40S6*czE3ODQ5MjE0ODckbzQkZzEkdDE3ODQ5MjE3OTIkajU5JGwwJGgw",
+    "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    "https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
+    "https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  ];
+
   const tabDescriptions = [
     "Custom websites & powerful web apps built for speed and growth",
     "High-performance Android & iOS apps for seamless user experiences",
@@ -84,6 +90,7 @@ const VerticalStackSlider = () => {
         const accent = ACCENTS[index % ACCENTS.length];
         const isActive = activeIndex === index;
         const Icon = serviceIcons[index % serviceIcons.length];
+        const imageUrl = serviceImages[index % serviceImages.length];
 
         return (
           <div
@@ -104,16 +111,12 @@ const VerticalStackSlider = () => {
                 <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-neutral-300" />
 
                 {/* Tab - with description */}
-                <div className="absolute -top-px left-8 flex items-center gap-3 border-b border-r border-neutral-200 bg-white px-4 py-1.5 max-w-[70%]">
+                <div className="absolute -top-px left-8 flex items-center gap-3 border-b border-r border-neutral-200 bg-white px-4 py-1.5 max-w-[70%] z-20">
                   <span className="flex items-center gap-1.5">
                     <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
-                    {/* <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500 whitespace-nowrap">
-                      SERVICE {String(index + 1).padStart(2, "0")}
-                    </span> */}
                   </span>
-                  {/* <span className="h-3 w-px bg-neutral-300" /> */}
                   <span className="font-mono text-[9px] tracking-[0.15em] text-neutral-500 truncate">
-                  {tabDescriptions[index]}
+                    {tabDescriptions[index]}
                   </span>
                 </div>
 
@@ -125,20 +128,22 @@ const VerticalStackSlider = () => {
                   }}
                 />
 
-                
-                      {/* Ghost Number */}
-                <div
-                  aria-hidden="true"
-                  className="pointer-events-none absolute -right-4 sm:right-0 top-1/2 -translate-y-1/2 select-none font-black leading-none text-neutral-100/60"
-                  style={{ fontSize: "clamp(8rem, 25vw, 20rem)" }}
-                >
-                  {String(index + 1).padStart(2, "0")}
+                {/* Image Box - Right Side */}
+                <div className="absolute right-8 top-1/2 -translate-y-1/2 w-[280px] h-[320px] lg:w-[340px] lg:h-[380px] rounded-xl overflow-hidden border border-neutral-200 shadow-lg">
+                  <img
+                    src={imageUrl}
+                    alt={item.title}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {/* Dark overlay at bottom for text readability if needed */}
+                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
                 </div>
 
-                
                 {/* Content */}
                 <div className="relative z-10 h-full flex items-center px-8 sm:px-12 lg:px-16">
-                  <div className="max-w-2xl">
+                  <div className="max-w-[55%]">
                     {/* Small Icon */}
                     <div className="flex items-center gap-3 mb-2">
                       <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
@@ -176,7 +181,7 @@ const VerticalStackSlider = () => {
                 </div>
 
                 {/* Progress Indicator */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
                   {services.map((_, i) => (
                     <span
                       key={i}
