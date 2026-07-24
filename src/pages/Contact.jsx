@@ -324,7 +324,7 @@ const Contact = () => {
             ))}
 
             {/* CTA Card */}
-            <div className="group relative border border-neutral-200 bg-white p-6 shadow-sm transition-colors duration-500 hover:border-[#F13A34]/40">
+            <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#F13A34]/40">
               <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
               <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
               <div className="absolute -bottom-px -left-px h-3 w-3 border-l border-b border-neutral-400" />
