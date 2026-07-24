@@ -1,18 +1,14 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { Target, Bot, Workflow, BarChart3, Sparkles, ArrowRight } from "lucide-react";
+import { Target, Bot, Workflow, BarChart3, Sparkles, ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-/* Brand accent palette — cycled per phase so the four columns read as
-   one continuous sequence rather than four unrelated cards. */
 const ACCENTS = ["#F13A34", "#FF7A45", "#FFB020", "#F13A34"];
 
-/* Each phase gets a small abstract diagram instead of a stock photo —
-   a literal sketch of what that phase actually does to the agent's
-   data/logic, so the visual explains rather than decorates. */
+/* Phase Graphics */
 const PhaseGraphic = ({ index, accent }) => {
   switch (index) {
-    case 0: // Discovery — scanning outward from a single source node
+    case 0:
       return (
         <svg viewBox="0 0 300 200" className="w-full h-full">
           <circle cx="150" cy="100" r="70" fill="none" stroke={accent} strokeOpacity="0.15" />
@@ -26,7 +22,7 @@ const PhaseGraphic = ({ index, accent }) => {
           <circle cx="222" cy="142" r="3" fill={accent} opacity="0.5" />
         </svg>
       );
-    case 1: // Architecture — one root branching into the agent's reasoning paths
+    case 1:
       return (
         <svg viewBox="0 0 300 200" className="w-full h-full">
           <circle cx="55" cy="100" r="7" fill={accent} />
@@ -42,7 +38,7 @@ const PhaseGraphic = ({ index, accent }) => {
           <circle cx="235" cy="66" r="3" fill={accent} opacity="0.5" />
         </svg>
       );
-    case 2: // Integration — external systems converging into one agent hub
+    case 2:
       return (
         <svg viewBox="0 0 300 200" className="w-full h-full">
           <circle cx="232" cy="100" r="8" fill={accent} />
@@ -56,7 +52,7 @@ const PhaseGraphic = ({ index, accent }) => {
           <circle cx="150" cy="128" r="3" fill={accent} opacity="0.45" />
         </svg>
       );
-    default: // Monitoring — a live trace of agent performance
+    default:
       return (
         <svg viewBox="0 0 300 200" className="w-full h-full">
           <polyline
@@ -76,42 +72,48 @@ const PhaseGraphic = ({ index, accent }) => {
   }
 };
 
+/* Reusable Components */
+const CornerBrackets = ({ size = "h-3 w-3", borderColor = "border-neutral-300" }) => (
+  <>
+    <div className={`absolute -top-px -left-px ${size} border-l border-t ${borderColor}`} />
+    <div className={`absolute -top-px -right-px ${size} border-r border-t ${borderColor}`} />
+    <div className={`absolute -bottom-px -left-px ${size} border-l border-b ${borderColor}`} />
+    <div className={`absolute -bottom-px -right-px ${size} border-r border-b ${borderColor}`} />
+  </>
+);
+
 const ProcessSection = () => {
   const services = {
     "Discovery & Strategy": {
-      icon: <Target className="w-6 h-6 opacity-90 group-hover:opacity-100 text-[var(--color-primary)]" />,
+      icon: <Target className="w-5 h-5 text-[#F13A34]" />,
       steps: [
         "Map manual workflows worth automating",
         "Audit existing tools, APIs, and data",
         "Define success metrics and ROI targets",
-        // "Design the agent roadmap",
       ],
     },
     "Agent Architecture": {
-      icon: <Bot className="w-6 h-6 opacity-90 group-hover:opacity-100 text-[var(--color-primary)]" />,
+      icon: <Bot className="w-5 h-5 text-[#F13A34]" />,
       steps: [
         "Design reasoning, memory, and tool access",
         "Select and fine-tune the underlying models",
         "Engineer prompts and decision logic",
-        // "Build guardrails and evaluation sets",
       ],
     },
     "Integration & Deployment": {
-      icon: <Workflow className="w-6 h-6 opacity-90 group-hover:opacity-100 text-[var(--color-primary)]" />,
+      icon: <Workflow className="w-5 h-5 text-[#F13A34]" />,
       steps: [
         "Connect agents to internal APIs and databases",
         "Integrate with Slack, CRM, and support tools",
         "Ship to staging, then production",
-        // "Set up auth, roles, and access controls",
       ],
     },
     "Monitoring & Optimization": {
-      icon: <BarChart3 className="w-6 h-6 opacity-90 group-hover:opacity-100 text-[var(--color-primary)]" />,
+      icon: <BarChart3 className="w-5 h-5 text-[#F13A34]" />,
       steps: [
         "Track task completion and accuracy",
         "Monitor latency, cost, and token usage",
         "A/B test prompts and workflows",
-        // "Retrain and refine continuously",
       ],
     },
   };
@@ -126,11 +128,11 @@ const ProcessSection = () => {
   };
 
   return (
-    <section className="section-padding overflow-hidden">
-      <div className="section-container w-full">
-        {/* TOP CONTENT */}
+    <section className="py-20 bg-white overflow-hidden">
+      <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
         <motion.div
-          className=" mb-14 md:mb-20 mx-20 md:mx-40 text-center"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.4 }}
@@ -138,60 +140,65 @@ const ProcessSection = () => {
         >
           <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
             <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
-            <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Our Delivery Process
             </span>
           </div>
 
-          <h2 className="section-heading text-neutral-900">
-            End-to-End AI Agent <br /> Development
+          <h2 className="font-mono text-[clamp(1.8rem,3vw,2.8rem)] font-black uppercase tracking-tight text-neutral-900">
+            End-to-End AI Agent Development
           </h2>
-          <p className="section-subtitle mt-4">
+          <p className="text-[15px] text-neutral-600 max-w-2xl mx-auto mt-4 leading-relaxed">
             A four-phase framework that takes you from workflow audit to a
             production agent — architected, integrated, and continuously
             tuned against real usage data.
           </p>
-          
-          {/* View Complete Process Button - Red background, white text on hover */}
+
           <Link
             to="/services"
-            className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] mt-8"
+            className="group inline-flex items-center gap-2 mt-8 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
           >
-            View Complete Process
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            <span className="relative flex items-center gap-2">
+              <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
+              View Complete Process
+              <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
           </Link>
         </motion.div>
 
-        {/* PROCESS GRID */}
+        {/* Process Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-start">
           {Object.entries(services).map(([title, service], index) => {
             const isEven = index % 2 === 0;
             const accent = ACCENTS[index % ACCENTS.length];
 
+            // Service Card - White Theme
             const ServiceCard = (
-              <div className="group relative bg-gradient-to-br from-[#050505] via-black to-[#101010] text-white rounded-3xl p-6 h-[250px] flex flex-col justify-between transition-all duration-400 hover:scale-[1.02] hover:shadow-[0_22px_55px_rgba(0,0,0,0.45)] cursor-pointer overflow-hidden">
-                <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                  style={{
-                    background: `radial-gradient(circle at top, ${accent}59, transparent 60%)`,
-                  }}
-                />
-                <div className="absolute top-6 right-6 z-10 font-mono text-[11px] tracking-[0.2em] text-white/30">
+              <div className="group relative border border-neutral-200 bg-white p-6 transition-all duration-500 hover:border-[#F13A34]/40">
+                <CornerBrackets />
+
+                <div className="absolute top-4 right-4 font-mono text-[10px] font-semibold tracking-[0.2em] text-neutral-400">
                   {String(index + 1).padStart(2, "0")}/04
                 </div>
+
+                <div
+                  className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: `radial-gradient(ellipse 60% 40% at 50% 20%, ${accent}15, transparent 70%)`,
+                  }}
+                />
+
                 <div className="relative z-10">
-                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-2xl bg-white/5 mb-4 transform transition-all duration-400 group-hover:scale-105 group-hover:rotate-3">
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10 mb-4">
                     {service.icon}
                   </div>
-                  <h4 className="font-mono text-[12px] font-semibold uppercase tracking-[0.2em] transform transition-all duration-300 group-hover:translate-x-1">
+                  <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-900">
                     {title}
                   </h4>
-                  <ul className="mt-3 space-y-1.5">
+                  <ul className="mt-3 space-y-2">
                     {service.steps.map((step, i) => (
-                      <li key={i} className="text-xs text-neutral-300 flex items-start gap-2">
-                        <span className="text-[10px] mt-1" style={{ color: "var(--color-primary)" }}>
-                          •
-                        </span>
+                      <li key={i} className="flex items-start gap-2 text-[13px] text-neutral-600 leading-relaxed">
+                        <span className="text-[#F13A34] mt-1">•</span>
                         <span>{step}</span>
                       </li>
                     ))}
@@ -200,19 +207,25 @@ const ProcessSection = () => {
               </div>
             );
 
+            // Graphic Panel - Dark Theme (pehle jaisa)
             const GraphicPanel = (
-              <div className="group relative h-[200px] rounded-3xl overflow-hidden cursor-pointer bg-gradient-to-br from-[#0c0c0c] via-black to-[#050505] border border-white/5">
+              <div className="group relative border border-white/10 bg-gradient-to-br from-[#0c0c0c] via-black to-[#050505] overflow-hidden transition-all duration-500 hover:border-[#F13A34]/40">
+                <CornerBrackets borderColor="border-white/10" />
+
                 <div
-                  className="absolute inset-0 opacity-60 transition-opacity duration-500 group-hover:opacity-100"
+                  className="absolute inset-0 pointer-events-none opacity-60 transition-opacity duration-500 group-hover:opacity-100"
                   style={{
-                    background: `radial-gradient(circle at 30% 20%, ${accent}22, transparent 65%)`,
+                    background: `radial-gradient(ellipse 50% 40% at 30% 20%, ${accent}22, transparent 65%)`,
                   }}
                 />
-                <div className="absolute inset-0 p-4 transition-transform duration-700 group-hover:scale-105">
+
+                <div className="relative h-[200px] p-4 transition-transform duration-700 group-hover:scale-105">
                   <PhaseGraphic index={index} accent={accent} />
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 p-5 transform translate-y-4 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-400 z-20">
-                  <div className="inline-flex items-center rounded-full bg-black/65 px-4 py-1.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white">
+
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/90 to-transparent">
+                  <div className="inline-flex items-center gap-2 font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-white/60">
+                    <span className="h-1 w-1 rounded-full bg-[#F13A34]" />
                     {title}
                   </div>
                 </div>
@@ -245,6 +258,27 @@ const ProcessSection = () => {
           })}
         </div>
       </div>
+
+      <style>{`
+        .section-container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+          .section-container {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .section-container {
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
+        }
+      `}</style>
     </section>
   );
 };

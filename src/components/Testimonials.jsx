@@ -1,12 +1,13 @@
 import React, { memo } from "react";
 import { motion } from "framer-motion";
-import { Sparkles } from "lucide-react";
+import { Sparkles, ChevronRight } from "lucide-react";
+
 const defaultTestimonials = [
   {
     name: "Sarah Johnson",
     role: "Head of Marketing, Horizon Group",
     message:
-      "The team feels like an extension of our own. They own the strategy, execution, and reporting—our channels have never been this consistent or high-performing.",
+      "Partnering with this team has completely transformed the way we approach digital marketing. They took the time to understand our brand, audience, and long-term business goals before creating a strategy tailored specifically to our needs. From content creation and campaign management to performance reporting and optimization, every step has been handled with professionalism and attention to detail. Their proactive communication, creative ideas, and commitment to delivering measurable results have made them a trusted extension of our internal team. We've seen stronger engagement, higher-quality leads, and consistent business growth since working together.",
     image:
       "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop",
   },
@@ -14,7 +15,7 @@ const defaultTestimonials = [
     name: "Michael Lee",
     role: "Founder, Northside Studio",
     message:
-      "From our first campaign, we saw a clear lift in engagement and qualified leads. The reporting is clean, actionable, and always tied back to business outcomes.",
+      "The level of expertise and dedication this team brings to every project is exceptional. They didn't just improve our online visibility—they completely redefined our digital strategy with a data-driven approach that delivered real business impact. Every campaign was carefully planned, monitored, and optimized for maximum performance. Their reports are detailed yet easy to understand, and they consistently provide actionable recommendations that help us make smarter business decisions. Working with them has resulted in increased traffic, stronger customer engagement, and a significant boost in qualified leads.",
     image:
       "https://images.unsplash.com/photo-1544723795-3fb6469f5b39?w=400&h=400&fit=crop",
   },
@@ -22,7 +23,7 @@ const defaultTestimonials = [
     name: "Aisha Khan",
     role: "Brand Director, Emerald Living",
     message:
-      "They rebuilt our content and posting cadence from the ground up. Everything now feels on-brand, intentional, and measurable across every platform.",
+      "From the very beginning, their team demonstrated a deep understanding of branding, design, and digital communication. They completely revamped our content strategy, improved our social media presence, and created campaigns that genuinely resonated with our audience. Their ability to combine creativity with analytics helped us strengthen our brand identity while achieving measurable growth across multiple platforms. Every project was delivered on time, communication was seamless, and the results consistently exceeded our expectations. We couldn't be happier with the partnership.",
     image:
       "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=400&h=400&fit=crop",
   },
@@ -30,14 +31,23 @@ const defaultTestimonials = [
     name: "David Martinez",
     role: "CEO, Nova Commerce",
     message:
-      "We launched a new product line and relied on them for full-funnel social. The launch exceeded targets in the first 30 days—and they already had iteration plans ready.",
+      "Launching our new product line was a major milestone, and choosing this team to manage our digital strategy was one of the best business decisions we've made. They handled everything from planning and creative development to paid advertising and performance optimization with exceptional professionalism. The launch not only exceeded our initial sales and engagement targets within the first month but also established a strong foundation for long-term growth. Their strategic thinking, technical expertise, and commitment to continuous improvement have made them a valuable long-term partner for our company.",
     image:
       "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&h=400&fit=crop",
   },
 ];
 
+// Corner Brackets Component
+const CornerBrackets = ({ size = "h-3 w-3", borderColor = "border-neutral-400" }) => (
+  <>
+    <div className={`absolute -top-px -left-px ${size} border-l border-t ${borderColor}`} />
+    <div className={`absolute -top-px -right-px ${size} border-r border-t ${borderColor}`} />
+    <div className={`absolute -bottom-px -left-px ${size} border-l border-b ${borderColor}`} />
+    <div className={`absolute -bottom-px -right-px ${size} border-r border-b ${borderColor}`} />
+  </>
+);
+
 const Testimonials = ({ testimonialsData, loading }) => {
-  // Ensure testimonials is always an array
   let testimonials = defaultTestimonials;
   
   if (testimonialsData) {
@@ -53,12 +63,11 @@ const Testimonials = ({ testimonialsData, loading }) => {
   const cardWidth = 320;
   const gap = 24;
   const totalWidth = (cardWidth + gap) * testimonials.length;
-
   const marqueeItems = [...testimonials, ...testimonials];
 
   return (
-    <section className="section-padding bg-[#F6F4EF]">
-      <div className="section-container max-w-7xl mx-auto">
+    <section className="py-20 bg-white">
+      <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
           className="text-center mb-16"
@@ -67,27 +76,24 @@ const Testimonials = ({ testimonialsData, loading }) => {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          {/* <p className="section-eyebrow mb-3 text-neutral-500">
-            Client results
-          </p> */}
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
+              Testimonials
+            </span>
+          </div>
 
-            <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-                     <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
-                     <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
-                       Start a project
-                     </span>
-                   </div>
-          <h2 className="section-heading text-neutral-900 mb-4">
+          <h2 className="font-mono text-[clamp(1.8rem,3vw,2.8rem)] font-black uppercase tracking-tight text-neutral-900 mb-4">
             Brands that trust our team
           </h2>
-          <p className="section-subtitle max-w-2xl mx-auto">
+          <p className="text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed">
             We build long-term partnerships with teams who care about craft,
             consistency, and measurable growth.
           </p>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-stretch">
-          {/* Static Highlight Card */}
+        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
+          {/* Static Highlight Card - Dark Theme */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -95,22 +101,37 @@ const Testimonials = ({ testimonialsData, loading }) => {
             transition={{ duration: 0.6, ease: "easeOut" }}
             className="lg:w-[320px] flex-shrink-0"
           >
-            <div className="h-full min-h-[360px] rounded-3xl bg-gradient-to-b from-black via-[#111111] to-black text-white p-8 flex flex-col justify-between relative overflow-hidden">
+            <div className="relative bg-gradient-to-b from-[#0c0c0c] via-black to-[#050505] p-8 h-full min-h-[380px] flex flex-col justify-between overflow-hidden ">
+              {/* Corner Brackets - White */}
+              <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-white/10" />
+              <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-white/10" />
+              <div className="absolute -bottom-px -left-px h-4 w-4 border-l border-b border-white/10" />
+              <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-white/10" />
+
+              {/* Gradient Overlay */}
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(241,58,52,0.4),_transparent_55%)] opacity-70" />
-              <div className="relative z-10 space-y-4 text-left">
-                <p className="section-eyebrow text-white/70">
-                  Social proof
-                </p>
-                <h3 className="font-mono text-[20px] font-bold uppercase leading-snug tracking-tight">
+
+              {/* Tab */}
+              <div className="absolute -top-px left-8 flex items-center gap-2 border-b  border-r border-white/10 bg-white px-4 py-1.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+                <span className="font-mono text-[9px] tracking-[0.2em] text-black">
+                  SOCIAL PROOF
+                </span>
+              </div>
+
+              <div className="relative z-10 pt-4 space-y-4">
+                <h3 className="font-mono text-[18px] font-black uppercase leading-snug tracking-tight text-white">
                   90% of our clients extend beyond their first engagement.
                 </h3>
-                <p className="text-sm text-neutral-200 leading-relaxed">
+                <p className="text-[14px] text-white/60 leading-relaxed">
                   We focus on clarity, responsiveness, and execution quality—so
                   every campaign feels managed, not micro-managed.
                 </p>
               </div>
-              <div className="relative z-10 mt-6 pt-4 border-t border-white/15 flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.1em] text-neutral-300">
+
+              <div className="relative z-10 mt-6 pt-4 border-t border-white/15 flex items-center justify-between font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40">
                 <span>Average NPS: 9.4 / 10</span>
+                <span className="h-3 w-px bg-white/10" />
                 <span>Retention: 18+ months</span>
               </div>
             </div>
@@ -134,13 +155,15 @@ const Testimonials = ({ testimonialsData, loading }) => {
                 {marqueeItems.map((t, idx) => (
                   <div
                     key={`${t.id || t.name}-${idx}`}
-                    className="w-[320px] h-[360px] bg-white px-7 py-8 shadow-sm border border-neutral-200/70 flex flex-col justify-between rounded-3xl"
+                    className="relative border border-neutral-200 bg-white p-6 w-[320px] h-[360px] flex flex-col justify-between"
                   >
+                    <CornerBrackets size="h-3 w-3" />
+
                     {/* Quotation Mark */}
-                    <div className="text-neutral-200 mb-4">
+                    <div className="text-[#F13A34]/20 mb-3">
                       <svg
-                        width="32"
-                        height="32"
+                        width="28"
+                        height="28"
                         viewBox="0 0 24 24"
                         fill="currentColor"
                       >
@@ -149,13 +172,13 @@ const Testimonials = ({ testimonialsData, loading }) => {
                     </div>
 
                     {/* Testimonial Text */}
-                    <p className="text-neutral-800 leading-relaxed text-sm mb-6 line-clamp-5">
-                      {t.message || t.testimonial || t.content}
+                    <p className="text-[14px] text-neutral-700 leading-relaxed mb-4 line-clamp-5 flex-1">
+                      {defaultTestimonials.message || t.testimonial || t.content}
                     </p>
 
                     {/* Author */}
-                    <div className="flex items-center gap-4 pt-6 border-t border-neutral-100">
-                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
+                    <div className="flex items-center gap-4 pt-4 border-t border-neutral-200">
+                      <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0 border border-neutral-200">
                         <img
                           src={
                             t?.image
@@ -172,15 +195,15 @@ const Testimonials = ({ testimonialsData, loading }) => {
                       </div>
 
                       <div>
-                        <h3 className="font-mono text-[12px] font-bold uppercase tracking-[0.1em] text-neutral-900">
+                        <h3 className="font-mono text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-900">
                           {t.name || t.author}
                         </h3>
-                        <p className="text-[12px] text-neutral-500">{t.role || t.position || t.company}</p>
-                        <div className="flex mt-1">
+                        <p className="text-[11px] text-neutral-500">{t.role || t.position || t.company}</p>
+                        <div className="flex mt-1 gap-0.5">
                           {[1, 2, 3, 4, 5].map((i) => (
                             <svg
                               key={i}
-                              className="w-3.5 h-3.5 text-[var(--color-primary)]"
+                              className="w-3 h-3 text-[#F13A34]"
                               fill="currentColor"
                               viewBox="0 0 20 20"
                             >
@@ -194,13 +217,34 @@ const Testimonials = ({ testimonialsData, loading }) => {
                 ))}
               </motion.div>
 
-              {/* Fade edges */}
-              <div className="pointer-events-none absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-[#F6F4EF] to-transparent z-10" />
-              <div className="pointer-events-none absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-[#F6F4EF] to-transparent z-10" />
+              {/* Fade edges - White */}
+              <div className="pointer-events-none absolute left-0 top-0 w-24 h-full bg-gradient-to-r from-white to-transparent z-10" />
+              <div className="pointer-events-none absolute right-0 top-0 w-24 h-full bg-gradient-to-l from-white to-transparent z-10" />
             </div>
           </div>
         </div>
       </div>
+
+      <style>{`
+        .section-container {
+          padding-left: 1rem;
+          padding-right: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+          .section-container {
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+          }
+        }
+        
+        @media (min-width: 1024px) {
+          .section-container {
+            padding-left: 2rem;
+            padding-right: 2rem;
+          }
+        }
+      `}</style>
     </section>
   );
 };
