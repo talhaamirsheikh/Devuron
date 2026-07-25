@@ -34,10 +34,10 @@ const BlogDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <p className="text-red-500 mb-4">Error loading blog post</p>
+          <p className="text-[#4db9e0] mb-4">Error loading blog post</p>
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-[#f13a34] hover:underline"
+            className="inline-flex items-center gap-2 text-[#4db9e0] hover:underline"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -63,7 +63,7 @@ const BlogDetail = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34",
+          second: "#4db9e0",
         }}
       />
 
@@ -77,7 +77,7 @@ const BlogDetail = () => {
         >
           <Link
             to="/blog"
-            className="inline-flex items-center gap-2 text-neutral-600 hover:text-[#f13a34] transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-neutral-600 hover:text-[#4db9e0] transition-colors mb-8"
           >
             <ArrowLeft className="w-4 h-4" />
             Back to Blog
@@ -155,7 +155,7 @@ const BlogDetail = () => {
                   setCommentForm({ ...commentForm, name: e.target.value })
                 }
                 required
-                className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all"
+                className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#4db9e0]/30 focus:border-[#4db9e0] transition-all"
               />
               <input
                 type="email"
@@ -165,7 +165,7 @@ const BlogDetail = () => {
                   setCommentForm({ ...commentForm, email: e.target.value })
                 }
                 required
-                className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all"
+                className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#4db9e0]/30 focus:border-[#4db9e0] transition-all"
               />
             </div>
             <textarea
@@ -176,12 +176,12 @@ const BlogDetail = () => {
               }
               required
               rows="4"
-              className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#f13a34]/30 focus:border-[#f13a34] transition-all resize-none"
+              className="w-full rounded-xl border border-neutral-300 bg-white px-4 py-3 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-[#4db9e0]/30 focus:border-[#4db9e0] transition-all resize-none"
             />
             <button
               type="submit"
               disabled={isSubmittingComment}
-              className="bg-[#f13a34] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#d32f2f] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+              className="bg-[#4db9e0] text-white px-6 py-3 rounded-xl font-medium hover:bg-[#d32f2f] transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
             >
               {isSubmittingComment ? "Submitting..." : "Submit Comment"}
             </button>
@@ -196,8 +196,8 @@ const BlogDetail = () => {
                   className="p-6 bg-neutral-50 rounded-xl border border-neutral-200"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-full bg-[#f13a34]/10 flex items-center justify-center flex-shrink-0">
-                      <User className="w-5 h-5 text-[#f13a34]" />
+                    <div className="w-10 h-10 rounded-full bg-[#4db9e0]/10 flex items-center justify-center flex-shrink-0">
+                      <User className="w-5 h-5 text-[#4db9e0]" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-2">

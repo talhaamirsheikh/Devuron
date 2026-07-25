@@ -45,11 +45,11 @@ const Services = () => {
   // Get fallback gradient based on service index
   const getFallbackGradient = (index) => {
     const gradients = [
-      'bg-gradient-to-br from-[#f13a34] to-[#6A070E]',
-      'bg-gradient-to-br from-[#f13a34] to-[#8a1c1a]',
-      'bg-gradient-to-br from-[#f13a34] to-[#a52d2a]',
-      'bg-gradient-to-br from-[#f13a34] to-[#c03e3a]',
-      'bg-gradient-to-br from-[#f13a34] to-[#db4f4a]',
+      'bg-gradient-to-br from-[#4db9e0] to-[#10475c]',
+      'bg-gradient-to-br from-[#4db9e0] to-[#185e78]',
+      'bg-gradient-to-br from-[#4db9e0] to-[#207694]',
+      'bg-gradient-to-br from-[#4db9e0] to-[#2b8eb3]',
+      'bg-gradient-to-br from-[#4db9e0] to-[#38a6d1]',
     ];
     return gradients[index % gradients.length];
   };
@@ -71,7 +71,7 @@ const Services = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34" // Red color for the word "Tailored"
+          second: "#4db9e0" // Red color for the word "Tailored"
         }}
       />
        
@@ -185,21 +185,21 @@ const Services = () => {
         <div className="sticky top-0 h-screen flex items-center justify-center bg-black mx-10 rounded-xl">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-950 rounded-xl"></div>
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#f13a34]/10 to-[#f13a34]/5 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-[#f13a34]/5 to-transparent rounded-full blur-3xl"></div>
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-[#4db9e0]/10 to-[#4db9e0]/5 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gradient-to-l from-[#4db9e0]/5 to-transparent rounded-full blur-3xl"></div>
             <div className="absolute inset-0 opacity-[0.02] bg-[url('https://www.transparenttextures.com/patterns/grid-noise.png')]"></div>
           </div>
 
           <div className="relative z-10 max-w-4xl text-center px-4 sm:px-6 lg:px-8 " >
-            <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-[#f13a34]/10 to-transparent border border-[#f13a34]/20 backdrop-blur-sm">
-              <div className="w-1.5 h-1.5 rounded-full bg-[#f13a34] animate-pulse"></div>
-              <span className="text-xs font-semibold tracking-widest text-[#f13a34] uppercase">
+            <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-gradient-to-r from-[#4db9e0]/10 to-transparent border border-[#4db9e0]/20 backdrop-blur-sm">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#4db9e0] animate-pulse"></div>
+              <span className="text-xs font-semibold tracking-widest text-[#4db9e0] uppercase">
                 Let's Connect
               </span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-              Ready to <span className="text-[#f13a34]">Transform</span><br />
+              Ready to <span className="text-[#4db9e0]">Transform</span><br />
               Your Business?
             </h2>
 
@@ -222,7 +222,7 @@ const Services = () => {
                     className="transition-transform duration-300 group-hover:translate-x-1"
                   />
                 </span>
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#f13a34]/20 via-transparent to-[#f13a34]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                <div className="absolute -inset-1 bg-gradient-to-r from-[#4db9e0]/20 via-transparent to-[#4db9e0]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </Link>
             </div>
           </div>

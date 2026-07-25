@@ -20,7 +20,7 @@ const SubServiceDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <p className="text-red-500 mb-6">Sub-service not found</p>
+          <p className="text-[#4db9e0] mb-6">Sub-service not found</p>
           <Link
             to="/services"
             className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] font-semibold"
@@ -50,7 +50,7 @@ const SubServiceDetail = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34",
+          second: "#4db9e0",
         }}
       />
 

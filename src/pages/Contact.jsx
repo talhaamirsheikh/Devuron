@@ -93,7 +93,7 @@ const Contact = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34"
+          second: "#4db9e0"
         }}
       />
 
@@ -109,7 +109,7 @@ const Contact = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="lg:col-span-2"
           >
-            <div className="relative border border-neutral-200 bg-white p-8 md:p-10  transition-colors duration-500 hover:border-[#F13A34]/40">
+            <div className="relative border border-neutral-200 bg-white p-8 md:p-10  transition-colors duration-500 hover:border-[#4db9e0]/40">
               {/* Corner brackets */}
               <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-400" />
               <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-400" />
@@ -118,7 +118,7 @@ const Contact = () => {
 
               {/* Top tab */}
               <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
                 <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
                   FORM
                 </span>
@@ -135,7 +135,7 @@ const Contact = () => {
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
-                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#4db9e0] transition-colors duration-300">
                         First name
                       </label>
                       <input
@@ -144,13 +144,13 @@ const Contact = () => {
                         value={formData.first_name}
                         onChange={handleChange}
                         required
-                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400"
                         placeholder="Alex"
                       />
                     </div>
 
                     <div className="group">
-                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#4db9e0] transition-colors duration-300">
                         Last name
                       </label>
                       <input
@@ -159,7 +159,7 @@ const Contact = () => {
                         value={formData.last_name}
                         onChange={handleChange}
                         required
-                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400"
                         placeholder="Smith"
                       />
                     </div>
@@ -167,7 +167,7 @@ const Contact = () => {
 
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="group">
-                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#4db9e0] transition-colors duration-300">
                         Work email
                       </label>
                       <input
@@ -176,13 +176,13 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400"
                         placeholder="you@company.com"
                       />
                     </div>
 
                     <div className="group">
-                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                      <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#4db9e0] transition-colors duration-300">
                         Subject
                       </label>
                       <input
@@ -191,14 +191,14 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                        className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400"
                         placeholder="How can we help?"
                       />
                     </div>
                   </div>
 
                   <div className="group">
-                    <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                    <label className="block font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-500 mb-2 group-hover:text-[#4db9e0] transition-colors duration-300">
                       Project details
                     </label>
                     <textarea
@@ -207,7 +207,7 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows="6"
-                      className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400 resize-none"
+                      className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3.5 text-sm text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400 resize-none"
                       placeholder="Share a brief overview of your project, timeline, and expectations..."
                     />
                   </div>
@@ -235,14 +235,14 @@ const Contact = () => {
                     <motion.div
                       initial={{ opacity: 0, y: 10 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-4 border border-red-300 bg-red-50 flex items-center gap-3"
+                      className="p-4 border border-[#4db9e0]/30 bg-[#4db9e0]/10 flex items-center gap-3"
                     >
-                      <CheckCircle className="w-5 h-5 text-red-600" />
+                      <CheckCircle className="w-5 h-5 text-[#38a6d1]" />
                       <div>
-                        <p className="text-sm font-medium text-red-800">
+                        <p className="text-sm font-medium text-[#10475c]">
                           Something went wrong
                         </p>
-                        <p className="text-xs text-red-600 mt-1">
+                        <p className="text-xs text-[#38a6d1] mt-1">
                           Please try again or contact us directly.
                         </p>
                       </div>
@@ -252,7 +252,7 @@ const Contact = () => {
                   <button
                     type="submit"
                     disabled={contactMutation.isPending}
-                    className="group relative w-full bg-[#F13A34] text-white px-8 py-4 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34] disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="group relative w-full bg-[#4db9e0] text-white px-8 py-4 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0] disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     <span className="relative flex items-center justify-center gap-2">
                       {contactMutation.isPending ? (
@@ -288,7 +288,7 @@ const Contact = () => {
             {contactInfo.map((item, index) => (
               <div
                 key={index}
-                className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#F13A34]/40"
+                className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#4db9e0]/40"
               >
                 <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
                 <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
@@ -296,17 +296,17 @@ const Contact = () => {
                 <div className="absolute -bottom-px -right-px h-3 w-3 border-r border-b border-neutral-400" />
 
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
-                    <item.icon className="h-5 w-5 text-[#F13A34]" />
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
+                    <item.icon className="h-5 w-5 text-[#4db9e0]" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h4 className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                    <h4 className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
                       {item.label}
                     </h4>
                     {item.href ? (
                       <a
                         href={item.href}
-                        className="mt-1 block font-mono text-[15px] font-medium text-neutral-900 transition-colors duration-300 hover:text-[#F13A34] truncate"
+                        className="mt-1 block font-mono text-[15px] font-medium text-neutral-900 transition-colors duration-300 hover:text-[#4db9e0] truncate"
                       >
                         {item.value}
                       </a>
@@ -324,13 +324,13 @@ const Contact = () => {
             ))}
 
             {/* CTA Card */}
-            <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#F13A34]/40">
+            <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#4db9e0]/40">
               <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
               <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
               <div className="absolute -bottom-px -left-px h-3 w-3 border-l border-b border-neutral-400" />
               <div className="absolute -bottom-px -right-px h-3 w-3 border-r border-b border-neutral-400" />
 
-              <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+              <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
                 Start a Project
               </h4>
               <p className="mt-2 text-[14px] text-neutral-600">
@@ -338,7 +338,7 @@ const Contact = () => {
               </p>
               <Link
                 to="/contact"
-                className="group/btn mt-4 inline-flex items-center gap-2 bg-[#F13A34] px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+                className="group/btn mt-4 inline-flex items-center gap-2 bg-[#4db9e0] px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
               >
                 Get Started
                 <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -354,7 +354,7 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative border border-neutral-200 bg-white p-8 shadow-sm transition-colors duration-500 hover:border-[#F13A34]/40">
+          <div className="relative border border-neutral-200 bg-white p-8 shadow-sm transition-colors duration-500 hover:border-[#4db9e0]/40">
             {/* Corner brackets */}
             <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-300" />
             <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-300" />
@@ -363,7 +363,7 @@ const Contact = () => {
 
             {/* Top tab */}
             <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
               <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
                 LOCATION
               </span>
@@ -384,7 +384,7 @@ const Contact = () => {
                     href="https://maps.google.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white bg-[#F13A34] transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white bg-[#4db9e0] transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
                   >
                     <MapPin className="w-4 h-4" />
                     Get directions

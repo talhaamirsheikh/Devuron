@@ -28,8 +28,8 @@ const LiveTimecode = () => {
   return (
     <div className="hidden sm:flex items-center gap-2 font-mono text-[11px] tracking-[0.18em] text-white/50">
       <span className="relative flex h-1.5 w-1.5">
-        <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-[#F13A34] opacity-60" />
-        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#F13A34]" />
+        <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-[#4db9e0] opacity-60" />
+        <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-[#4db9e0]" />
       </span>
       LIVE&nbsp;&middot;&nbsp;{format(elapsed)}
     </div>
@@ -67,7 +67,7 @@ export default function GlobalHero({
   ],
   backgroundImage = "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
   centered = false,
-  titleColors = { first: "white", second: "#f13a34" },
+  titleColors = { first: "white", second: "#4db9e0" },
 }) {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
@@ -99,7 +99,7 @@ export default function GlobalHero({
 
       {/* Gradient Overlays — same grade as the homepage Hero, no grid/scanlines */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(255,180,120,0.14),_transparent_55%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(241,58,52,0.45),_transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(77, 185, 224,0.45),_transparent_55%)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/85 to-[#08090A]" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-transparent to-black/70" />
       <div className="absolute inset-0 [box-shadow:inset_0_0_200px_90px_rgba(0,0,0,0.7)]" />
@@ -146,7 +146,7 @@ export default function GlobalHero({
                       <span
                         className={`absolute -bottom-2 left-0 h-[3px] w-[3px] transition-all duration-300 ${
                           active
-                            ? "scale-100 bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]"
+                            ? "scale-100 bg-[#4db9e0] shadow-[0_0_8px_2px_rgba(77, 185, 224,0.8)]"
                             : "scale-0 bg-white/50"
                         }`}
                       />
@@ -160,7 +160,7 @@ export default function GlobalHero({
             <div className="flex flex-shrink-0 items-center">
               <Link
                 to="/join-us"
-                className="group inline-flex items-center gap-2 mr-5 bg-[#F13A34] px-5 py-2.5 border-1 border-[#F13A34] font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+                className="group inline-flex items-center gap-2 mr-5 bg-[#4db9e0] px-5 py-2.5 border-1 border-[#4db9e0] font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
               >
                 Join Us
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -181,7 +181,7 @@ export default function GlobalHero({
             </Link>
             <button
               onClick={() => setIsOpen((prev) => !prev)}
-              className="border border-white/15 bg-black/40 p-2.5 text-white backdrop-blur-md transition-colors hover:border-[#F13A34]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              className="border border-white/15 bg-black/40 p-2.5 text-white backdrop-blur-md transition-colors hover:border-[#4db9e0]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
               aria-label="Toggle navigation"
               aria-expanded={isOpen}
             >
@@ -214,7 +214,7 @@ export default function GlobalHero({
                   >
                     {link.label}
                     {isActive(link.href) && (
-                      <span className="h-[3px] w-[3px] bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]" />
+                      <span className="h-[3px] w-[3px] bg-[#4db9e0] shadow-[0_0_8px_2px_rgba(77, 185, 224,0.8)]" />
                     )}
                   </Link>
                 ))}
@@ -255,7 +255,7 @@ export default function GlobalHero({
                   </span>
                 ))}
                 <span
-                  className={`absolute -bottom-2 h-px w-full bg-gradient-to-r from-[#F13A34] via-[#F13A34]/60 to-transparent ${
+                  className={`absolute -bottom-2 h-px w-full bg-gradient-to-r from-[#4db9e0] via-[#4db9e0]/60 to-transparent ${
                     centered ? "left-0 right-0 mx-auto" : "left-0"
                   }`}
                 />
@@ -274,7 +274,7 @@ export default function GlobalHero({
             {/* <div className="mt-10 sm:mt-12 flex flex-wrap gap-4">
               <Link
                 to="/portfolio"
-                className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+                className="group relative inline-flex items-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
               >
                 <span className="relative flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
@@ -296,7 +296,7 @@ export default function GlobalHero({
             {breadcrumbs && breadcrumbs.length > 0 && (
               <div className={`mt-9 md:mt-10 ${centered ? "flex justify-center" : ""}`}>
                 <nav
-                  className="inline-flex items-center gap-2 md:gap-2.5 flex-wrap border-l-2 border-[#F13A34] bg-black/30 py-2 pl-4 pr-5 backdrop-blur-sm"
+                  className="inline-flex items-center gap-2 md:gap-2.5 flex-wrap border-l-2 border-[#4db9e0] bg-black/30 py-2 pl-4 pr-5 backdrop-blur-sm"
                   aria-label="Breadcrumb"
                 >
                   {breadcrumbs.map((item, index) => (
@@ -315,7 +315,7 @@ export default function GlobalHero({
                         {item.icon && <item.icon className="w-3.5 h-3.5" />}
                         <span>{item.label}</span>
                         {item.current && (
-                          <span className="h-[3px] w-[3px] bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]" />
+                          <span className="h-[3px] w-[3px] bg-[#4db9e0] shadow-[0_0_8px_2px_rgba(77, 185, 224,0.8)]" />
                         )}
                       </Link>
                     </div>

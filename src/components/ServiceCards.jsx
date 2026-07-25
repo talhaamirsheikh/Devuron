@@ -34,8 +34,8 @@ const ServiceCard = memo(({ service, index, isVisible }) => {
         ease: "easeOut"
       }}
       whileHover={{
-        boxShadow: "0 20px 40px rgba(241, 58, 52, 0.15)",
-        borderColor: "rgba(241, 58, 52, 0.3)",
+        boxShadow: "0 20px 40px rgba(77, 185, 224, 0.15)",
+        borderColor: "rgba(77, 185, 224, 0.3)",
         transition: { duration: 0.15 },
       }}
       onMouseEnter={() => setIsHovered(true)}
@@ -136,7 +136,7 @@ const ServiceCard = memo(({ service, index, isVisible }) => {
           {/* CTA Button - Updated to match Hero.jsx style */}
           <Link
             to="/contact"
-            className="group relative inline-flex w-full items-center justify-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] 
+            className="group relative inline-flex w-full items-center justify-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-white hover:text-[#4db9e0] hover:border-1 hover:border-[#4db9e0] 
             "
           >
             <span>Get Quote</span>
@@ -311,8 +311,8 @@ const ServicesList = ({ servicesData, loading }) => {
           className="mb-12 relative z-10"
         >
           {/* Eyebrow - Updated to match Hero.jsx style */}
-          <div className="mb-3 inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/30 py-2 pl-4 pr-5 backdrop-blur-sm">
-            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+          <div className="mb-3 inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/30 py-2 pl-4 pr-5 backdrop-blur-sm">
+            <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
             <span className="section-eyebrow font-mono text-xs tracking-[0.22em] uppercase text-white/80">
               Our Services
             </span>

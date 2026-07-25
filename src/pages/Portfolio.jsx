@@ -27,7 +27,7 @@ const CornerBrackets = ({ size = "h-3 w-3", borderColor = "border-neutral-300" }
 
 const Tab = ({ label }) => (
   <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
-    <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+    <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
     <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">{label}</span>
   </div>
 );
@@ -73,7 +73,7 @@ const Portfolio = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34"
+          second: "#4db9e0"
         }}
       />
 
@@ -87,8 +87,8 @@ const Portfolio = () => {
           transition={{ duration: 0.6 }}
           className="mb-16 text-center"
         >
-          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+            <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Featured Projects
             </span>
@@ -116,8 +116,8 @@ const Portfolio = () => {
               onClick={() => setActiveFilter(filter)}
               className={`group relative px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 ${
                 activeFilter === filter
-                  ? 'bg-[#F13A34] text-white'
-                  : 'bg-transparent text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-[#F13A34]/40'
+                  ? 'bg-[#4db9e0] text-white'
+                  : 'bg-transparent text-neutral-600 hover:text-neutral-900 border border-neutral-200 hover:border-[#4db9e0]/40'
               }`}
             >
               {filter}
@@ -146,7 +146,7 @@ const Portfolio = () => {
             >
               <Link
                 to={`/portfolio/${project.id}`}
-                className="block relative border border-neutral-200 bg-white transition-all duration-500 hover:border-[#F13A34]/40"
+                className="block relative border border-neutral-200 bg-white transition-all duration-500 hover:border-[#4db9e0]/40"
               >
                 <CornerBrackets />
                 
@@ -166,7 +166,7 @@ const Portfolio = () => {
                   {/* Category Badge - Studio Monitor Style */}
                   <div className="absolute top-4 left-4">
                     <span className="inline-flex items-center gap-1.5 bg-black/80 backdrop-blur-sm px-3 py-1.5 border border-white/20">
-                      <span className="h-1 w-1 rounded-full bg-[#F13A34]" />
+                      <span className="h-1 w-1 rounded-full bg-[#4db9e0]" />
                       <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-white">
                         {project.category}
                       </span>
@@ -181,7 +181,7 @@ const Portfolio = () => {
                       opacity: hoveredId === project.id ? 1 : 0
                     }}
                   >
-                    <div className="flex h-10 w-10 items-center justify-center bg-[#F13A34] text-white shadow-lg transition-all duration-300 group-hover:bg-white group-hover:text-[#F13A34]">
+                    <div className="flex h-10 w-10 items-center justify-center bg-[#4db9e0] text-white shadow-lg transition-all duration-300 group-hover:bg-white group-hover:text-[#4db9e0]">
                       <Eye size={16} />
                     </div>
                   </motion.div>
@@ -206,7 +206,7 @@ const Portfolio = () => {
 
                 {/* Content */}
                 <div className="p-6">
-                  <h3 className="font-mono text-[15px] font-semibold text-neutral-900 mb-2 group-hover:text-[#F13A34] transition-colors duration-300">
+                  <h3 className="font-mono text-[15px] font-semibold text-neutral-900 mb-2 group-hover:text-[#4db9e0] transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-[13px] text-neutral-600 mb-4 leading-relaxed">
@@ -228,7 +228,7 @@ const Portfolio = () => {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative border border-neutral-200 bg-white p-8 md:p-12 transition-colors duration-500 hover:border-[#F13A34]/40 mb-16"
+          className="relative border border-neutral-200 bg-white p-8 md:p-12 transition-colors duration-500 hover:border-[#4db9e0]/40 mb-16"
         >
           <CornerBrackets size="h-4 w-4" />
           <Tab label="STATS" />
@@ -247,8 +247,8 @@ const Portfolio = () => {
                   transition={{ delay: idx * 0.1 }}
                   className="text-center"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10 mx-auto mb-3">
-                    <stat.icon className="h-5 w-5 text-[#F13A34]" />
+                  <div className="flex h-12 w-12 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10 mx-auto mb-3">
+                    <stat.icon className="h-5 w-5 text-[#4db9e0]" />
                   </div>
                   <div className="font-mono text-[clamp(1.8rem,2.5vw,3rem)] font-black text-neutral-900 mb-1">
                     {stat.number}
@@ -267,13 +267,13 @@ const Portfolio = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="relative border border-[#F13A34]/30 bg-white p-8 md:p-12 text-center transition-colors duration-500 hover:border-[#F13A34]/60"
+          className="relative border border-[#4db9e0]/30 bg-white p-8 md:p-12 text-center transition-colors duration-500 hover:border-[#4db9e0]/60"
         >
-          <CornerBrackets size="h-4 w-4" borderColor="border-[#F13A34]/30" />
+          <CornerBrackets size="h-4 w-4" borderColor="border-[#4db9e0]/30" />
           
-          <div className="absolute -top-px left-1/2 -translate-x-1/2 flex items-center gap-2 border-b border-x border-[#F13A34]/30 bg-white px-6 py-1.5">
-            <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
-            <span className="font-mono text-[9px] tracking-[0.2em] text-[#F13A34]">GET STARTED</span>
+          <div className="absolute -top-px left-1/2 -translate-x-1/2 flex items-center gap-2 border-b border-x border-[#4db9e0]/30 bg-white px-6 py-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
+            <span className="font-mono text-[9px] tracking-[0.2em] text-[#4db9e0]">GET STARTED</span>
           </div>
 
           <div className="pt-6">
@@ -285,7 +285,7 @@ const Portfolio = () => {
             </p>
             <Link
               to="/contact"
-              className="group inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+              className="group inline-flex items-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
             >
               <span className="relative flex items-center gap-2">
                 <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />

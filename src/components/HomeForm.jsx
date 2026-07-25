@@ -43,8 +43,8 @@ const HomeForm = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="space-y-8"
         >
-          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5">
+            <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Start a project
             </span>
@@ -96,7 +96,7 @@ const HomeForm = () => {
 
             {/* Tab */}
             {/* <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
               <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
                 CONTACT
               </span>
@@ -115,7 +115,7 @@ const HomeForm = () => {
                     value={formData.name}
                     onChange={handleChange}
                     placeholder="Alex Smith"
-                    className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                    className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400"
                     required
                   />
                 </div>
@@ -131,7 +131,7 @@ const HomeForm = () => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="you@company.com"
-                    className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                    className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400"
                     required
                   />
                 </div>
@@ -147,7 +147,7 @@ const HomeForm = () => {
                     onChange={handleChange}
                     placeholder="Share a short overview of your brand, timeline, and what success looks like..."
                     rows="4"
-                    className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400 resize-none"
+                    className="w-full border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400 resize-none"
                     required
                   />
                 </div>
@@ -157,7 +157,7 @@ const HomeForm = () => {
                   <input
                     type="checkbox"
                     id="agreement"
-                    className="mt-1 border border-neutral-300 text-[#F13A34] focus:ring-[#F13A34] rounded-none"
+                    className="mt-1 border border-neutral-300 text-[#4db9e0] focus:ring-[#4db9e0] rounded-none"
                     required
                   />
                   <label htmlFor="agreement" className="text-[12px] text-neutral-600 leading-relaxed">
@@ -170,7 +170,7 @@ const HomeForm = () => {
                 <div className="pt-1">
                   <button 
                     type="submit" 
-                    className="group relative inline-flex w-full items-center justify-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34] cursor-pointer"
+                    className="group relative inline-flex w-full items-center justify-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0] cursor-pointer"
                   >
                     <span className="relative flex items-center gap-2">
                       <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />

@@ -28,8 +28,8 @@ const Navbar = () => {
   const isLightBackground = !isHome && theme !== "dark";
   const textColor = isLightBackground ? "text-neutral-900" : "text-white";
   const textColorMuted = isLightBackground ? "text-neutral-600" : "text-white/80";
-  const hoverColor = isLightBackground ? "hover:text-[#f13a34]" : "hover:text-white";
-  const activeColor = isLightBackground ? "text-[#f13a34]" : "text-white";
+  const hoverColor = isLightBackground ? "hover:text-[#4db9e0]" : "hover:text-white";
+  const activeColor = isLightBackground ? "text-[#4db9e0]" : "text-white";
   const mobileMenuBg = isLightBackground ? "bg-white border-neutral-200" : "bg-black/95 border-white/10";
 
   return (
@@ -128,7 +128,7 @@ const Navbar = () => {
                 onClick={() => setIsOpen(false)}
                 className={`py-2.5 px-3 font-mono text-[12px] font-medium tracking-[0.2em] uppercase rounded-md transition-colors ${
                   isActive(link.href)
-                    ? `${activeColor} ${isLightBackground ? "bg-red-50" : "bg-white/10"}`
+                    ? `${activeColor} ${isLightBackground ? "bg-[#4db9e0]/10" : "bg-white/10"}`
                     : `${textColorMuted} ${hoverColor}`
                 }`}
               >

@@ -51,7 +51,7 @@ const About = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34"
+          second: "#4db9e0"
         }}
       />
 
@@ -63,8 +63,8 @@ const About = () => {
             {...fadeUp(0.1)}
             className="max-w-4xl mx-auto text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-              <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+            <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+              <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
               <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
                 Who We Are
               </span>
@@ -124,18 +124,18 @@ const About = () => {
               className="space-y-5"
             >
               {/* Web Development */}
-              <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#F13A34]/40">
+              <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#4db9e0]/40">
                 <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
                 <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
                 <div className="absolute -bottom-px -left-px h-3 w-3 border-l border-b border-neutral-400" />
                 <div className="absolute -bottom-px -right-px h-3 w-3 border-r border-b border-neutral-400" />
 
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
-                    <Code className="h-5 w-10 text-[#F13A34]" />
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
+                    <Code className="h-5 w-10 text-[#4db9e0]" />
                   </div>
                   <div>
-                    <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                    <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
                       Web Development
                     </h3>
                     <p className="mt-2 text-[15px] text-neutral-600">
@@ -146,18 +146,18 @@ const About = () => {
               </div>
 
               {/* AI & Automation */}
-              <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#F13A34]/40">
+              <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#4db9e0]/40">
                 <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
                 <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
                 <div className="absolute -bottom-px -left-px h-3 w-3 border-l border-b border-neutral-400" />
                 <div className="absolute -bottom-px -right-px h-3 w-3 border-r border-b border-neutral-400" />
 
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
-                    <Bot className="h-5 w-10 text-[#F13A34]" />
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
+                    <Bot className="h-5 w-10 text-[#4db9e0]" />
                   </div>
                   <div>
-                    <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                    <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
                       AI Solutions & Automation
                     </h3>
                     <p className="mt-2 text-[15px] text-neutral-600">
@@ -166,18 +166,18 @@ const About = () => {
                   </div>
                 </div>
               </div>
-               <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#F13A34]/40">
+               <div className="group relative border border-neutral-200 bg-white p-6 transition-colors duration-500 hover:border-[#4db9e0]/40">
                 <div className="absolute -top-px -left-px h-3 w-3 border-l border-t border-neutral-400" />
                 <div className="absolute -top-px -right-px h-3 w-3 border-r border-t border-neutral-400" />
                 <div className="absolute -bottom-px -left-px h-3 w-3 border-l border-b border-neutral-400" />
                 <div className="absolute -bottom-px -right-px h-3 w-3 border-r border-b border-neutral-400" />
 
                 <div className="flex items-start gap-4">
-                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
-                    <Smartphone className="h-5 w-10 text-[#F13A34]" />
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
+                    <Smartphone className="h-5 w-10 text-[#4db9e0]" />
                   </div>
                   <div>
-                    <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                    <h3 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
                       Mobile App Development
                     </h3>
                     <p className="mt-2 text-[15px] text-neutral-600">
@@ -196,7 +196,7 @@ const About = () => {
             {/* Our Mission */}
             <motion.div
               {...fadeUp(0.1)}
-              className="relative border border-neutral-200 bg-white p-8  transition-colors duration-500 hover:border-[#F13A34]/40"
+              className="relative border border-neutral-200 bg-white p-8  transition-colors duration-500 hover:border-[#4db9e0]/40"
             >
               <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-400" />
               <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-400" />
@@ -204,7 +204,7 @@ const About = () => {
               <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-neutral-400" />
 
               <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
                 <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
                   MISSION
                 </span>
@@ -212,11 +212,11 @@ const About = () => {
 
               <div className="pt-4">
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
-                    <Target className="h-5 w-5 text-[#F13A34]" />
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
+                    <Target className="h-5 w-5 text-[#4db9e0]" />
                   </div>
                   <div>
-                    <h4 className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                    <h4 className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
                       Our Mission
                     </h4>
                     <p className="text-[12px] text-neutral-500 mt-0.5">
@@ -256,7 +256,7 @@ const About = () => {
                     <div className="absolute -bottom-px -right-px h-2 w-2 border-r border-b border-neutral-400" />
                     
                     <div className="flex items-center gap-2 mb-1.5">
-                      <UsersIcon className="h-4 w-4 text-[#F13A34]" />
+                      <UsersIcon className="h-4 w-4 text-[#4db9e0]" />
                       <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-700">Client-First</span>
                     </div>
                     <p className="text-[12px] text-neutral-600">Your success is our priority</p>
@@ -268,7 +268,7 @@ const About = () => {
                     <div className="absolute -bottom-px -right-px h-2 w-2 border-r border-b border-neutral-400" />
                     
                     <div className="flex items-center gap-2 mb-1.5">
-                      <TrendingUp className="h-4 w-4 text-[#F13A34]" />
+                      <TrendingUp className="h-4 w-4 text-[#4db9e0]" />
                       <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-700">Innovation-Driven</span>
                     </div>
                     <p className="text-[12px] text-neutral-600">Cutting-edge solutions</p>
@@ -280,7 +280,7 @@ const About = () => {
                     <div className="absolute -bottom-px -right-px h-2 w-2 border-r border-b border-neutral-400" />
                     
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Rocket className="h-4 w-4 text-[#F13A34]" />
+                      <Rocket className="h-4 w-4 text-[#4db9e0]" />
                       <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-700">Results-Focused</span>
                     </div>
                     <p className="text-[12px] text-neutral-600">Measurable outcomes</p>
@@ -292,7 +292,7 @@ const About = () => {
                     <div className="absolute -bottom-px -right-px h-2 w-2 border-r border-b border-neutral-400" />
                     
                     <div className="flex items-center gap-2 mb-1.5">
-                      <Globe className="h-4 w-4 text-[#F13A34]" />
+                      <Globe className="h-4 w-4 text-[#4db9e0]" />
                       <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-700">Global Reach</span>
                     </div>
                     <p className="text-[12px] text-neutral-600">Serving worldwide clients</p>
@@ -304,7 +304,7 @@ const About = () => {
             {/* Our Vision */}
             <motion.div
               {...fadeUp(0.15)}
-              className="relative border border-neutral-800 bg-neutral-900 p-8 transition-colors duration-500 hover:border-[#F13A34]/40"
+              className="relative border border-neutral-800 bg-neutral-900 p-8 transition-colors duration-500 hover:border-[#4db9e0]/40"
             >
               <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-700" />
               <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-700" />
@@ -312,7 +312,7 @@ const About = () => {
               <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-neutral-700" />
 
               <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-700 bg-neutral-800 px-4 py-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
                 <span className="font-mono text-[9px] tracking-[0.2em] text-white/60">
                   VISION
                 </span>
@@ -397,7 +397,7 @@ const About = () => {
         <section className="mb-20">
           <motion.div
             {...fadeUp(0.05)}
-            className="relative border border-neutral-200 bg-white p-8 md:p-12 transition-colors duration-500 hover:border-[#F13A34]/40"
+            className="relative border border-neutral-200 bg-white p-8 md:p-12 transition-colors duration-500 hover:border-[#4db9e0]/40"
           >
             <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-400" />
             <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-400" />
@@ -405,7 +405,7 @@ const About = () => {
             <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-neutral-400" />
 
             <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+              <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
               <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
                 STATS
               </span>
@@ -425,24 +425,24 @@ const About = () => {
               </div>
 
               <div>
-                <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#F13A34] mb-4">
+                <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0] mb-4">
                   Why Choose Us
                 </h4>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3 text-[15px] text-neutral-600">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#F13A34] flex-shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#4db9e0] flex-shrink-0" />
                     Full-cycle development from strategy to deployment
                   </li>
                   <li className="flex items-start gap-3 text-[15px] text-neutral-600">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#F13A34] flex-shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#4db9e0] flex-shrink-0" />
                     AI-powered solutions for business automation
                   </li>
                   <li className="flex items-start gap-3 text-[15px] text-neutral-600">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#F13A34] flex-shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#4db9e0] flex-shrink-0" />
                     Multi-platform expertise across web and mobile
                   </li>
                   <li className="flex items-start gap-3 text-[15px] text-neutral-600">
-                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#F13A34] flex-shrink-0" />
+                    <span className="mt-1.5 h-2 w-2 rounded-full bg-[#4db9e0] flex-shrink-0" />
                     Integrated marketing and SEO strategies
                   </li>
                 </ul>
@@ -460,16 +460,16 @@ const About = () => {
         <section>
           <motion.div
             {...fadeUp(0.1)}
-            className="relative border border-[#F13A34]/30 bg-white p-8 md:p-12 text-center transition-colors duration-500 hover:border-[#F13A34]/60"
+            className="relative border border-[#4db9e0]/30 bg-white p-8 md:p-12 text-center transition-colors duration-500 hover:border-[#4db9e0]/60"
           >
-            <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-[#F13A34]/30" />
-            <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-[#F13A34]/30" />
-            <div className="absolute -bottom-px -left-px h-4 w-4 border-l border-b border-[#F13A34]/30" />
-            <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-[#F13A34]/30" />
+            <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-[#4db9e0]/30" />
+            <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-[#4db9e0]/30" />
+            <div className="absolute -bottom-px -left-px h-4 w-4 border-l border-b border-[#4db9e0]/30" />
+            <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-[#4db9e0]/30" />
 
-            <div className="absolute -top-px left-1/2 -translate-x-1/2 flex items-center gap-2 border-b border-x border-[#F13A34]/30 bg-white px-6 py-1.5">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
-              <span className="font-mono text-[9px] tracking-[0.2em] text-[#F13A34]">
+            <div className="absolute -top-px left-1/2 -translate-x-1/2 flex items-center gap-2 border-b border-x border-[#4db9e0]/30 bg-white px-6 py-1.5">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
+              <span className="font-mono text-[9px] tracking-[0.2em] text-[#4db9e0]">
                 GET STARTED
               </span>
             </div>
@@ -483,7 +483,7 @@ const About = () => {
               </p>
               <Link
                 to="/contact"
-                className="group inline-flex items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+                className="group inline-flex items-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
               >
                 <span className="relative flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />

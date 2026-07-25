@@ -36,7 +36,7 @@ const ServiceDetail = () => {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <p className="text-red-500 mb-6">Service not found</p>
+          <p className="text-[#4db9e0] mb-6">Service not found</p>
           <Link
             to="/services"
             className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] font-semibold"
@@ -65,7 +65,7 @@ const ServiceDetail = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34",
+          second: "#4db9e0",
         }}
       />
 
@@ -110,7 +110,7 @@ const ServiceDetail = () => {
               className="mb-16 text-center"
             >
               {/* <div className="mb-4 flex justify-center">
-                <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(241,58,52,0.25)] bg-[rgba(241,58,52,0.07)] px-4 py-2">
+                <div className="inline-flex items-center gap-2 rounded-full border border-[rgba(77, 185, 224,0.25)] bg-[rgba(77, 185, 224,0.07)] px-4 py-2">
                   <Sparkles className="h-3 w-3 text-[var(--color-primary)]" />
                   <span className="section-eyebrow text-[var(--color-primary)]">
                     What's Included

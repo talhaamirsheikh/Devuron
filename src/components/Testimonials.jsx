@@ -76,8 +76,8 @@ const Testimonials = ({ testimonialsData, loading }) => {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+            <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Testimonials
             </span>
@@ -109,11 +109,11 @@ const Testimonials = ({ testimonialsData, loading }) => {
               <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-white/10" />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(241,58,52,0.4),_transparent_55%)] opacity-70" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(77, 185, 224,0.4),_transparent_55%)] opacity-70" />
 
               {/* Tab */}
               <div className="absolute -top-px left-8 flex items-center gap-2 border-b  border-r border-white/10 bg-white px-4 py-1.5">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+                <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
                 <span className="font-mono text-[9px] tracking-[0.2em] text-black">
                   SOCIAL PROOF
                 </span>
@@ -160,7 +160,7 @@ const Testimonials = ({ testimonialsData, loading }) => {
                     <CornerBrackets size="h-3 w-3" />
 
                     {/* Quotation Mark */}
-                    <div className="text-[#F13A34]/20 mb-3">
+                    <div className="text-[#4db9e0]/20 mb-3">
                       <svg
                         width="28"
                         height="28"
@@ -203,7 +203,7 @@ const Testimonials = ({ testimonialsData, loading }) => {
                           {[1, 2, 3, 4, 5].map((i) => (
                             <svg
                               key={i}
-                              className="w-3 h-3 text-[#F13A34]"
+                              className="w-3 h-3 text-[#4db9e0]"
                               fill="currentColor"
                               viewBox="0 0 20 20"
                             >

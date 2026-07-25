@@ -140,10 +140,10 @@ const InfoBox = ({ slide, variant = "floating" }) => {
       whileHover={{ y: -3 }}
       className={wrapperClass}
     >
-      <div className="group relative border border-white/15 bg-black/40 p-3.5 sm:p-4 backdrop-blur-xl transition-colors duration-500 hover:border-[#F13A34]/40">
+      <div className="group relative border border-white/15 bg-black/40 p-3.5 sm:p-4 backdrop-blur-xl transition-colors duration-500 hover:border-[#4db9e0]/40">
         {/* corner tab */}
         <div className="absolute -top-px -left-px flex items-center gap-1 border-b border-r border-white/15 bg-black px-2 py-1">
-          <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+          <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
           <span className="font-mono text-[9px] tracking-[0.2em] text-white/60">
             CLIP
           </span>
@@ -169,7 +169,7 @@ const InfoBox = ({ slide, variant = "floating" }) => {
             )}
             <Link
               to="/contact"
-              className="group/btn inline-flex items-center gap-2 bg-white px-4 sm:px-5 py-2 sm:py-2.5 text-sm font-semibold text-black transition-all duration-300 ease-out hover:bg-[#F13A34] hover:text-white active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              className="group/btn inline-flex items-center gap-2 bg-white px-4 sm:px-5 py-2 sm:py-2.5 text-sm font-semibold text-black transition-all duration-300 ease-out hover:bg-[#4db9e0] hover:text-white active:scale-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
             >
               Let's Talk
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover/btn:translate-x-1" />
@@ -205,7 +205,7 @@ const ServicesMegaMenu = ({ open, onClose }) => (
                   onClick={onClose}
                   className="group flex flex-col gap-4 bg-black/70 p-6 xl:p-7 transition-colors duration-300 hover:bg-white/[0.06]"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center border border-white/15 text-[#F13A34] transition-colors duration-300 group-hover:border-[#F13A34]/60">
+                  <span className="flex h-11 w-11 items-center justify-center border border-white/15 text-[#4db9e0] transition-colors duration-300 group-hover:border-[#4db9e0]/60">
                     <SIcon className="h-5 w-5" />
                   </span>
                   <span className="font-mono text-[11.5px] font-semibold uppercase tracking-[0.14em] text-white">
@@ -255,7 +255,7 @@ const MobileOffCanvas = ({ open, onClose, navLinks, isActive }) => {
               </span>
               <button
                 onClick={onClose}
-                className="border border-white/15 bg-black/40 p-2 text-white transition-colors hover:border-[#F13A34]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+                className="border border-white/15 bg-black/40 p-2 text-white transition-colors hover:border-[#4db9e0]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
                 aria-label="Close navigation"
               >
                 <X size={20} />
@@ -301,7 +301,7 @@ const MobileOffCanvas = ({ open, onClose, navLinks, isActive }) => {
                                   onClick={onClose}
                                   className="flex items-center gap-3 px-3 py-2.5 text-white/60 transition-colors hover:text-white"
                                 >
-                                  <SIcon className="h-4 w-4 shrink-0 text-[#F13A34]" />
+                                  <SIcon className="h-4 w-4 shrink-0 text-[#4db9e0]" />
                                   <span className="text-[12.5px] font-medium tracking-wide">
                                     {service.title}
                                   </span>
@@ -328,7 +328,7 @@ const MobileOffCanvas = ({ open, onClose, navLinks, isActive }) => {
                   >
                     {link.label}
                     {isActive(link.href) && (
-                      <span className="h-[3px] w-[3px] bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]" />
+                      <span className="h-[3px] w-[3px] bg-[#4db9e0] shadow-[0_0_8px_2px_rgba(77, 185, 224,0.8)]" />
                     )}
                   </Link>
                 );
@@ -339,7 +339,7 @@ const MobileOffCanvas = ({ open, onClose, navLinks, isActive }) => {
               <Link
                 to="/join-us"
                 onClick={onClose}
-                className="group flex w-full items-center  justify-center gap-2 bg-[#F13A34] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]"
+                className="group flex w-full items-center  justify-center gap-2 bg-[#4db9e0] px-5 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#4db9e0] hover:border-1 hover:border-[#4db9e0]"
               >
                 Join Us
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -500,7 +500,7 @@ export default function Hero({ heroData, loading }) {
                 <img
                   src={logo}
                   alt="Logo"
-                  className="h-14 md:h-16 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+                  className="h-9 md:h-9 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] mb-4 mt-4" 
                   loading="eager"
                   fetchPriority="high"
                 />
@@ -540,7 +540,7 @@ export default function Hero({ heroData, loading }) {
                         <span
                           className={`absolute -bottom-2 left-0 h-[3px] w-[3px] transition-all duration-300 ${
                             active || isServicesOpen
-                              ? "scale-100 bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]"
+                              ? "scale-100 bg-[#4db9e0] shadow-[0_0_8px_2px_rgba(77, 185, 224,0.8)]"
                               : "scale-0 bg-white/50"
                           }`}
                         />
@@ -564,7 +564,7 @@ export default function Hero({ heroData, loading }) {
                       <span
                         className={`absolute -bottom-2 left-0 h-[3px] w-[3px] transition-all duration-300 ${
                           active
-                            ? "scale-100 bg-[#F13A34] shadow-[0_0_8px_2px_rgba(241,58,52,0.8)]"
+                            ? "scale-100 bg-[#4db9e0] shadow-[0_0_8px_2px_rgba(77, 185, 224,0.8)]"
                             : "scale-0 bg-white/50"
                         }`}
                       />
@@ -578,7 +578,7 @@ export default function Hero({ heroData, loading }) {
             <div className="flex flex-shrink-0 items-center">
               <Link
                 to="/join-us"
-                className="group inline-flex items-center border-1 border-[#F13A34] gap-2 mr-5 bg-[#F13A34] px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34] "
+                className="group inline-flex items-center border-1 border-[#4db9e0] gap-2 mr-5 bg-[#4db9e0] px-5 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border-1 hover:border-[#4db9e0] "
               >
                 Join Us
                 <ArrowRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
@@ -599,7 +599,7 @@ export default function Hero({ heroData, loading }) {
             </Link>
             <button
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
-              className="border border-white/15 bg-black/40 p-2.5 text-white backdrop-blur-md transition-colors hover:border-[#F13A34]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
+              className="border border-white/15 bg-black/40 p-2.5 text-white backdrop-blur-md transition-colors hover:border-[#4db9e0]/50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50"
               aria-label="Toggle navigation"
               aria-expanded={isMobileMenuOpen}
             >
@@ -642,9 +642,9 @@ export default function Hero({ heroData, loading }) {
                 hidden: { opacity: 0, x: -14 },
                 visible: { opacity: 1, x: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
               }}
-              className="mb-7 inline-flex items-center gap-3 border-l-2 border-[#F13A34] bg-black/30 py-2 pl-4 pr-5 backdrop-blur-sm"
+              className="mb-7 inline-flex items-center gap-3 border-l-2 border-[#4db9e0] bg-black/30 py-2 pl-4 pr-5 backdrop-blur-sm"
             >
-              <Icon className="h-4 w-4 text-[#F13A34]" />
+              <Icon className="h-4 w-4 text-[#4db9e0]" />
               <span className="section-eyebrow font-mono tracking-[0.22em] text-white/80 text-xs sm:text-sm">
                 {chapterLabel(slide, currentSlide)}
               </span>
@@ -678,7 +678,7 @@ export default function Hero({ heroData, loading }) {
                   animate={{ scaleX: 1 }}
                   transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
                   style={{ transformOrigin: "left" }}
-                  className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-[#F13A34] via-[#F13A34]/60 to-transparent"
+                  className="absolute -bottom-2 left-0 h-px w-full bg-gradient-to-r from-[#4db9e0] via-[#4db9e0]/60 to-transparent"
                 />
               </motion.span>
             </h1>
@@ -703,7 +703,7 @@ export default function Hero({ heroData, loading }) {
               {/* View Projects Button - Red background, white text on hover */}
               <Link
                 to="/portfolio"
-                className="group relative inline-flex border-1 border-[#F13A34] items-center gap-2 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#F13A34] hover:border-1 hover:border-[#F13A34]
+                className="group relative inline-flex border-1 border-[#4db9e0] items-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300  hover:bg-white hover:text-[#4db9e0] hover:border-1 hover:border-[#4db9e0]
                 
                 "
               >
@@ -760,7 +760,7 @@ export default function Hero({ heroData, loading }) {
                     initial={{ width: "0%" }}
                     animate={{ width: "100%" }}
                     transition={{ duration: 5, ease: "linear" }}
-                    className="absolute inset-y-0 left-0 bg-[#F13A34] shadow-[0_0_8px_1px_rgba(241,58,52,0.8)]"
+                    className="absolute inset-y-0 left-0 bg-[#4db9e0] shadow-[0_0_8px_1px_rgba(77, 185, 224,0.8)]"
                   />
                 )}
               </span>

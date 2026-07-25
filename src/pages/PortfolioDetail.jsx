@@ -26,7 +26,7 @@ const PortfolioDetail = () => {
           <p className="text-neutral-600 mb-6">The project you're looking for doesn't exist.</p>
           <Link
             to="/portfolio"
-            className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[rgba(241,58,52,0.8)] font-medium transition-colors"
+            className="inline-flex items-center gap-2 text-[var(--color-primary)] hover:text-[rgba(77, 185, 224,0.8)] font-medium transition-colors"
           >
             <ChevronLeft size={18} />
             Back to Portfolio
@@ -54,7 +54,7 @@ const PortfolioDetail = () => {
         ]}
         backgroundImage={project.image}
         centered={true}
-        titleColors={{ first: "white", second: "#f13a34" }}
+        titleColors={{ first: "white", second: "#4db9e0" }}
       />
 
       {/* Main Content Sections */}
@@ -106,7 +106,7 @@ const PortfolioDetail = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="bg-[rgba(241,58,52,0.07)] p-8 rounded-2xl border border-[rgba(241,58,52,0.25)]"
+            className="bg-[rgba(77, 185, 224,0.07)] p-8 rounded-2xl border border-[rgba(77, 185, 224,0.25)]"
           >
             <h3 className="text-xl font-semibold text-neutral-900 mb-4">Our Solution</h3>
             <p className="text-neutral-600 leading-relaxed">{project.solution}</p>
@@ -135,7 +135,7 @@ const PortfolioDetail = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="flex items-start gap-4 bg-neutral-50 p-6 rounded-xl border border-neutral-200 hover:border-[rgba(241,58,52,0.25)] transition-colors"
+                className="flex items-start gap-4 bg-neutral-50 p-6 rounded-xl border border-neutral-200 hover:border-[rgba(77, 185, 224,0.25)] transition-colors"
               >
                 <div className="w-8 h-8 bg-[var(--color-primary)] rounded-lg flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-sm font-semibold">{idx + 1}</span>
@@ -163,7 +163,7 @@ const PortfolioDetail = () => {
                 whileInView={{ scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
-                className="inline-flex items-center gap-2 bg-[rgba(241,58,52,0.10)] text-[var(--color-primary)] px-4 py-2 rounded-full text-sm font-medium border border-[rgba(241,58,52,0.25)]"
+                className="inline-flex items-center gap-2 bg-[rgba(77, 185, 224,0.10)] text-[var(--color-primary)] px-4 py-2 rounded-full text-sm font-medium border border-[rgba(77, 185, 224,0.25)]"
               >
                 <Sparkles size={14} />
                 {item}
@@ -205,7 +205,7 @@ const PortfolioDetail = () => {
             {prevProject && (
               <Link
                 to={`/portfolio/${prevProject.id}`}
-                className="group flex items-center gap-3 bg-neutral-50 hover:bg-[rgba(241,58,52,0.07)] border border-neutral-200 hover:border-[rgba(241,58,52,0.25)] p-6 rounded-2xl transition-all"
+                className="group flex items-center gap-3 bg-neutral-50 hover:bg-[rgba(77, 185, 224,0.07)] border border-neutral-200 hover:border-[rgba(77, 185, 224,0.25)] p-6 rounded-2xl transition-all"
               >
                 <ChevronLeft size={20} className="text-neutral-400 group-hover:text-[var(--color-primary)] transition-colors" />
                 <div className="text-left">
@@ -220,7 +220,7 @@ const PortfolioDetail = () => {
             {nextProject && (
               <Link
                 to={`/portfolio/${nextProject.id}`}
-                className="group flex items-center justify-between bg-neutral-50 hover:bg-[rgba(241,58,52,0.07)] border border-neutral-200 hover:border-[rgba(241,58,52,0.25)] p-6 rounded-2xl transition-all"
+                className="group flex items-center justify-between bg-neutral-50 hover:bg-[rgba(77, 185, 224,0.07)] border border-neutral-200 hover:border-[rgba(77, 185, 224,0.25)] p-6 rounded-2xl transition-all"
               >
                 <div className="text-right">
                   <div className="text-xs font-medium text-neutral-500 uppercase tracking-wider">Next Project</div>
@@ -238,7 +238,7 @@ const PortfolioDetail = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-[var(--color-primary)] to-[rgba(241,58,52,0.8)] rounded-2xl p-8 md:p-12 text-white text-center shadow-lg"
+            className="bg-gradient-to-r from-[var(--color-primary)] to-[rgba(77, 185, 224,0.8)] rounded-2xl p-8 md:p-12 text-white text-center shadow-lg"
           >
             <h3 className="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your Project?</h3>
             <p className="text-[rgba(255,255,255,0.9)] mb-8 text-lg max-w-2xl mx-auto">

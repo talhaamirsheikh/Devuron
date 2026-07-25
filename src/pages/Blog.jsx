@@ -37,7 +37,7 @@
 //         centered={true}
 //         titleColors={{
 //           first: "white",
-//           second: "#f13a34",
+//           second: "#4db9e0",
 //         }}
 //       />
 
@@ -178,7 +178,7 @@ const CornerBrackets = ({ size = "h-3 w-3", borderColor = "border-neutral-300" }
 
 const Tab = ({ label }) => (
   <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5">
-    <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+    <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
     <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">{label}</span>
   </div>
 );
@@ -216,7 +216,7 @@ const Blog = () => {
         centered={true}
         titleColors={{
           first: "white",
-          second: "#f13a34",
+          second: "#4db9e0",
         }}
       />
 
@@ -230,8 +230,8 @@ const Blog = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+            <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Our Blog
             </span>
@@ -260,7 +260,7 @@ const Blog = () => {
             >
               <Link
                 to={`/blog/${blog.slug || blog.id}`}
-                className="group relative block border border-neutral-200 bg-white transition-all duration-500 hover:border-[#F13A34]/40"
+                className="group relative block border border-neutral-200 bg-white transition-all duration-500 hover:border-[#4db9e0]/40"
               >
                 <CornerBrackets />
 
@@ -280,7 +280,7 @@ const Blog = () => {
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4">
                     <span className="inline-flex items-center gap-1.5 bg-black/80 backdrop-blur-sm px-3 py-1.5 border border-white/20">
-                      <span className="h-1 w-1 rounded-full bg-[#F13A34]" />
+                      <span className="h-1 w-1 rounded-full bg-[#4db9e0]" />
                       <span className="font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-white">
                         {blog.category || "Article"}
                       </span>
@@ -321,7 +321,7 @@ const Blog = () => {
                       {blog.excerpt || blog.summary || ""}
                     </p>
                     <div className="mt-4">
-                      <span className="inline-flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white group-hover:text-[#F13A34] transition-colors duration-300">
+                      <span className="inline-flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white group-hover:text-[#4db9e0] transition-colors duration-300">
                         Read Article
                         <ChevronRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                       </span>
@@ -341,13 +341,13 @@ const Blog = () => {
                       {blog.read_time || "5 min read"}
                     </span>
                   </div>
-                  <h3 className="font-mono text-[15px] font-semibold text-neutral-900 group-hover:text-[#F13A34] transition-colors duration-300 line-clamp-2">
+                  <h3 className="font-mono text-[15px] font-semibold text-neutral-900 group-hover:text-[#4db9e0] transition-colors duration-300 line-clamp-2">
                     {blog.title}
                   </h3>
                   <p className="mt-2 text-[13px] text-neutral-600 leading-relaxed line-clamp-2">
                     {blog.excerpt || blog.summary || ""}
                   </p>
-                  <div className="mt-4 flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#F13A34] group-hover:gap-3 transition-all duration-300">
+                  <div className="mt-4 flex items-center gap-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-[#4db9e0] group-hover:gap-3 transition-all duration-300">
                     Read Article
                     <ChevronRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
@@ -363,7 +363,7 @@ const Blog = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-20 relative border border-neutral-200 bg-white p-10 md:p-14 text-center transition-colors duration-500 hover:border-[#F13A34]/40"
+          className="mt-20 relative border border-neutral-200 bg-white p-10 md:p-14 text-center transition-colors duration-500 hover:border-[#4db9e0]/40"
         >
           <CornerBrackets size="h-4 w-4" />
           <Tab label="NEWSLETTER" />
@@ -379,9 +379,9 @@ const Blog = () => {
               <input
                 type="email"
                 placeholder="you@company.com"
-                className="flex-1 border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#F13A34] focus:ring-1 focus:ring-[#F13A34] transition-all duration-300 hover:border-neutral-400"
+                className="flex-1 border border-neutral-300 bg-neutral-50 px-4 py-3 text-[13px] text-neutral-900 placeholder-neutral-400 focus:outline-none focus:border-[#4db9e0] focus:ring-1 focus:ring-[#4db9e0] transition-all duration-300 hover:border-neutral-400"
               />
-              <button className="group inline-flex items-center justify-center gap-2 bg-[#F13A34] px-6 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34] whitespace-nowrap">
+              <button className="group inline-flex items-center justify-center gap-2 bg-[#4db9e0] px-6 py-3 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0] whitespace-nowrap">
                 <span className="relative flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
                   Subscribe

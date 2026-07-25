@@ -32,7 +32,7 @@ const VerticalStackSlider = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const ACCENTS = ["#F13A34", "#FF7A45", "#FFB020"];
+  const ACCENTS = ["#4db9e0", "#FF7A45", "#FFB020"];
 
   const serviceIcons = [
     Globe,
@@ -69,8 +69,8 @@ const VerticalStackSlider = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+            <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Our Services
             </span>
@@ -101,7 +101,7 @@ const VerticalStackSlider = () => {
               {/* Card */}
               <div
                 className={`absolute inset-0 transition-all duration-700 ease-out border bg-white ${
-                  isActive ? 'border-[#F13A34]/40 scale-[1.02]' : 'border-neutral-200 scale-100'
+                  isActive ? 'border-[#4db9e0]/40 scale-[1.02]' : 'border-neutral-200 scale-100'
                 }`}
               >
                 {/* Corner Brackets */}
@@ -113,7 +113,7 @@ const VerticalStackSlider = () => {
                 {/* Tab - with description */}
                 <div className="absolute -top-px left-8 flex items-center gap-3 border-b border-r border-neutral-200 bg-white px-4 py-1.5 max-w-[70%] z-20">
                   <span className="flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#F13A34] motion-safe:animate-pulse" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
                   </span>
                   <span className="font-mono text-[9px] tracking-[0.15em] text-neutral-500 truncate">
                     {tabDescriptions[index]}
@@ -146,10 +146,10 @@ const VerticalStackSlider = () => {
                   <div className="max-w-[55%]">
                     {/* Small Icon */}
                     <div className="flex items-center gap-3 mb-2">
-                      <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10">
-                        <Icon className="h-5 w-5 text-[#F13A34]" />
+                      <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
+                        <Icon className="h-5 w-5 text-[#4db9e0]" />
                       </div>
-                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#F13A34]">
+                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
                         Service {String(index + 1).padStart(2, "0")}
                       </span>
                     </div>
@@ -169,7 +169,7 @@ const VerticalStackSlider = () => {
 
                     <Link
                       to="/portfolio"
-                      className="group inline-flex items-center gap-2 mt-8 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+                      className="group inline-flex items-center gap-2 mt-8 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
                     >
                       <span className="relative flex items-center gap-2">
                         <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
@@ -186,7 +186,7 @@ const VerticalStackSlider = () => {
                     <span
                       key={i}
                       className={`h-1 w-6 transition-all duration-500 ${
-                        i === index ? 'bg-[#F13A34]' : 'bg-neutral-200'
+                        i === index ? 'bg-[#4db9e0]' : 'bg-neutral-200'
                       }`}
                     />
                   ))}

@@ -31,8 +31,8 @@ function ClientsGrid() {
                 viewport={{ once: true, amount: 0.4 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
               >
-                <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-                  <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+                <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+                  <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
                   <span className="font-mono text-xs tracking-[0.22em] uppercase text-neutral-700">
 Trusted by brands
                   </span>
@@ -74,13 +74,13 @@ Trusted by brands
               className={`relative flex-shrink-0 h-28 md:h-32 bg-white rounded-3xl flex items-center justify-center transition-all duration-300 ease-out
                 ${
                   hoveredIndex === index
-                    ? "scale-[1.03] shadow-[0_18px_45px_rgba(0,0,0,0.08)] border border-[rgba(241,58,52,0.25)]"
-                    : "border border-neutral-200 hover:border-[rgba(241,58,52,0.35)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
+                    ? "scale-[1.03] shadow-[0_18px_45px_rgba(0,0,0,0.08)] border border-[rgba(77, 185, 224,0.25)]"
+                    : "border border-neutral-200 hover:border-[rgba(77, 185, 224,0.35)] hover:shadow-[0_12px_30px_rgba(0,0,0,0.05)]"
                 }`}
             >
               {/* Hover effect overlay */}
               <div
-                className={`absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,_rgba(241,58,52,0.09),_transparent_55%)] transition-opacity duration-300 ${
+                className={`absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_top,_rgba(77, 185, 224,0.09),_transparent_55%)] transition-opacity duration-300 ${
                   hoveredIndex === index ? "opacity-100" : "opacity-0"
                 }`}
               />

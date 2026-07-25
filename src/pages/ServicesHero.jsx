@@ -49,7 +49,7 @@ export default function ServicesHero() {
       />
       
       {/* Gradient Overlays */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(241,58,52,0.55),_transparent_55%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(77, 185, 224,0.55),_transparent_55%)]" />
       <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/85 to-black" />
 
       {/* Content */}

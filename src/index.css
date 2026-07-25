@@ -26,15 +26,15 @@
   --line-height-loose: 2;
 
   /* Colors */
-  --color-primary: #f13a34;
+  --color-primary: #4db9e0;
   --color-secondary: #000000;
-  --color-primary-dark: #6a070e;
+  --color-primary-dark: #10475c;
   --color-secondary-soft: #4a4a4a;
 
   --color-bg: #ffffff;
   --color-text: #171717;
 
-  --gradient-red: linear-gradient(135deg, #f13a34, #6a070e);
+  --gradient-red: linear-gradient(135deg, #4db9e0, #10475c);
   --gradient-black: linear-gradient(135deg, #000000, #4a4a4a);
 
   /* Spacing */
@@ -212,11 +212,11 @@
 
   /* Buttons */
   .btn-primary {
-    @apply inline-flex items-center justify-center bg-[#F13A34] text-white px-8 py-4 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34];
+    @apply inline-flex items-center justify-center bg-[#4db9e0] text-white px-8 py-4 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0];
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center bg-white border border-neutral-200 text-neutral-900 px-8 py-4 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:border-[#F13A34]/40;
+    @apply inline-flex items-center justify-center bg-white border border-neutral-200 text-neutral-900 px-8 py-4 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-all duration-300 hover:border-[#4db9e0]/40;
   }
 
   /* Form Elements */

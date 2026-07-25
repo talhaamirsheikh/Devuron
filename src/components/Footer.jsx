@@ -36,13 +36,13 @@ export default function Footer() {
           className="absolute -top-1 left-0 right-0 h-px"
           style={{
             background:
-              "linear-gradient(90deg, transparent, #F13A34, #FF7A45, #FFB020, transparent)",
+              "linear-gradient(90deg, transparent, #4db9e0, #FF7A45, #FFB020, transparent)",
             opacity: 0.6,
           }}
         />
         <div
           className="absolute -top-24 left-1/4 w-[36vw] h-[36vw] max-w-[480px] max-h-[480px] rounded-full opacity-[0.10] blur-[110px]"
-          style={{ background: "radial-gradient(circle, #F13A34, transparent 70%)" }}
+          style={{ background: "radial-gradient(circle, #4db9e0, transparent 70%)" }}
         />
         <div
           className="absolute top-1/2 -right-24 w-[30vw] h-[30vw] max-w-[420px] max-h-[420px] rounded-full opacity-[0.08] blur-[100px]"
@@ -66,7 +66,7 @@ export default function Footer() {
           {/* Button - Updated to match Hero.jsx style */}
           <Link
             to="/contact"
-            className="group relative inline-flex items-center gap-2 bg-[#F13A34] px-7 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#F13A34] hover-border-1 border-[1px] border-[#F13A34] "
+            className="group relative inline-flex items-center gap-2 bg-[#4db9e0] px-7 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-transparent hover:text-[#4db9e0] hover-border-1 border-[1px] border-[#4db9e0] "
           >
             Start a Conversation
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
@@ -96,7 +96,7 @@ export default function Footer() {
                   key={label}
                   href={href}
                   aria-label={label}
-                  className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-white/60 hover:text-white hover:border-[#F13A34] transition-all duration-300 hover:scale-105"
+                  className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 text-white/60 hover:text-white hover:border-[#4db9e0] transition-all duration-300 hover:scale-105"
                 >
                   <Icon size={16} />
                 </a>
@@ -114,7 +114,7 @@ export default function Footer() {
                 <li key={label}>
                   <Link 
                     to={to} 
-                    className="hover:text-[#F13A34] transition-all duration-300 text-white hover:translate-x-1 inline-block"
+                    className="hover:text-[#4db9e0] transition-all duration-300 text-white hover:translate-x-1 inline-block"
                   >
                     {label}
                   </Link>
@@ -133,7 +133,7 @@ export default function Footer() {
                 <li key={service.id}>
                   <Link
                     to={`/services/${service.slug}`}
-                    className="hover:text-[#F13A34] transition-all duration-300 text-white hover:translate-x-1 inline-block"
+                    className="hover:text-[#4db9e0] transition-all duration-300 text-white hover:translate-x-1 inline-block"
                   >
                     {service.title}
                   </Link>
@@ -151,7 +151,7 @@ export default function Footer() {
               Occasional notes on what we&apos;re shipping. No noise.
             </p>
             {subscribed ? (
-              <p className="text-sm text-[#F13A34] font-medium">
+              <p className="text-sm text-[#4db9e0] font-medium">
                 You&apos;re on the list — thank you.
               </p>
             ) : (
@@ -162,12 +162,12 @@ export default function Footer() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="you@company.com"
-                  className="w-full min-w-0 bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[#F13A34] transition-colors"
+                  className="w-full min-w-0 bg-white/5 border border-white/10 rounded-md px-4 py-2.5 text-sm text-white placeholder:text-white/35 focus:outline-none focus:border-[#4db9e0] transition-colors"
                 />
                 <button
                   type="submit"
                   aria-label="Subscribe"
-                  className="shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-[#F13A34] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
+                  className="shrink-0 w-10 h-10 flex items-center justify-center rounded-md bg-[#4db9e0] text-white hover:bg-white hover:text-black transition-all duration-300 hover:scale-105"
                 >
                   <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </button>
@@ -179,17 +179,17 @@ export default function Footer() {
         {/* Contact strip */}
         <div className="flex flex-col md:flex-row flex-wrap justify-between gap-6 py-8 border-t border-white/10 text-sm text-white/70">
           <a href="mailto:info@hashtaginterior.com" className="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1 group">
-            <Mail size={18} className="text-[#F13A34] transition-transform duration-300 group-hover:scale-110" />
+            <Mail size={18} className="text-[#4db9e0] transition-transform duration-300 group-hover:scale-110" />
             <span className="text-white">info@hashtaginterior.com</span>
           </a>
 
           <a href="tel:+971483580444" className="flex items-center gap-3 hover:text-white transition-all duration-300 hover:translate-x-1 group">
-            <Phone size={18} className="text-[#F13A34] transition-transform duration-300 group-hover:scale-110" />
+            <Phone size={18} className="text-[#4db9e0] transition-transform duration-300 group-hover:scale-110" />
             <span className="text-white">+971 48358044</span>
           </a>
 
           <div className="flex items-start gap-3 max-w-md hover:text-white transition-all duration-300 group">
-            <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[#F13A34] transition-transform duration-300 group-hover:scale-110" />
+            <MapPin size={18} className="mt-0.5 flex-shrink-0 text-[#4db9e0] transition-transform duration-300 group-hover:scale-110" />
             <span>Suite 506, The Binary by Omniyat, Business Bay, Dubai, UAE</span>
           </div>
         </div>
@@ -205,7 +205,7 @@ export default function Footer() {
             <span>|</span>
             <Link 
               to="/contact" 
-              className="hover:text-[#F13A34] transition-all duration-300 hover:translate-x-0.5"
+              className="hover:text-[#4db9e0] transition-all duration-300 hover:translate-x-0.5"
             >
               Contact Us
             </Link>

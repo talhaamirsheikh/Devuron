@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Target, Bot, Workflow, BarChart3, Sparkles, ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
-const ACCENTS = ["#F13A34", "#FF7A45", "#FFB020", "#F13A34"];
+const ACCENTS = ["#4db9e0", "#FF7A45", "#FFB020", "#4db9e0"];
 
 /* Phase Graphics */
 const PhaseGraphic = ({ index, accent }) => {
@@ -85,7 +85,7 @@ const CornerBrackets = ({ size = "h-3 w-3", borderColor = "border-neutral-300" }
 const ProcessSection = () => {
   const services = {
     "Discovery & Strategy": {
-      icon: <Target className="w-5 h-5 text-[#F13A34]" />,
+      icon: <Target className="w-5 h-5 text-[#4db9e0]" />,
       steps: [
         "Map manual workflows worth automating",
         "Audit existing tools, APIs, and data",
@@ -93,7 +93,7 @@ const ProcessSection = () => {
       ],
     },
     "Agent Architecture": {
-      icon: <Bot className="w-5 h-5 text-[#F13A34]" />,
+      icon: <Bot className="w-5 h-5 text-[#4db9e0]" />,
       steps: [
         "Design reasoning, memory, and tool access",
         "Select and fine-tune the underlying models",
@@ -101,7 +101,7 @@ const ProcessSection = () => {
       ],
     },
     "Integration & Deployment": {
-      icon: <Workflow className="w-5 h-5 text-[#F13A34]" />,
+      icon: <Workflow className="w-5 h-5 text-[#4db9e0]" />,
       steps: [
         "Connect agents to internal APIs and databases",
         "Integrate with Slack, CRM, and support tools",
@@ -109,7 +109,7 @@ const ProcessSection = () => {
       ],
     },
     "Monitoring & Optimization": {
-      icon: <BarChart3 className="w-5 h-5 text-[#F13A34]" />,
+      icon: <BarChart3 className="w-5 h-5 text-[#4db9e0]" />,
       steps: [
         "Track task completion and accuracy",
         "Monitor latency, cost, and token usage",
@@ -138,8 +138,8 @@ const ProcessSection = () => {
           viewport={{ once: true, amount: 0.4 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#F13A34] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
-            <Sparkles className="h-3.5 w-3.5 text-[#F13A34]" />
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+            <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
             <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
               Our Delivery Process
             </span>
@@ -156,7 +156,7 @@ const ProcessSection = () => {
 
           <Link
             to="/services"
-            className="group inline-flex items-center gap-2 mt-8 bg-[#F13A34] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#F13A34] hover:border hover:border-[#F13A34]"
+            className="group inline-flex items-center gap-2 mt-8 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
           >
             <span className="relative flex items-center gap-2">
               <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
@@ -174,7 +174,7 @@ const ProcessSection = () => {
 
             // Service Card - White Theme
             const ServiceCard = (
-              <div className="group relative border border-neutral-200 bg-white p-6 transition-all duration-500 hover:border-[#F13A34]/40">
+              <div className="group relative border border-neutral-200 bg-white p-6 transition-all duration-500 hover:border-[#4db9e0]/40">
                 <CornerBrackets />
 
                 <div className="absolute top-4 right-4 font-mono text-[10px] font-semibold tracking-[0.2em] text-neutral-400">
@@ -189,7 +189,7 @@ const ProcessSection = () => {
                 />
 
                 <div className="relative z-10">
-                  <div className="flex h-10 w-10 items-center justify-center border border-[#F13A34]/30 bg-[#F13A34]/10 mb-4">
+                  <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10 mb-4">
                     {service.icon}
                   </div>
                   <h4 className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-900">
@@ -198,7 +198,7 @@ const ProcessSection = () => {
                   <ul className="mt-3 space-y-2">
                     {service.steps.map((step, i) => (
                       <li key={i} className="flex items-start gap-2 text-[13px] text-neutral-600 leading-relaxed">
-                        <span className="text-[#F13A34] mt-1">•</span>
+                        <span className="text-[#4db9e0] mt-1">•</span>
                         <span>{step}</span>
                       </li>
                     ))}
@@ -209,7 +209,7 @@ const ProcessSection = () => {
 
             // Graphic Panel - Dark Theme (pehle jaisa)
             const GraphicPanel = (
-              <div className="group relative border border-white/10 bg-gradient-to-br from-[#0c0c0c] via-black to-[#050505] overflow-hidden transition-all duration-500 hover:border-[#F13A34]/40">
+              <div className="group relative border border-white/10 bg-gradient-to-br from-[#0c0c0c] via-black to-[#050505] overflow-hidden transition-all duration-500 hover:border-[#4db9e0]/40">
                 <CornerBrackets borderColor="border-white/10" />
 
                 <div
@@ -225,7 +225,7 @@ const ProcessSection = () => {
 
                 <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black via-black/90 to-transparent">
                   <div className="inline-flex items-center gap-2 font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-white/60">
-                    <span className="h-1 w-1 rounded-full bg-[#F13A34]" />
+                    <span className="h-1 w-1 rounded-full bg-[#4db9e0]" />
                     {title}
                   </div>
                 </div>
