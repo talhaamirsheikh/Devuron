@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, ArrowRight, Github, Linkedin, Twitter } from "lucide-react";
 import { Link } from "react-router-dom";
 import { services } from "../constants/services";
-import logo from "../assets/logo.png";
+import logo from "../../public/logo.png";
 
 const SOCIALS = [
   { icon: Linkedin, label: "LinkedIn", href: "#" },

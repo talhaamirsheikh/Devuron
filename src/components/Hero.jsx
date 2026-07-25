@@ -414,9 +414,9 @@ export default function Hero({ heroData, loading }) {
       category: "Mobile App Development",
       icon: Smartphone,
       bgImage:
-        "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1596742578443-7682ef5251cd?q=80&w=2154&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       infoImage:
-        "https://images.unsplash.com/photo-1512428559087-560fa5ceab42?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
+        "https://images.unsplash.com/photo-1596742578443-7682ef5251cd?q=80&w=2154&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       projectDescription: "Cross-platform app that passed 100K+ downloads",
     },
     {
@@ -427,7 +427,7 @@ export default function Hero({ heroData, loading }) {
       category: "AI Solutions & Automation",
       icon: Bot,
       bgImage:
-        "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+        "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       infoImage:
         "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
       projectDescription: "Automation workflow saving 30+ hours every week",
@@ -500,7 +500,7 @@ export default function Hero({ heroData, loading }) {
                 <img
                   src={logo}
                   alt="Logo"
-                  className="h-9 md:h-9 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] mb-4 mt-4" 
+                  className="h-12 md:h-12 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)] my-3 " 
                   loading="eager"
                   fetchPriority="high"
                 />

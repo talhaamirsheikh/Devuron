@@ -354,7 +354,7 @@ const Contact = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <div className="relative border border-neutral-200 bg-white p-8 shadow-sm transition-colors duration-500 hover:border-[#4db9e0]/40">
+          <div className="relative border border-neutral-200 bg-white p-8  transition-colors duration-500 hover:border-[#4db9e0]/40">
             {/* Corner brackets */}
             <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-300" />
             <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-300" />

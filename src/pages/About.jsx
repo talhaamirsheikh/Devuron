@@ -6,6 +6,7 @@ import { Home, Target, Eye, Users, Sparkles, Zap, Heart, TrendingUp, Brain, Pale
 import Testimonials from "../components/Testimonials";
 import DOMPurify from 'dompurify'; 
 import { Link } from 'react-router-dom';
+import about from "../../public/about.png"
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 24 },
@@ -91,7 +92,7 @@ const About = () => {
     <img
       src={
         getImageUrl(whoWeAreData?.image) ||
-        "https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg"
+        about
       }
       alt="Professional software development team collaborating on AI and digital solutions"
       className="h-[400px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -103,19 +104,19 @@ const About = () => {
     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
     {/* Floating Experience Card */}
-    <div className="absolute bottom-6 left-6 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl px-6 py-4 text-white shadow-2xl">
+    {/* <div className="absolute bottom-6 left-6 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-xl px-6 py-4 text-white shadow-2xl">
       <p className="text-3xl font-bold">7+</p>
       <p className="text-sm text-white/80">
         Years of Delivering Technology Excellence
       </p>
-    </div>
+    </div> */}
 
     {/* Top Badge */}
-    <div className="absolute top-6 right-6 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2">
+    {/* <div className="absolute top-6 right-6 rounded-full border border-white/20 bg-white/10 backdrop-blur-md px-4 py-2">
       <span className="text-xs font-semibold uppercase tracking-[0.25em] text-white">
         Web • AI • Mobile • Marketing
       </span>
-    </div>
+    </div> */}
   </div>
 </motion.div>
 

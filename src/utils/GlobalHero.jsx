@@ -116,7 +116,7 @@ export default function GlobalHero({
                 <img
                   src={logo}
                   alt="Logo"
-                  className="h-14 md:h-16 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
+                  className="h-12 md:h-12 object-contain drop-shadow-[0_4px_12px_rgba(0,0,0,0.5)]"
                   loading="eager"
                   fetchPriority="high"
                 />

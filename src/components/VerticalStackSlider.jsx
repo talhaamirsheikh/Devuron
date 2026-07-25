@@ -46,8 +46,8 @@ const VerticalStackSlider = () => {
     "https://images.pexels.com/photos/8117416/pexels-photo-8117416.jpeg",
     "https://images.pexels.com/photos/160107/pexels-photo-160107.jpeg?_gl=1*1ybnu1h*_ga*MzgzMTkxODU3LjE3ODQ4OTk4MTA.*_ga_8JE65Q40S6*czE3ODQ5MjE0ODckbzQkZzEkdDE3ODQ5MjE3OTIkajU5JGwwJGgw",
     "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1557838923-2985c318be48?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80",
-    "https://images.unsplash.com/photo-1558655146-9f40138edfeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+    "https://images.unsplash.com/photo-1542641728-6ca359b085f4?q=80&w=465&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   ];
 
   const tabDescriptions = [
@@ -129,7 +129,7 @@ const VerticalStackSlider = () => {
                 />
 
                 {/* Image Box - Right Side */}
-                <div className="absolute right-8 top-1/2 -translate-y-1/2 w-[280px] h-[320px] lg:w-[340px] lg:h-[380px] rounded-xl overflow-hidden border border-neutral-200 shadow-lg">
+                <div className="absolute right-8 top-1/2 -translate-y-1/2 w-[280px] h-[320px] lg:w-[340px] lg:h-[380px]  overflow-hidden border border-neutral-200 ">
                   <img
                     src={imageUrl}
                     alt={item.title}
@@ -160,7 +160,7 @@ const VerticalStackSlider = () => {
 
                     <div
                       className="mt-5 h-[3px] w-16"
-                      style={{ backgroundColor: accent }}
+                      style={{ backgroundColor: "#4db9e0" }}
                     />
 
                     <p className="mt-6 text-[15px] text-neutral-600 max-w-xl leading-relaxed">
