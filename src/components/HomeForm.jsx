@@ -33,7 +33,7 @@ const HomeForm = () => {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className=" bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 items-center">
         {/* Left */}
         <motion.div

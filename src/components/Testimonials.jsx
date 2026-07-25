@@ -66,7 +66,7 @@ const Testimonials = ({ testimonialsData, loading }) => {
   const marqueeItems = [...testimonials, ...testimonials];
 
   return (
-    <section className="py-20 bg-white">
+    <section className=" bg-white">
       <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <motion.div
@@ -109,7 +109,7 @@ const Testimonials = ({ testimonialsData, loading }) => {
               <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-white/10" />
 
               {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(77, 185, 224,0.4),_transparent_55%)] opacity-70" />
+           <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(77,185,224,0.5),_rgba(77,185,224,0.35)_1%,_transparent_45%)]" />
 
               {/* Tab */}
               <div className="absolute -top-px left-8 flex items-center gap-2 border-b  border-r border-white/10 bg-white px-4 py-1.5">
@@ -131,7 +131,7 @@ const Testimonials = ({ testimonialsData, loading }) => {
 
               <div className="relative z-10 mt-6 pt-4 border-t border-white/15 flex items-center justify-between font-mono text-[9px] font-semibold uppercase tracking-[0.2em] text-white/40">
                 <span>Average NPS: 9.4 / 10</span>
-                <span className="h-3 w-px bg-white/10" />
+                {/* <span className="h-3 w-px bg-white/10" /> */}
                 <span>Retention: 18+ months</span>
               </div>
             </div>

@@ -128,7 +128,7 @@ const ProcessSection = () => {
   };
 
   return (
-    <section className="py-20 bg-white overflow-hidden">
+    <section className=" bg-white overflow-hidden">
       <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -183,9 +183,9 @@ const ProcessSection = () => {
 
                 <div
                   className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                  style={{
-                    background: `radial-gradient(ellipse 60% 40% at 50% 20%, ${accent}15, transparent 70%)`,
-                  }}
+                  // style={{
+                  //   background: `radial-gradient(ellipse 60% 40% at 50% 20%, ${accent}15, transparent 70%)`,
+                  // }}
                 />
 
                 <div className="relative z-10">

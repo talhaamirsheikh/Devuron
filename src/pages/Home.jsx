@@ -14,12 +14,22 @@ const Home = () => {
   return (
     <div>
       <Hero heroData={heroData} loading={false} />
-      <VerticalStackSlider />
-      <ProcessSection /> 
-      <ServiceCards servicesData={{ data: services }} loading={false} />
-      <ClientsSlider />
-      <HomeForm />
-      <Testimonials testimonialsData={{ data: testimonialsData }} loading={false} />
+      <div className="pt-20">
+        <VerticalStackSlider />
+      </div>
+      <div className="pt-10">
+        <ProcessSection /> 
+      </div>
+      {/* <ServiceCards servicesData={{ data: services }} loading={false} /> */}
+      <div className='pt-10'>
+        <ClientsSlider />
+      </div>
+      <div className='pt-10'>
+        <HomeForm />
+      </div>
+      <div className='pt-20'>
+        <Testimonials testimonialsData={{ data: testimonialsData }} loading={false} />
+      </div>
     </div>
   );
 };

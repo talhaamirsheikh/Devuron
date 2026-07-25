@@ -61,7 +61,7 @@ const VerticalStackSlider = () => {
   return (
     <section className="relative bg-white overflow-x-clip">
       {/* Header Section */}
-      <div className="relative z-10 mx-auto max-w-7xl section-container pt-20 pb-12">
+      <div className="relative z-10 mx-auto max-w-7xl section-container ">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
