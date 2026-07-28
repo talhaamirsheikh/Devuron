@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { 
-  Sparkles, 
-  ArrowRight, 
+import {
+  Sparkles,
   ChevronRight,
   Globe,
   Smartphone,
@@ -18,8 +17,8 @@ const VerticalStackSlider = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = document.querySelectorAll('.sticky-section');
-      
+      const sections = document.querySelectorAll(".sticky-section");
+
       sections.forEach((section, index) => {
         const rect = section.getBoundingClientRect();
         if (rect.top <= window.innerHeight * 0.5 && rect.bottom >= window.innerHeight * 0.5) {
@@ -28,19 +27,13 @@ const VerticalStackSlider = () => {
       });
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const ACCENTS = ["#4db9e0", "#FF7A45", "#FFB020"];
 
-  const serviceIcons = [
-    Globe,
-    Smartphone,
-    Bot,
-    TrendingUp,
-    Palette
-  ];
+  const serviceIcons = [Globe, Smartphone, Bot, TrendingUp, Palette];
 
   const serviceImages = [
     "https://images.pexels.com/photos/8117416/pexels-photo-8117416.jpeg",
@@ -50,18 +43,18 @@ const VerticalStackSlider = () => {
     "https://images.unsplash.com/photo-1599658880436-c61792e70672?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   ];
 
-  const tabDescriptions = [
-    "Custom websites & powerful web apps built for speed and growth",
-    "High-performance Android & iOS apps for seamless user experiences",
-    "Intelligent AI solutions that streamline operations & boost productivity",
-    "Data-driven SEO & marketing strategies that increase visibility",
-    "Creative branding & professional video editing that make you stand out"
+  const channelLabels = [
+    "Websites & web apps",
+    "iOS & Android apps",
+    "AI-driven automation",
+    "SEO & marketing",
+    "Brand & video"
   ];
 
   return (
     <section className="relative bg-white overflow-x-clip">
       {/* Header Section */}
-      <div className="relative z-10 mx-auto max-w-7xl section-container ">
+      <div className="relative z-10 mx-auto max-w-7xl section-container">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -80,12 +73,13 @@ const VerticalStackSlider = () => {
             Comprehensive Digital & Creative Services
           </h2>
           <p className="text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed">
-            From digital marketing and web development to creative production and media planning - we provide end-to-end solutions for modern brands.
+            From digital marketing and web development to creative production and media planning - we
+            provide end-to-end solutions for modern brands.
           </p>
         </motion.div>
       </div>
 
-      {/* Service Cards - Vertical Stack */}
+      {/* Service Cards - Channel Rail Stack */}
       {services.map((item, index) => {
         const accent = ACCENTS[index % ACCENTS.length];
         const isActive = activeIndex === index;
@@ -95,102 +89,121 @@ const VerticalStackSlider = () => {
         return (
           <div
             key={index}
-            className="sticky-section sticky top-0 h-screen flex items-center justify-center"
+            className="sticky-section sticky top-0 h-screen w-full flex bg-white"
           >
-            <div className="relative w-[90vw] max-w-7xl h-[80vh]">
-              {/* Card */}
-              <div
-                className={`absolute inset-0 transition-all duration-700 ease-out border bg-white ${
-                  isActive ? 'border-[#4db9e0]/40 scale-[1.02]' : 'border-neutral-200 scale-100'
-                }`}
-              >
-                {/* Corner Brackets */}
-                <div className="absolute -top-px -left-px h-4 w-4 border-l border-t border-neutral-300" />
-                <div className="absolute -top-px -right-px h-4 w-4 border-r border-t border-neutral-300" />
-                <div className="absolute -bottom-px -left-px h-4 w-4 border-l border-b border-neutral-300" />
-                <div className="absolute -bottom-px -right-px h-4 w-4 border-r border-b border-neutral-300" />
+            {/* Channel Rail */}
+            <div className="hidden md:flex flex-col items-center justify-center w-16 lg:w-[76px] shrink-0 border-r border-neutral-200 relative z-20 bg-white">
+              {services.map((_, i) => {
+                const on = i === index;
+                const railAccent = ACCENTS[i % ACCENTS.length];
+                return (
+                  <div key={i} className="flex flex-col items-center gap-2 py-3">
+                    <span
+                      className="font-mono text-[9px] tracking-[0.15em] transition-colors duration-500"
+                      style={{ color: on ? railAccent : "#c7c7c7" }}
+                    >
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span
+                      className="block transition-all duration-500 ease-out"
+                      style={{
+                        width: on ? "3px" : "2px",
+                        height: on ? "28px" : "10px",
+                        backgroundColor: on ? railAccent : "#e5e5e5"
+                      }}
+                    />
+                  </div>
+                );
+              })}
+            </div>
 
-                {/* Tab - with description */}
-                <div className="absolute -top-px left-8 flex items-center gap-3 border-b border-r border-neutral-200 bg-white px-4 py-1.5 max-w-[70%] z-20">
-                  <span className="flex items-center gap-1.5">
-                    <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
-                  </span>
-                  <span className="font-mono text-[9px] tracking-[0.15em] text-neutral-500 truncate">
-                    {tabDescriptions[index]}
+            {/* Card body */}
+            <div className="relative flex-1 flex flex-col lg:flex-row overflow-hidden">
+              {/* Ghost index number */}
+              <span
+                aria-hidden="true"
+                className="hidden lg:block pointer-events-none select-none absolute -left-6 top-1/2 -translate-y-1/2 font-mono font-black leading-none text-transparent"
+                style={{
+                  fontSize: "26vw",
+                  WebkitTextStroke: `1px ${accent}26`
+                }}
+              >
+                {String(index + 1).padStart(2, "0")}
+              </span>
+
+              {/* Content */}
+              <div className="relative z-10 order-2 lg:order-1 w-full lg:w-[54%] flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-10 lg:py-0">
+                {/* Kicker */}
+                <div className="flex items-center gap-2.5 mb-5">
+                  <span
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{
+                      backgroundColor: accent,
+                      animation: isActive ? "pulse 1.6s ease-in-out infinite" : "none",
+                      opacity: isActive ? 1 : 0.4
+                    }}
+                  />
+                  <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                    Service {String(index + 1).padStart(2, "0")} — {channelLabels[index % channelLabels.length]}
                   </span>
                 </div>
 
-                {/* Accent Glow */}
-                <div
-                  className="absolute inset-0 pointer-events-none opacity-30"
+                <div className="flex items-center gap-3 mb-2">
+                  <Icon className="h-5 w-5" style={{ color: accent }} />
+                </div>
+
+                <h2 className="font-mono text-[clamp(2rem,4vw,3.4rem)] font-black uppercase tracking-tight text-neutral-900 leading-[1.05]">
+                  {item.title}
+                </h2>
+
+                <div className="mt-5 h-[3px] w-16" style={{ backgroundColor: accent }} />
+
+                <p className="mt-6 text-[15px] text-neutral-600 max-w-xl leading-relaxed">
+                  {item.description}
+                </p>
+
+                <Link
+                  to="/portfolio"
+                  className="group inline-flex items-center gap-2 mt-9 w-fit border px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300"
                   style={{
-                    background: `radial-gradient(ellipse 50% 40% at 80% 20%, ${accent}20, transparent 70%)`,
+                    borderColor: accent,
+                    color: accent
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = accent;
+                    e.currentTarget.style.color = "#fff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = accent;
+                  }}
+                >
+                  Explore
+                  <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+                </Link>
+              </div>
+
+              {/* Image, diagonal on desktop */}
+              <div className="relative order-1 lg:order-2 w-full h-[38vh] lg:h-auto lg:w-[46%] diagonal-clip overflow-hidden">
+                <img
+                  src={imageUrl}
+                  alt={item.title}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover transition-all duration-[1200ms] ease-out"
+                  style={{
+                    filter: isActive ? "grayscale(0)" : "grayscale(1)",
+                    transform: isActive ? "scale(1.04)" : "scale(1)"
                   }}
                 />
-
-                {/* Image Box - Right Side */}
-                <div className="absolute right-8 top-1/2 -translate-y-1/2 w-[280px] h-[320px] lg:w-[340px] lg:h-[380px]  overflow-hidden border border-neutral-200 ">
-                  <img
-                    src={imageUrl}
-                    alt={item.title}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                  {/* Dark overlay at bottom for text readability if needed */}
-                  <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-black/40 to-transparent" />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10 h-full flex items-center px-8 sm:px-12 lg:px-16">
-                  <div className="max-w-[55%]">
-                    {/* Small Icon */}
-                    <div className="flex items-center gap-3 mb-2">
-                      <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
-                        <Icon className="h-5 w-5 text-[#4db9e0]" />
-                      </div>
-                      <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-[#4db9e0]">
-                        Service {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-
-                    <h2 className="font-mono text-[clamp(2rem,4vw,3.5rem)] font-black uppercase tracking-tight text-neutral-900 leading-[1.05]">
-                      {item.title}
-                    </h2>
-
-                    <div
-                      className="mt-5 h-[3px] w-16"
-                      style={{ backgroundColor: "#4db9e0" }}
-                    />
-
-                    <p className="mt-6 text-[15px] text-neutral-600 max-w-xl leading-relaxed">
-                      {item.description}
-                    </p>
-
-                    <Link
-                      to="/portfolio"
-                      className="group inline-flex items-center gap-2 mt-8 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
-                    >
-                      <span className="relative flex items-center gap-2">
-                        <span className="h-1.5 w-1.5 rounded-full bg-white/90 motion-safe:group-hover:animate-pulse" />
-                        Explore
-                        <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-                      </span>
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Progress Indicator */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2 z-20">
-                  {services.map((_, i) => (
-                    <span
-                      key={i}
-                      className={`h-1 w-6 transition-all duration-500 ${
-                        i === index ? 'bg-[#4db9e0]' : 'bg-neutral-200'
-                      }`}
-                    />
-                  ))}
-                </div>
+                <div
+                  className="absolute inset-0 pointer-events-none transition-opacity duration-700"
+                  style={{
+                    backgroundColor: accent,
+                    mixBlendMode: "multiply",
+                    opacity: isActive ? 0.08 : 0.35
+                  }}
+                />
               </div>
             </div>
           </div>
@@ -201,23 +214,40 @@ const VerticalStackSlider = () => {
         .sticky-section {
           scroll-snap-align: start;
         }
-        
+
         .section-container {
           padding-left: 1rem;
           padding-right: 1rem;
         }
-        
+
         @media (min-width: 640px) {
           .section-container {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
           }
         }
-        
+
         @media (min-width: 1024px) {
           .section-container {
             padding-left: 2rem;
             padding-right: 2rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .diagonal-clip {
+            clip-path: polygon(10% 0, 100% 0, 100% 100%, 0 100%);
+          }
+        }
+
+        @keyframes pulse {
+          0%, 100% { opacity: 1; transform: scale(1); }
+          50% { opacity: 0.4; transform: scale(1.4); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .diagonal-clip img {
+            transition: none !important;
           }
         }
       `}</style>
