@@ -32,7 +32,7 @@ function ClientsGrid() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   return (
-    <section className="bg-[#F6F4EF] py-10 overflow-hidden">
+    <section className="bg-white py-10 overflow-hidden">
       {/* Header */}
       <div className="section-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
@@ -52,7 +52,7 @@ function ClientsGrid() {
           <h2 className="font-mono text-[clamp(1.8rem,3vw,2.8rem)] font-black uppercase tracking-tight text-neutral-900">
             We partner with ambitious teams
           </h2>
-          <p className="text-[15px] text-neutral-600 max-w-2xl mx-auto mt-4 leading-relaxed">
+          <p className="text-[15px] text-neutral-600 max-w-2xl mx-auto mt-4 mb-0 leading-relaxed">
             From ambitious startups to established businesses, brands trust us to strengthen their identity, accelerate growth, and protect their digital presence through innovative solutions.
           </p>
         </motion.div>
@@ -127,7 +127,7 @@ function ClientsGrid() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="text-center mt-12"
         >
-          <Link
+          {/* <Link
             to="/portfolio"
             className="group inline-flex items-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] hover:border hover:border-[#4db9e0]"
           >
@@ -136,7 +136,7 @@ function ClientsGrid() {
               View Our Work
               <ChevronRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </span>
-          </Link>
+          </Link> */}
         </motion.div>
       </div>
 

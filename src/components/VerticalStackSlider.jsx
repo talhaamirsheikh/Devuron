@@ -12,6 +12,9 @@ import {
 import { Link } from "react-router-dom";
 import { services } from "../constants/services";
 
+const ACCENT = "#4db9e0";
+const INK = "#0a0a0a";
+
 const VerticalStackSlider = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -30,8 +33,6 @@ const VerticalStackSlider = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const ACCENTS = ["#4db9e0", "#FF7A45", "#FFB020"];
 
   const serviceIcons = [Globe, Smartphone, Bot, TrendingUp, Palette];
 
@@ -52,9 +53,9 @@ const VerticalStackSlider = () => {
   ];
 
   return (
-    <section className="relative bg-white overflow-x-clip">
+    <section className="relative bg-[#08090A] overflow-x-clip">
       {/* Header Section */}
-      <div className="relative z-10 mx-auto max-w-7xl section-container">
+      <div className="relative z-10 mx-auto max-w-7xl section-container pt-10 pb-12">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -62,17 +63,17 @@ const VerticalStackSlider = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-black/[0.03] py-2 pl-4 pr-5 mb-5">
+          <div className="inline-flex items-center gap-2.5 border-l-2 border-[#4db9e0] bg-white/5 py-2 pl-4 pr-5 mb-5">
             <Sparkles className="h-3.5 w-3.5 text-[#4db9e0]" />
-            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-neutral-700">
+            <span className="font-mono text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70">
               Our Services
             </span>
           </div>
 
-          <h2 className="font-mono text-[clamp(1.8rem,3vw,2.8rem)] font-black uppercase tracking-tight text-neutral-900 mb-3">
+          <h2 className="font-mono text-[clamp(1.8rem,3vw,2.8rem)] font-black uppercase tracking-tight text-white mb-3">
             Comprehensive Digital & Creative Services
           </h2>
-          <p className="text-[15px] text-neutral-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[15px] text-white/50 max-w-2xl mx-auto leading-relaxed">
             From digital marketing and web development to creative production and media planning - we
             provide end-to-end solutions for modern brands.
           </p>
@@ -81,26 +82,21 @@ const VerticalStackSlider = () => {
 
       {/* Service Cards - Channel Rail Stack */}
       {services.map((item, index) => {
-        const accent = ACCENTS[index % ACCENTS.length];
         const isActive = activeIndex === index;
         const Icon = serviceIcons[index % serviceIcons.length];
         const imageUrl = serviceImages[index % serviceImages.length];
 
         return (
-          <div
-            key={index}
-            className="sticky-section sticky top-0 h-screen w-full flex bg-white"
-          >
-            {/* Channel Rail */}
-            <div className="hidden md:flex flex-col items-center justify-center w-16 lg:w-[76px] shrink-0 border-r border-neutral-200 relative z-20 bg-white">
+          <div key={index} className="sticky-section sticky top-0 h-screen w-full flex">
+            {/* Channel Rail — fixed control strip */}
+            <div className="hidden md:flex flex-col items-center justify-center w-16 lg:w-[76px] shrink-0 border-r border-white/10 relative z-20 bg-[#08090A]">
               {services.map((_, i) => {
                 const on = i === index;
-                const railAccent = ACCENTS[i % ACCENTS.length];
                 return (
                   <div key={i} className="flex flex-col items-center gap-2 py-3">
                     <span
                       className="font-mono text-[9px] tracking-[0.15em] transition-colors duration-500"
-                      style={{ color: on ? railAccent : "#c7c7c7" }}
+                      style={{ color: on ? ACCENT : "rgba(255,255,255,0.25)" }}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
@@ -109,7 +105,7 @@ const VerticalStackSlider = () => {
                       style={{
                         width: on ? "3px" : "2px",
                         height: on ? "28px" : "10px",
-                        backgroundColor: on ? railAccent : "#e5e5e5"
+                        backgroundColor: on ? ACCENT : "rgba(255,255,255,0.15)"
                       }}
                     />
                   </div>
@@ -117,15 +113,19 @@ const VerticalStackSlider = () => {
               })}
             </div>
 
-            {/* Card body */}
-            <div className="relative flex-1 flex flex-col lg:flex-row overflow-hidden">
+            {/* Card body — All Dark */}
+            <div
+              className="relative flex-1 flex flex-col lg:flex-row overflow-hidden transition-colors duration-700"
+              style={{ backgroundColor: INK }}
+            >
               {/* Ghost index number */}
               <span
                 aria-hidden="true"
-                className="hidden lg:block pointer-events-none select-none absolute -left-6 top-1/2 -translate-y-1/2 font-mono font-black leading-none text-transparent"
+                className="hidden lg:block pointer-events-none select-none absolute -left-6 top-1/2 -translate-y-1/2 font-mono font-black leading-none text-transparent transition-all duration-700"
                 style={{
                   fontSize: "26vw",
-                  WebkitTextStroke: `1px ${accent}26`
+                  WebkitTextStroke: `1px ${ACCENT}55`,
+                  textShadow: isActive ? `0 0 60px ${ACCENT}33` : "none"
                 }}
               >
                 {String(index + 1).padStart(2, "0")}
@@ -138,44 +138,47 @@ const VerticalStackSlider = () => {
                   <span
                     className="h-1.5 w-1.5 rounded-full"
                     style={{
-                      backgroundColor: accent,
+                      backgroundColor: ACCENT,
                       animation: isActive ? "pulse 1.6s ease-in-out infinite" : "none",
                       opacity: isActive ? 1 : 0.4
                     }}
                   />
-                  <span className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-neutral-500">
+                  <span
+                    className="font-mono text-[10px] font-semibold uppercase tracking-[0.2em] text-white/40"
+                  >
                     Service {String(index + 1).padStart(2, "0")} — {channelLabels[index % channelLabels.length]}
                   </span>
                 </div>
 
                 <div className="flex items-center gap-3 mb-2">
-                  <Icon className="h-5 w-5" style={{ color: accent }} />
+                  <Icon className="h-5 w-5 text-[#4db9e0]" />
                 </div>
 
-                <h2 className="font-mono text-[clamp(2rem,4vw,3.4rem)] font-black uppercase tracking-tight text-neutral-900 leading-[1.05]">
+                <h2
+                  className="font-mono text-[clamp(2rem,4vw,3.4rem)] font-black uppercase tracking-tight leading-[1.05] text-white transition-colors duration-700"
+                >
                   {item.title}
                 </h2>
 
-                <div className="mt-5 h-[3px] w-16" style={{ backgroundColor: accent }} />
+                <div className="mt-5 h-[3px] w-16" style={{ backgroundColor: ACCENT }} />
 
-                <p className="mt-6 text-[15px] text-neutral-600 max-w-xl leading-relaxed">
+                <p
+                  className="mt-6 text-[15px] max-w-xl leading-relaxed text-white/60 transition-colors duration-700"
+                >
                   {item.description}
                 </p>
 
                 <Link
                   to="/portfolio"
                   className="group inline-flex items-center gap-2 mt-9 w-fit border px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] transition-colors duration-300"
-                  style={{
-                    borderColor: accent,
-                    color: accent
-                  }}
+                  style={{ borderColor: ACCENT, color: ACCENT }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = accent;
-                    e.currentTarget.style.color = "#fff";
+                    e.currentTarget.style.backgroundColor = ACCENT;
+                    e.currentTarget.style.color = "#0a0a0a";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = accent;
+                    e.currentTarget.style.color = ACCENT;
                   }}
                 >
                   Explore
@@ -183,25 +186,34 @@ const VerticalStackSlider = () => {
                 </Link>
               </div>
 
-              {/* Image, diagonal on desktop */}
+              {/* Image */}
               <div className="relative order-1 lg:order-2 w-full h-[38vh] lg:h-auto lg:w-[46%] diagonal-clip overflow-hidden">
                 <img
                   src={imageUrl}
                   alt={item.title}
                   loading="lazy"
                   decoding="async"
-                  className="h-full w-full object-cover transition-all duration-[1200ms] ease-out"
+                  className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out"
                   style={{
-                    filter: isActive ? "grayscale(0)" : "grayscale(1)",
+                    filter: "grayscale(1) contrast(1.15)",
                     transform: isActive ? "scale(1.04)" : "scale(1)"
+                  }}
+                />
+                {/* Duotone gradient wash */}
+                <div
+                  className="absolute inset-0 pointer-events-none transition-opacity duration-700"
+                  style={{
+                    background: `linear-gradient(135deg, ${INK} 0%, ${ACCENT} 100%)`,
+                    mixBlendMode: "color",
+                    opacity: isActive ? 0.75 : 0.92
                   }}
                 />
                 <div
                   className="absolute inset-0 pointer-events-none transition-opacity duration-700"
                   style={{
-                    backgroundColor: accent,
+                    backgroundColor: INK,
                     mixBlendMode: "multiply",
-                    opacity: isActive ? 0.08 : 0.35
+                    opacity: isActive ? 0.12 : 0.55
                   }}
                 />
               </div>
@@ -246,7 +258,8 @@ const VerticalStackSlider = () => {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .diagonal-clip img {
+          .diagonal-clip img,
+          .sticky-section * {
             transition: none !important;
           }
         }
