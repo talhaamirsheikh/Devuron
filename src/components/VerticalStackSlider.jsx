@@ -121,7 +121,7 @@ const VerticalStackSlider = () => {
               {/* Ghost index number */}
               <span
                 aria-hidden="true"
-                className="hidden lg:block pointer-events-none select-none absolute -left-6 top-1/2 -translate-y-1/2 font-mono font-black leading-none text-transparent transition-all duration-700"
+                className="hidden lg:block pointer-events-none select-none absolute -left-0 top-1/2 -translate-y-1/2 font-mono font-black leading-none text-transparent transition-all duration-700"
                 style={{
                   fontSize: "26vw",
                   WebkitTextStroke: `1px ${ACCENT}55`,

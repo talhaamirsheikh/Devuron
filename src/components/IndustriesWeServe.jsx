@@ -28,17 +28,72 @@ const CornerBrackets = ({ size = "h-4 w-4", borderColor = "border-neutral-300" }
 );
 
 const industries = [
-  { title: "Shopify", href: "#", icon: Store },
-  { title: "Travel & Hospitality", href: "#", icon: Plane },
-  { title: "Public Sector", href: "#", icon: Landmark },
-  { title: "Telecommunication", href: "#", icon: Signal },
-  { title: "Retail & CPG", href: "#", icon: ShoppingCart },
-  { title: "Oil, Gas & Energy", href: "#", icon: Flame },
-  { title: "Startups", href: "#", icon: Rocket },
-  { title: "E-commerce", href: "#", icon: Store },
-  { title: "Banking & Fintech", href: "#", icon: Banknote },
-  { title: "Healthcare & Pharmaceuticals", href: "#", icon: HeartPulse },
-  { title: "Gaming", href: "#", icon: Gamepad2 }
+  { 
+    title: "Shopify", 
+    href: "#", 
+    icon: Store,
+    image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Travel & Hospitality", 
+    href: "#", 
+    icon: Plane,
+    image: "https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Public Sector", 
+    href: "#", 
+    icon: Landmark,
+    image: "https://images.unsplash.com/photo-1540910419892-4a36d2c3266c?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Telecommunication", 
+    href: "#", 
+    icon: Signal,
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Retail & CPG", 
+    href: "#", 
+    icon: ShoppingCart,
+    image: "https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Oil, Gas & Energy", 
+    href: "#", 
+    icon: Flame,
+    image: "https://images.pexels.com/photos/13247379/pexels-photo-13247379.jpeg?_gl=1*1kx8i89*_ga*MzgzMTkxODU3LjE3ODQ4OTk4MTA.*_ga_8JE65Q40S6*czE3ODUyODg4ODIkbzYkZzEkdDE3ODUyODg5MDckajM1JGwwJGgw"
+  },
+  { 
+    title: "Startups", 
+    href: "#", 
+    icon: Rocket,
+    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "E-commerce", 
+    href: "#", 
+    icon: Store,
+    image: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Banking & Fintech", 
+    href: "#", 
+    icon: Banknote,
+    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Healthcare & Pharmaceuticals", 
+    href: "#", 
+    icon: HeartPulse,
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  },
+  { 
+    title: "Gaming", 
+    href: "#", 
+    icon: Gamepad2,
+    image: "https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
+  }
 ];
 
 const IndustriesWeServe = () => {
@@ -143,42 +198,55 @@ const IndustriesWeServe = () => {
             })}
           </div>
 
-          {/* Preview panel */}
+          {/* Preview panel with image */}
           <div className="hidden lg:block lg:col-span-4">
             <div className="sticky top-24 relative border border-neutral-200 bg-white h-[420px] flex flex-col justify-between p-8 overflow-hidden">
               <CornerBrackets size="h-4 w-4" />
 
+              {/* Background Image */}
+              <div className="absolute inset-0">
+                <img
+                  src={active.image}
+                  alt={active.title}
+                  className="h-full w-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-black/30" />
+              </div>
+
               {/* Tab */}
-              <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5 z-10">
+              {/* <div className="absolute -top-px left-8 flex items-center gap-2 border-b border-r border-neutral-200 bg-white px-4 py-1.5 z-10">
                 <span className="h-1.5 w-1.5 rounded-full bg-[#4db9e0] motion-safe:animate-pulse" />
                 <span className="font-mono text-[9px] tracking-[0.2em] text-neutral-500">
                   INDUSTRY
                 </span>
-              </div>
+              </div> */}
 
               <div className="relative z-10 flex items-center justify-between">
-                <span
+                {/* <span
                   className="h-1.5 w-1.5 rounded-full"
                   style={{ backgroundColor: ACCENT, animation: "pulse 1.6s ease-in-out infinite" }}
                 />
                 <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-neutral-400">
                   Tracking
-                </span>
+                </span> */}
               </div>
 
               <div className="relative z-10">
                 <div
-                  className="flex h-12 w-12 items-center justify-center border mb-6"
+                  className="flex h-12 w-12 items-center justify-center border mb-6 bg-white/80 backdrop-blur-sm"
                   style={{ borderColor: ACCENT, backgroundColor: `${ACCENT}0d` }}
                 >
                   <ActiveIcon className="h-5 w-5" style={{ color: ACCENT }} />
                 </div>
-                <h3
-                  className="font-mono text-[clamp(1.2rem,2vw,1.8rem)] font-black uppercase tracking-tight leading-[1.05] mb-2"
-                  style={{ color: INK }}
-                >
-                  {active.title}
-                </h3>
+              <h3
+  className="font-mono text-[clamp(1.2rem,2vw,1.8rem)] font-bold uppercase tracking-tight leading-[1.05] mb-2"
+  style={{ color: "white" }}
+>
+  {active.title}
+</h3>
                 <a
                   href={active.href}
                   target="_blank"
