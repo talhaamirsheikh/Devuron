@@ -11,6 +11,7 @@ const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const SubServiceDetail = lazy(() => import('./pages/SubServiceDetail'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const PortfolioDetail = lazy(() => import('./pages/PortfolioDetail'));
+const MobileCaseStudy = lazy(() => import('./pages/MobileCaseStudy'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -28,7 +29,8 @@ function App() {
               <Route path="services/:slug" element={<ServiceDetail />} />
               <Route path="services/:slug/:subSlug" element={<SubServiceDetail />} />
               <Route path="portfolio" element={<Portfolio />} />
-              <Route path="portfolio/:id" element={<PortfolioDetail />} />
+              <Route path="portfolio/:slug" element={<PortfolioDetail />} />
+              <Route path="portfolio/mobile/:slug" element={<MobileCaseStudy />} />
               <Route path="blog" element={<Blog />} />
               <Route path="blog/:slug" element={<BlogDetail />} />
               <Route path="contact" element={<Contact />} />

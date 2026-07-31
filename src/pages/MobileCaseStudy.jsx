@@ -11,19 +11,15 @@ import {
   Target,
   Layers,
   Home,
+  Smartphone,
   ExternalLink,
   X,
   ZoomIn,
   Award,
   Github,
-  Clock,
-  Users,
-  TrendingUp,
-  Calendar,
-  Layers as LayersIcon
 } from "lucide-react";
 import GlobalHero from "../utils/GlobalHero";
-import allProjects from "../Portfolio/allProjects";
+import MobileDevelopment from "../Portfolio/MobileDevelopment";
 
 // ─── Sub-components ────────────────────────────────────────────────────────────
 
@@ -42,6 +38,13 @@ const Tab = ({ label }) => (
     <span className="font-mono text-[9px] tracking-[0.2em] text-gray-500">{label}</span>
   </div>
 );
+
+const platformColors = {
+  Android: { bg: "bg-emerald-500/10", text: "text-emerald-600", border: "border-emerald-500/30", dot: "bg-emerald-500" },
+  iOS: { bg: "bg-blue-500/10", text: "text-blue-600", border: "border-blue-500/30", dot: "bg-blue-500" },
+  Flutter: { bg: "bg-[#4db9e0]/10", text: "text-[#4db9e0]", border: "border-[#4db9e0]/30", dot: "bg-[#4db9e0]" },
+  "React Native": { bg: "bg-violet-500/10", text: "text-violet-600", border: "border-violet-500/30", dot: "bg-violet-500" },
+};
 
 // ─── Lightbox ──────────────────────────────────────────────────────────────────
 
@@ -108,13 +111,13 @@ const Lightbox = ({ images, initialIndex, onClose }) => {
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0, scale: 0.92 }}
           transition={{ duration: 0.25 }}
-          className="relative max-h-[85vh] max-w-[90vw] md:max-w-[75vw]"
+          className="relative max-h-[88vh] max-w-[90vw] md:max-w-[60vw]"
           onClick={(e) => e.stopPropagation()}
         >
           <img
             src={images[current]}
             alt={`Screenshot ${current + 1}`}
-            className="max-h-[85vh] w-auto object-contain rounded shadow-2xl mx-auto"
+            className="max-h-[88vh] w-auto object-contain rounded shadow-2xl"
             draggable={false}
           />
         </motion.div>
@@ -150,24 +153,24 @@ const Lightbox = ({ images, initialIndex, onClose }) => {
 
 // ─── Main Component ────────────────────────────────────────────────────────────
 
-const PortfolioDetail = () => {
+const MobileCaseStudy = () => {
   const { slug } = useParams();
   const [lightboxIndex, setLightboxIndex] = useState(null);
 
-  const project = allProjects.find((p) => p.slug === slug);
+  const project = MobileDevelopment.find((p) => p.slug === slug);
 
-  // Group by category to navigate only within the same project type (e.g. Web Development)
-  const categoryProjects = allProjects.filter((p) => p.category === project?.category);
-  const currentIndex = categoryProjects.findIndex((p) => p.slug === slug);
-  const prevProject = currentIndex > 0 ? categoryProjects[currentIndex - 1] : categoryProjects[categoryProjects.length - 1];
-  const nextProject = currentIndex < categoryProjects.length - 1 ? categoryProjects[currentIndex + 1] : categoryProjects[0];
+  const currentIndex = MobileDevelopment.findIndex((p) => p.slug === slug);
+  const prevProject = currentIndex > 0 ? MobileDevelopment[currentIndex - 1] : MobileDevelopment[MobileDevelopment.length - 1];
+  const nextProject = currentIndex < MobileDevelopment.length - 1 ? MobileDevelopment[currentIndex + 1] : MobileDevelopment[0];
+
+  const pColors = platformColors[project?.platform] || platformColors["Android"];
 
   if (!project) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
           <p className="text-[#4db9e0] mb-4 font-mono text-[11px] uppercase tracking-[0.2em]">Project Not Found</p>
-          <p className="text-[14px] text-gray-600 mb-6">The project you're looking for doesn't exist.</p>
+          <p className="text-[14px] text-gray-600 mb-6">The mobile project you're looking for doesn't exist.</p>
           <Link
             to="/portfolio"
             className="inline-flex items-center gap-2 bg-[#4db9e0] px-6 py-3.5 font-mono text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:bg-white hover:text-[#4db9e0] border border-transparent hover:border-[#4db9e0]"
@@ -191,7 +194,7 @@ const PortfolioDetail = () => {
       {/* Hero */}
       <GlobalHero
         title={project.title}
-        subtitle={project.category}
+        subtitle={`${project.platform} App`}
         description={project.description}
         breadcrumbs={breadcrumbs}
         backgroundImage={project.image}
@@ -210,10 +213,10 @@ const PortfolioDetail = () => {
           className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-16"
         >
           {[
-            { icon: Clock, label: "Duration", value: project.duration || "N/A" },
-            { icon: Users, label: "Client", value: project.client || "Client Project" },
-            { icon: TrendingUp, label: "Impact", value: project.impact || "N/A" },
-            { icon: Calendar, label: "Category", value: project.category },
+            { icon: Smartphone, label: "Platform", value: project.platform },
+            { icon: Code, label: "Role", value: project.role },
+            { icon: Layers, label: "Category", value: "Mobile App" },
+            { icon: Award, label: "Screenshots", value: `${project.gallery.length} views` },
           ].map((item, idx) => (
             <div key={idx} className="relative border border-gray-200 bg-white p-4 text-center">
               <CornerBrackets size="h-2 w-2" />
@@ -224,39 +227,30 @@ const PortfolioDetail = () => {
           ))}
         </motion.div>
 
-        {/* Action CTAs */}
-        {(project.url && project.url !== "#" || project.github) && (
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="flex flex-wrap items-center gap-3 mb-16"
-          >
-            {project.url && project.url !== "#" && (
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#4db9e0] px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-white hover:bg-white hover:text-[#4db9e0] border border-transparent hover:border-[#4db9e0] transition-all duration-200"
-              >
-                <ExternalLink className="h-3.5 w-3.5" />
-                Visit Live Website
-              </a>
-            )}
+        {/* Platform Badge + Links */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex flex-wrap items-center gap-3 mb-16"
+        >
+          <span className={`inline-flex items-center gap-2 border ${pColors.border} ${pColors.bg} px-4 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] ${pColors.text}`}>
+            <span className={`h-1.5 w-1.5 rounded-full ${pColors.dot}`} />
+            {project.platform}
+          </span>
 
-            {project.github && (
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 border border-gray-200 bg-white px-5 py-2.5 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-700 hover:border-[#4db9e0]/40 hover:text-[#4db9e0] transition-all duration-200"
-              >
-                <Github className="h-3.5 w-3.5" />
-                View GitHub Code
-              </a>
-            )}
-          </motion.div>
-        )}
+          {project.url && project.url !== "#" && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 border border-gray-200 bg-white px-4 py-2 font-mono text-[10px] font-semibold uppercase tracking-[0.18em] text-gray-700 hover:border-[#4db9e0]/40 hover:text-[#4db9e0] transition-all duration-200"
+            >
+              <ExternalLink className="h-3.5 w-3.5" />
+              View on Store
+            </a>
+          )}
+        </motion.div>
 
         {/* Project Overview */}
         <motion.div
@@ -275,7 +269,7 @@ const PortfolioDetail = () => {
                 </div>
                 <h2 className="font-mono text-[18px] font-black uppercase tracking-tight text-gray-900">Project Overview</h2>
               </div>
-              <p className="text-[15px] text-gray-600 leading-relaxed">{project.fullDescription || project.description}</p>
+              <p className="text-[15px] text-gray-600 leading-relaxed">{project.fullDescription}</p>
             </div>
           </div>
         </motion.div>
@@ -400,79 +394,6 @@ const PortfolioDetail = () => {
           </motion.div>
         )}
 
-        {/* Key Results */}
-        {project.results?.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <div className="relative border border-gray-200 bg-white p-8 md:p-10">
-              <CornerBrackets size="h-4 w-4" />
-              <Tab label="RESULTS" />
-              <div className="pt-4">
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="flex h-10 w-10 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10">
-                    <Award className="h-5 w-5 text-[#4db9e0]" />
-                  </div>
-                  <h2 className="font-mono text-[18px] font-black uppercase tracking-tight text-gray-900">Key Results</h2>
-                </div>
-                <div className="grid grid-cols-1 gap-3">
-                  {project.results.map((result, idx) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.07 }}
-                      className="flex items-start gap-4 border border-gray-200 bg-gray-50 p-4"
-                    >
-                      <div className="flex h-8 w-8 items-center justify-center border border-[#4db9e0]/30 bg-[#4db9e0]/10 flex-shrink-0">
-                        <CheckCircle2 className="h-4 w-4 text-[#4db9e0]" />
-                      </div>
-                      <p className="text-[14px] text-gray-700 leading-relaxed">{result}</p>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
-        {/* Highlights */}
-        {project.highlights?.length > 0 && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <div className="relative border border-gray-200 bg-white p-8 md:p-10">
-              <CornerBrackets size="h-4 w-4" />
-              <Tab label="HIGHLIGHTS" />
-              <div className="pt-4">
-                <h3 className="font-mono text-[18px] font-black uppercase tracking-tight text-gray-900 mb-6">What We Delivered</h3>
-                <div className="flex flex-wrap gap-3">
-                  {project.highlights.map((item, idx) => (
-                    <motion.span
-                      key={idx}
-                      initial={{ scale: 0 }}
-                      whileInView={{ scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1 }}
-                      className="inline-flex items-center gap-2 border border-[#4db9e0]/30 bg-[#4db9e0]/5 px-4 py-2.5 font-mono text-[10px] font-medium uppercase tracking-[0.15em] text-[#4db9e0]"
-                    >
-                      <Sparkles className="h-3 w-3" />
-                      {item}
-                    </motion.span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </motion.div>
-        )}
-
         {/* Image Gallery */}
         {project.gallery?.length > 0 && (
           <motion.section
@@ -490,18 +411,18 @@ const PortfolioDetail = () => {
                     <Layers className="h-5 w-5 text-violet-600" />
                   </div>
                   <div>
-                    <h2 className="font-mono text-[18px] font-black uppercase tracking-tight text-gray-900">Project Gallery</h2>
-                    <p className="font-mono text-[10px] text-gray-400 tracking-[0.15em]">Click any screenshot to view fullscreen</p>
+                    <h2 className="font-mono text-[18px] font-black uppercase tracking-tight text-gray-900">App Screenshots</h2>
+                    <p className="font-mono text-[10px] text-gray-400 tracking-[0.15em]">Click any image to view fullscreen</p>
                   </div>
                 </div>
 
-                {/* Gallery grid — landscape aspect ratio for website layouts */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                {/* Responsive gallery grid — portrait ratio for mobile screenshots */}
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
                   {project.gallery.map((src, idx) => (
                     <motion.div
                       key={idx}
                       className="group relative overflow-hidden border border-gray-200 bg-gray-50 cursor-pointer"
-                      style={{ aspectRatio: "16/10" }}
+                      style={{ aspectRatio: "9/16" }}
                       whileHover={{ y: -4, boxShadow: "0 12px 32px rgba(77,185,224,0.18)" }}
                       transition={{ type: "spring", stiffness: 300, damping: 20 }}
                       onClick={() => setLightboxIndex(idx)}
@@ -554,41 +475,37 @@ const PortfolioDetail = () => {
         {/* Prev / Next Navigation */}
         <div className="space-y-8 border-t border-gray-200 pt-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {prevProject && (
-              <Link
-                to={`/portfolio/${prevProject.slug}`}
-                className="group relative border border-gray-200 bg-white p-6 transition-colors duration-300 hover:border-[#4db9e0]/40"
-              >
-                <CornerBrackets size="h-2 w-2" />
-                <div className="flex items-center gap-4">
-                  <ChevronLeft className="h-5 w-5 text-gray-400 group-hover:text-[#4db9e0] transition-colors" />
-                  <div>
-                    <div className="font-mono text-[8px] font-semibold uppercase tracking-[0.2em] text-gray-500">Previous</div>
-                    <div className="font-mono text-[11px] font-medium text-gray-900 group-hover:text-[#4db9e0] transition-colors">
-                      {prevProject.title}
-                    </div>
+            <Link
+              to={`/portfolio/mobile/${prevProject.slug}`}
+              className="group relative border border-gray-200 bg-white p-6 transition-colors duration-300 hover:border-[#4db9e0]/40"
+            >
+              <CornerBrackets size="h-2 w-2" />
+              <div className="flex items-center gap-4">
+                <ChevronLeft className="h-5 w-5 text-gray-400 group-hover:text-[#4db9e0] transition-colors" />
+                <div>
+                  <div className="font-mono text-[8px] font-semibold uppercase tracking-[0.2em] text-gray-500">Previous</div>
+                  <div className="font-mono text-[11px] font-medium text-gray-900 group-hover:text-[#4db9e0] transition-colors">
+                    {prevProject.title}
                   </div>
                 </div>
-              </Link>
-            )}
+              </div>
+            </Link>
 
-            {nextProject && (
-              <Link
-                to={`/portfolio/${nextProject.slug}`}
-                className="group relative border border-gray-200 bg-white p-6 transition-colors duration-300 hover:border-[#4db9e0]/40"
-              >
-                <CornerBrackets size="h-2 w-2" />
-                <div className="flex items-center justify-end gap-4">
-                  <div className="text-right">
-                    <div className="font-mono text-[8px] font-semibold uppercase tracking-[0.2em] text-gray-500">Next</div>
-                    <div className="font-mono text-[11px] font-medium text-gray-900 group-hover:text-[#4db9e0] transition-colors">
-                      {nextProject.title}
-                    </div>
+            <Link
+              to={`/portfolio/mobile/${nextProject.slug}`}
+              className="group relative border border-gray-200 bg-white p-6 transition-colors duration-300 hover:border-[#4db9e0]/40"
+            >
+              <CornerBrackets size="h-2 w-2" />
+              <div className="flex items-center justify-end gap-4">
+                <div className="text-right">
+                  <div className="font-mono text-[8px] font-semibold uppercase tracking-[0.2em] text-gray-500">Next</div>
+                  <div className="font-mono text-[11px] font-medium text-gray-900 group-hover:text-[#4db9e0] transition-colors">
+                    {nextProject.title}
                   </div>
-                  <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-[#4db9e0] transition-colors" />
                 </div>
-              </Link>
-            )}
+                <ChevronRight className="h-5 w-5 text-gray-400 group-hover:text-[#4db9e0] transition-colors" />
+              </div>
+            </Link>
           </div>
 
           {/* CTA */}
@@ -605,10 +522,10 @@ const PortfolioDetail = () => {
             </div>
             <div className="pt-6">
               <h3 className="font-mono text-[clamp(1.2rem,2vw,1.8rem)] font-black uppercase tracking-tight text-gray-900 mb-4">
-                Ready to Start Your Project?
+                Need a Mobile App?
               </h3>
               <p className="text-[15px] text-gray-600 max-w-2xl mx-auto mb-8 leading-relaxed">
-                Let's discuss how we can help your brand achieve similar results and drive measurable growth.
+                Let's build a high-quality, performant mobile application tailored to your users and business goals.
               </p>
               <Link
                 to="/contact"
@@ -637,4 +554,4 @@ const PortfolioDetail = () => {
   );
 };
 
-export default PortfolioDetail;
+export default MobileCaseStudy;

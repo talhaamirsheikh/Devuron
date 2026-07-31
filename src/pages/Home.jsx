@@ -12,7 +12,9 @@ import { services } from '../constants/services';
 import Technologies from '../components/Technologies';
 import WhyChooseUs from '../components/WhyChoooseUs';
 import IndustriesWeServe from '../components/IndustriesWeServe';
+import PortfolioSection from '../components/PortfolioSection';
 import CTASection from '../components/CTASection';
+import OForm from '../components/OForm';
 
 const Home = () => {
   return (
@@ -21,6 +23,7 @@ const Home = () => {
       <div className='pt-10'>
         <ClientsSlider />
       </div>
+      {/* <OForm /> */}
       <div className="pt-0 pb-10">
         <VerticalStackSlider />
       </div>
@@ -30,6 +33,9 @@ const Home = () => {
       </div>
       <div className="pt-10">
         <ProcessSection /> 
+      </div>
+      <div className="pt-0 pb-0">
+          <PortfolioSection limit={3} initialFilter="Web Development" />
       </div>
       <div className="pt-0 pb-10">
         <IndustriesWeServe />
