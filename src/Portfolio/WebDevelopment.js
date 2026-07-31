@@ -3,14 +3,6 @@
  * Real client websites built by Devuron
  */
 
-const WEB_SHOTS = {
-  dashboard: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
-  analytics: "https://images.unsplash.com/photo-1460925895917-adf4e6f3b8c3?auto=format&fit=crop&w=800&q=80",
-  responsive: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
-  code: "https://images.unsplash.com/photo-1542831371-29b0f74f9713?auto=format&fit=crop&w=800&q=80",
-  workspace: "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=800&q=80"
-};
-
 const WebDevelopment = [
   {
     id: "wd-1",
@@ -45,9 +37,10 @@ const WebDevelopment = [
     ],
     highlights: ["Mobile-First Design", "High Conversion", "Local SEO Optimized"],
     gallery: [
-      "/projects/jsjunkcarbuyer.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.analytics
+      "/projects/js-junk-car-buyer/home.webp",
+      "/projects/js-junk-car-buyer/services.webp",
+      "/projects/js-junk-car-buyer/details.webp",
+      "/projects/js-junk-car-buyer/mobile.webp"
     ]
   },
   {
@@ -83,9 +76,9 @@ const WebDevelopment = [
     ],
     highlights: ["Elegant Aesthetics", "Interactive Menus", "Reservation Integration"],
     gallery: [
-      "/projects/vidasteakhouse.webp",
-      WEB_SHOTS.workspace,
-      WEB_SHOTS.responsive
+      "/projects/vida-steakhouse/home.webp",
+      "/projects/vida-steakhouse/contact.webp",
+      "/projects/vida-steakhouse/mobile.webp"
     ]
   },
   {
@@ -115,15 +108,16 @@ const WebDevelopment = [
       "Automated Abandoned Cart Recovery Sequences"
     ],
     results: [
-      "18% overall e-commerce conversion rate",
+      "18% e-commerce conversion rate",
       "Average Order Value (AOV) increased by 22%",
       "Reduced checkout abandonment rate from 72% to 48%"
     ],
     highlights: ["Shopify E-Commerce", "Regimen Quiz", "Conversion Optimized"],
     gallery: [
-      "/projects/glutaskinwhite.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.dashboard
+      "/projects/glutaskinwhite/home.webp",
+      "/projects/glutaskinwhite/services.webp",
+      "/projects/glutaskinwhite/details.webp",
+      "/projects/glutaskinwhite/mobile.webp"
     ]
   },
   {
@@ -159,9 +153,10 @@ const WebDevelopment = [
     ],
     highlights: ["Framer Motion", "Avant-Garde UX", "High Performance"],
     gallery: [
-      "/projects/2axis.webp",
-      WEB_SHOTS.code,
-      WEB_SHOTS.responsive
+      "/projects/2axis-creative-agency/home.webp",
+      "/projects/2axis-creative-agency/services.webp",
+      "/projects/2axis-creative-agency/details.webp",
+      "/projects/2axis-creative-agency/mobile.webp"
     ]
   },
   {
@@ -197,9 +192,10 @@ const WebDevelopment = [
     ],
     highlights: ["TypeScript Secure", "HIPAA Architecture", "Patient Portal"],
     gallery: [
-      "/projects/albarrehealth.webp",
-      WEB_SHOTS.dashboard,
-      WEB_SHOTS.responsive
+      "/projects/albarre-health/home.webp",
+      "/projects/albarre-health/services.webp",
+      "/projects/albarre-health/details.webp",
+      "/projects/albarre-health/mobile.webp"
     ]
   },
   {
@@ -235,16 +231,17 @@ const WebDevelopment = [
     ],
     highlights: ["Battery Calculator", "Local Lead Funnel", "Auto Specialist UX"],
     gallery: [
-      "/projects/priusfuture.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.workspace
+      "/projects/prius-future/home.webp",
+      "/projects/prius-future/services.webp",
+      "/projects/prius-future/details.webp",
+      "/projects/prius-future/mobile.webp"
     ]
   },
   {
     id: "wd-7",
     slug: "dr-talbeena",
     title: "Dr. Talbeena",
-    image: "/projects/dr-talbeena.webp", // note: checked existing path in wd-7 was http://dr-talbeena.com/ and /projects/drtalbeena.webp, let's fix matching image filename or use fallback
+    image: "/projects/drtalbeena.webp",
     url: "http://dr-talbeena.com/",
     description:
       "A professional healthcare website for Dr. Talbeena, providing patients with comprehensive information about medical services, specialties, and appointment booking.",
@@ -273,9 +270,10 @@ const WebDevelopment = [
     ],
     highlights: ["Doctor Portfolio", "Appointment Automator", "Responsive Design"],
     gallery: [
-      "/projects/priusfuture.webp", // fallback clean medical theme
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.workspace
+      "/projects/dr-talbeena/home.webp",
+      "/projects/dr-talbeena/services.webp",
+      "/projects/dr-talbeena/details.webp",
+      "/projects/dr-talbeena/mobile.webp"
     ]
   },
   {
@@ -311,9 +309,10 @@ const WebDevelopment = [
     ],
     highlights: ["Cinematic Web Player", "GSAP Motion Graphics", "Ultra-fast Video Loads"],
     gallery: [
-      "/projects/vantage-productions.webp",
-      WEB_SHOTS.workspace,
-      WEB_SHOTS.responsive
+      "/projects/vantage-productions/home.webp",
+      "/projects/vantage-productions/services.webp",
+      "/projects/vantage-productions/details.webp",
+      "/projects/vantage-productions/mobile.webp"
     ]
   },
   {
@@ -349,9 +348,10 @@ const WebDevelopment = [
     ],
     highlights: ["Advanced Arabic RTL", "Event Reservation", "Culture Hub Portal"],
     gallery: [
-      "/projects/daralasala.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.workspace
+      "/projects/daral-asala/home.webp",
+      "/projects/daral-asala/services.webp",
+      "/projects/daral-asala/details.webp",
+      "/projects/daral-asala/mobile.webp"
     ]
   },
   {
@@ -387,9 +387,10 @@ const WebDevelopment = [
     ],
     highlights: ["Revenue ROI Calculator", "HIPAA Document Secure", "Lead Gen Engine"],
     gallery: [
-      "/projects/atlasmedicalbilling.webp",
-      WEB_SHOTS.dashboard,
-      WEB_SHOTS.analytics
+      "/projects/atlas-medical-billing/home.webp",
+      "/projects/atlas-medical-billing/services.webp",
+      "/projects/atlas-medical-billing/details.webp",
+      "/projects/atlas-medical-billing/mobile.webp"
     ]
   },
   {
@@ -425,9 +426,10 @@ const WebDevelopment = [
     ],
     highlights: ["150+ Clinician Database", "Real-Time Schedulers", "Patient-First Flow"],
     gallery: [
-      "/projects/atlashealthcare.webp",
-      WEB_SHOTS.dashboard,
-      WEB_SHOTS.responsive
+      "/projects/atlas-healthcare-group/home.webp",
+      "/projects/atlas-healthcare-group/services.webp",
+      "/projects/atlas-healthcare-group/details.webp",
+      "/projects/atlas-healthcare-group/mobile.webp"
     ]
   },
   {
@@ -463,9 +465,10 @@ const WebDevelopment = [
     ],
     highlights: ["Next.js SSG Speed", "Corporate RFP Flow", "Supplier Catalog UI"],
     gallery: [
-      "/projects/surgicalsol.webp",
-      WEB_SHOTS.dashboard,
-      WEB_SHOTS.responsive
+      "/projects/surgical-solutions-international/home.webp",
+      "/projects/surgical-solutions-international/services.webp",
+      "/projects/surgical-solutions-international/details.webp",
+      "/projects/surgical-solutions-international/mobile.webp"
     ]
   },
   {
@@ -501,9 +504,10 @@ const WebDevelopment = [
     ],
     highlights: ["Before/After Slider", "Local Service Booker", "Pricing Estimator Panel"],
     gallery: [
-      "/projects/sharkcarpetflooring.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.workspace
+      "/projects/shark-carpet-floor-cleaning/home.webp",
+      "/projects/shark-carpet-floor-cleaning/services.webp",
+      "/projects/shark-carpet-floor-cleaning/details.webp",
+      "/projects/shark-carpet-floor-cleaning/mobile.webp"
     ]
   },
   {
@@ -539,9 +543,10 @@ const WebDevelopment = [
     ],
     highlights: ["Vehicle Appraisal Engine", "Mobile-First UX", "Instant Local SEO Pages"],
     gallery: [
-      "/projects/sellanycarcash.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.analytics
+      "/projects/sell-any-car-cash/home.webp",
+      "/projects/sell-any-car-cash/services.webp",
+      "/projects/sell-any-car-cash/details.webp",
+      "/projects/sell-any-car-cash/mobile.webp"
     ]
   },
   {
@@ -577,9 +582,10 @@ const WebDevelopment = [
     ],
     highlights: ["Suburb Page Automator", "Call Tracking Setup", "Emergency Response Flow"],
     gallery: [
-      "/projects/independentgaragedoor.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.workspace
+      "/projects/independent-garage-door-repair/home.webp",
+      "/projects/independent-garage-door-repair/about.webp",
+      "/projects/independent-garage-door-repair/contact.webp",
+      "/projects/independent-garage-door-repair/mobile.webp"
     ]
   },
   {
@@ -615,9 +621,10 @@ const WebDevelopment = [
     ],
     highlights: ["Car Key Checker Database", "Minneapolis SEO Authority", "Emergency Call Setup"],
     gallery: [
-      "/projects/mspkeysandremotes.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.workspace
+      "/projects/msp-keys-and-remotes/home.webp",
+      "/projects/msp-keys-and-remotes/about.webp",
+      "/projects/msp-keys-and-remotes/contact.webp",
+      "/projects/msp-keys-and-remotes/mobile.webp"
     ]
   },
   {
@@ -653,9 +660,10 @@ const WebDevelopment = [
     ],
     highlights: ["Single-Tap Dispatch UX", "Signal Strength Optimized", "Roadside GPS Router"],
     gallery: [
-      "/projects/eastbaymotorcycletow.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.workspace
+      "/projects/east-bay-motorcycle-tow/home.webp",
+      "/projects/east-bay-motorcycle-tow/about.webp",
+      "/projects/east-bay-motorcycle-tow/contact.webp",
+      "/projects/east-bay-motorcycle-tow/mobile.webp"
     ]
   },
   {
@@ -691,9 +699,10 @@ const WebDevelopment = [
     ],
     highlights: ["Dynamic Tow Price Board", "Auto Repair Scheduler", "Local SEO Authority"],
     gallery: [
-      "/projects/hawktowingauto.webp",
-      WEB_SHOTS.responsive,
-      WEB_SHOTS.dashboard
+      "/projects/hawk-towing-and-auto/home.webp",
+      "/projects/hawk-towing-and-auto/about.webp",
+      "/projects/hawk-towing-and-auto/contact.webp",
+      "/projects/hawk-towing-and-auto/mobile.webp"
     ]
   }
 ];
