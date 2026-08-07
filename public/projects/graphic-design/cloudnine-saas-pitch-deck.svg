@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#162540"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4db9e0"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a5f"/>
+      <stop offset="100%" style="stop-color:#0f2442"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Slide mockup - main slide -->
+  <rect x="60" y="60" width="460" height="290" rx="4" fill="url(#card)" stroke="rgba(77,185,224,0.3)" stroke-width="1"/>
+  <!-- Slide header -->
+  <rect x="60" y="60" width="460" height="55" rx="4" fill="url(#blue)" opacity="0.8"/>
+  <circle cx="95" cy="87" r="20" fill="rgba(255,255,255,0.15)"/>
+  <text x="95" y="92" font-family="monospace" font-size="10" fill="#fff" text-anchor="middle" font-weight="bold">CN</text>
+  <text x="230" y="82" font-family="sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="bold">CloudNine SaaS Platform</text>
+  <text x="230" y="98" font-family="sans-serif" font-size="8" fill="rgba(255,255,255,0.7)" text-anchor="middle">Q4 2025 Investor Pitch Deck</text>
+  <!-- Slide content: Revenue chart -->
+  <text x="80" y="140" font-family="sans-serif" font-size="8" fill="#4db9e0">ANNUAL RECURRING REVENUE</text>
+  <rect x="80" y="155" width="200" height="3" fill="rgba(77,185,224,0.3)"/>
+  <!-- Bar chart -->
+  <rect x="85" y="220" width="25" height="60" rx="2" fill="url(#blue)" opacity="0.5"/>
+  <text x="97" y="290" font-family="sans-serif" font-size="6" fill="#8abcd0" text-anchor="middle">Q1</text>
+  <rect x="120" y="195" width="25" height="85" rx="2" fill="url(#blue)" opacity="0.6"/>
+  <text x="132" y="290" font-family="sans-serif" font-size="6" fill="#8abcd0" text-anchor="middle">Q2</text>
+  <rect x="155" y="170" width="25" height="110" rx="2" fill="url(#blue)" opacity="0.75"/>
+  <text x="167" y="290" font-family="sans-serif" font-size="6" fill="#8abcd0" text-anchor="middle">Q3</text>
+  <rect x="190" y="145" width="25" height="135" rx="2" fill="url(#blue)" opacity="0.9" filter="url(#glow)"/>
+  <text x="202" y="290" font-family="sans-serif" font-size="6" fill="#fff" text-anchor="middle">Q4</text>
+  <!-- Stats side -->
+  <rect x="310" y="130" width="190" height="55" rx="3" fill="rgba(77,185,224,0.1)" stroke="rgba(77,185,224,0.3)" stroke-width="1"/>
+  <text x="405" y="152" font-family="sans-serif" font-size="22" fill="#4db9e0" text-anchor="middle" font-weight="bold">$2.4M</text>
+  <text x="405" y="172" font-family="sans-serif" font-size="7" fill="#8abcd0" text-anchor="middle">ARR Growth YoY</text>
+  <rect x="310" y="200" width="90" height="50" rx="3" fill="rgba(77,185,224,0.08)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="355" y="222" font-family="sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">340%</text>
+  <text x="355" y="238" font-family="sans-serif" font-size="6" fill="#8abcd0" text-anchor="middle">User Growth</text>
+  <rect x="410" y="200" width="90" height="50" rx="3" fill="rgba(77,185,224,0.08)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="455" y="222" font-family="sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">98%</text>
+  <text x="455" y="238" font-family="sans-serif" font-size="6" fill="#8abcd0" text-anchor="middle">Retention Rate</text>
+  <!-- Slide thumb row -->
+  <rect x="80" y="310" width="80" height="50" rx="2" fill="url(#blue)" opacity="0.4"/>
+  <text x="120" y="340" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle">1/12</text>
+  <rect x="170" y="310" width="80" height="50" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.3)" stroke-width="1"/>
+  <rect x="260" y="310" width="80" height="50" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <rect x="350" y="310" width="80" height="50" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <rect x="440" y="310" width="70" height="50" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <!-- Right panel - slide thumbnails stacked -->
+  <rect x="560" y="60" width="185" height="290" rx="4" fill="rgba(15,35,70,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="652" y="85" font-family="sans-serif" font-size="8" fill="#4db9e0" text-anchor="middle">SLIDE OVERVIEW</text>
+  <rect x="572" y="95" width="161" height="40" rx="2" fill="url(#blue)" opacity="0.5"/>
+  <text x="652" y="119" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle">Cover · Vision</text>
+  <rect x="572" y="143" width="161" height="40" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="652" y="167" font-family="sans-serif" font-size="7" fill="#aaa" text-anchor="middle">Market Opportunity</text>
+  <rect x="572" y="191" width="161" height="40" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="652" y="215" font-family="sans-serif" font-size="7" fill="#aaa" text-anchor="middle">Product Demo</text>
+  <rect x="572" y="239" width="161" height="40" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="652" y="263" font-family="sans-serif" font-size="7" fill="#aaa" text-anchor="middle">Financials</text>
+  <rect x="572" y="287" width="161" height="40" rx="2" fill="rgba(30,60,100,0.8)" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="652" y="311" font-family="sans-serif" font-size="7" fill="#aaa" text-anchor="middle">Team · Roadmap</text>
+  <!-- Label -->
+  <text x="400" y="478" font-family="monospace" font-size="10" fill="#4db9e0" text-anchor="middle" letter-spacing="2" opacity="0.8">PITCH DECK / PRESENTATION DESIGN</text>
+</svg>

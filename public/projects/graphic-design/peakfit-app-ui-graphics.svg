@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#080d1a"/>
+      <stop offset="100%" style="stop-color:#0f1825"/>
+    </linearGradient>
+    <linearGradient id="orange" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff6b00"/>
+      <stop offset="100%" style="stop-color:#ff9a3c"/>
+    </linearGradient>
+    <linearGradient id="blue" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4db9e0"/>
+      <stop offset="100%" style="stop-color:#2980b9"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="glow2"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid lines background -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.04"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <!-- Phone screen 1 (main, center) -->
+  <rect x="270" y="40" width="170" height="360" rx="24" fill="#0a1525" stroke="rgba(77,185,224,0.5)" stroke-width="2" filter="url(#glow2)"/>
+  <!-- Screen content -->
+  <rect x="285" y="70" width="140" height="310" rx="8" fill="#0d1f35"/>
+  <!-- App header -->
+  <rect x="285" y="70" width="140" height="50" rx="8" fill="url(#orange)" opacity="0.9"/>
+  <text x="355" y="100" font-family="Arial Black, sans-serif" font-size="12" fill="#fff" text-anchor="middle" font-weight="900">PEAKFIT</text>
+  <!-- Dashboard content -->
+  <text x="295" y="138" font-family="sans-serif" font-size="6" fill="#4db9e0">WORKOUT SCORE</text>
+  <text x="355" y="160" font-family="Arial Black, sans-serif" font-size="24" fill="#fff" text-anchor="middle" font-weight="900">847</text>
+  <!-- Progress ring -->
+  <circle cx="355" cy="175" r="28" fill="none" stroke="rgba(255,107,0,0.2)" stroke-width="6"/>
+  <circle cx="355" cy="175" r="28" fill="none" stroke="url(#orange)" stroke-width="6" stroke-dasharray="120 50" stroke-linecap="round" transform="rotate(-90, 355, 175)"/>
+  <text x="355" y="200" font-family="sans-serif" font-size="18" fill="#ff9a3c" text-anchor="middle" font-weight="bold">84%</text>
+  <!-- Mini stats row -->
+  <rect x="290" y="215" width="42" height="30" rx="3" fill="rgba(255,107,0,0.1)" stroke="rgba(255,107,0,0.3)" stroke-width="1"/>
+  <text x="311" y="234" font-family="sans-serif" font-size="8" fill="#ff9a3c" text-anchor="middle">🔥 540</text>
+  <rect x="337" y="215" width="42" height="30" rx="3" fill="rgba(77,185,224,0.1)" stroke="rgba(77,185,224,0.3)" stroke-width="1"/>
+  <text x="358" y="234" font-family="sans-serif" font-size="8" fill="#4db9e0" text-anchor="middle">⚡ 12k</text>
+  <rect x="285" y="256" width="140" height="1" fill="rgba(255,255,255,0.05)"/>
+  <text x="295" y="274" font-family="sans-serif" font-size="6" fill="#666">TODAY'S PLAN</text>
+  <rect x="290" y="280" width="130" height="22" rx="3" fill="rgba(255,107,0,0.15)"/>
+  <text x="355" y="295" font-family="sans-serif" font-size="7" fill="#ff9a3c" text-anchor="middle">Upper Body Strength</text>
+  <rect x="290" y="308" width="130" height="22" rx="3" fill="rgba(77,185,224,0.1)"/>
+  <text x="355" y="323" font-family="sans-serif" font-size="7" fill="#4db9e0" text-anchor="middle">HIIT Cardio · 20 min</text>
+  <!-- Phone 2 (left, rotated) -->
+  <rect x="75" y="100" width="150" height="300" rx="20" fill="#0a1525" stroke="rgba(255,107,0,0.3)" stroke-width="1.5" transform="rotate(-8, 150, 250)"/>
+  <rect x="90" y="125" width="120" height="250" rx="8" fill="#0d1f35" transform="rotate(-8, 150, 250)"/>
+  <rect x="90" y="125" width="120" height="40" rx="8" fill="rgba(255,107,0,0.7)" transform="rotate(-8, 150, 250)"/>
+  <text x="150" y="150" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle" transform="rotate(-8, 150, 250)">Exercise Library</text>
+  <!-- Exercise list -->
+  <text x="100" y="185" font-family="sans-serif" font-size="6" fill="#4db9e0" transform="rotate(-8, 150, 250)">💪 Bench Press</text>
+  <text x="100" y="200" font-family="sans-serif" font-size="6" fill="#666" transform="rotate(-8, 150, 250)">🏃 Sprint Intervals</text>
+  <text x="100" y="215" font-family="sans-serif" font-size="6" fill="#666" transform="rotate(-8, 150, 250)">🧘 Yoga Flow</text>
+  <!-- Phone 3 (right, rotated) -->
+  <rect x="575" y="100" width="150" height="300" rx="20" fill="#0a1525" stroke="rgba(77,185,224,0.3)" stroke-width="1.5" transform="rotate(8, 650, 250)"/>
+  <rect x="590" y="125" width="120" height="250" rx="8" fill="#0d1f35" transform="rotate(8, 650, 250)"/>
+  <rect x="590" y="125" width="120" height="40" rx="8" fill="rgba(77,185,224,0.7)" transform="rotate(8, 650, 250)"/>
+  <text x="650" y="150" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle" transform="rotate(8, 650, 250)">Progress Tracker</text>
+  <!-- Progress chart -->
+  <polyline points="600,250 615,235 630,240 645,220 660,210 675,200 690,195" fill="none" stroke="url(#orange)" stroke-width="2" transform="rotate(8, 650, 250)"/>
+  <text x="650" y="310" font-family="sans-serif" font-size="8" fill="#ff9a3c" text-anchor="middle" transform="rotate(8, 650, 250)">+24% this month</text>
+  <!-- Label -->
+  <text x="400" y="478" font-family="monospace" font-size="10" fill="#ff6b00" text-anchor="middle" letter-spacing="2" opacity="0.8">UI GRAPHICS / FITNESS APP</text>
+</svg>

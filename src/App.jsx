@@ -12,6 +12,7 @@ const SubServiceDetail = lazy(() => import('./pages/SubServiceDetail'));
 const Portfolio = lazy(() => import('./pages/Portfolio'));
 const PortfolioDetail = lazy(() => import('./pages/PortfolioDetail'));
 const MobileCaseStudy = lazy(() => import('./pages/MobileCaseStudy'));
+const CreativeCaseStudy = lazy(() => import('./pages/CreativeCaseStudy'));
 const Blog = lazy(() => import('./pages/Blog'));
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const Contact = lazy(() => import('./pages/Contact'));
@@ -31,6 +32,8 @@ function App() {
               <Route path="portfolio" element={<Portfolio />} />
               <Route path="portfolio/:slug" element={<PortfolioDetail />} />
               <Route path="portfolio/mobile/:slug" element={<MobileCaseStudy />} />
+              <Route path="portfolio/graphic/:slug" element={<CreativeCaseStudy type="graphic" />} />
+              <Route path="portfolio/video/:slug" element={<CreativeCaseStudy type="video" />} />
               <Route path="blog" element={<Blog />} />
               <Route path="blog/:slug" element={<BlogDetail />} />
               <Route path="contact" element={<Contact />} />

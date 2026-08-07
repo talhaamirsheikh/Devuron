@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf8f4"/>
+      <stop offset="100%" style="stop-color:#f0ebe0"/>
+    </linearGradient>
+    <linearGradient id="brochCover" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2c2c2c"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4db9e0"/>
+      <stop offset="100%" style="stop-color:#10475c"/>
+    </linearGradient>
+    <filter id="shadow"><feDropShadow dx="4" dy="6" stdDeviation="8" flood-color="#000" flood-opacity="0.2"/></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Brochure spread - open view -->
+  <!-- Left panel (back cover) -->
+  <rect x="60" y="70" width="220" height="360" rx="2" fill="url(#brochCover)" filter="url(#shadow)"/>
+  <rect x="60" y="70" width="4" height="360" fill="url(#accent)"/>
+  <text x="170" y="180" font-family="Georgia, serif" font-size="14" fill="#fff" text-anchor="middle" font-style="italic">Artisan</text>
+  <text x="170" y="200" font-family="monospace" font-size="7" fill="#4db9e0" text-anchor="middle" letter-spacing="3">CRAFTED WITH CARE</text>
+  <!-- Abstract geometric shapes -->
+  <circle cx="100" cy="290" r="40" fill="rgba(77,185,224,0.15)"/>
+  <circle cx="130" cy="310" r="30" fill="rgba(77,185,224,0.1)"/>
+  <rect x="160" y="260" width="90" height="60" fill="rgba(255,255,255,0.05)"/>
+  <text x="170" y="400" font-family="sans-serif" font-size="7" fill="#666" text-anchor="middle">www.artisan.co</text>
+  <!-- Center fold -->
+  <line x1="280" y1="70" x2="280" y2="430" stroke="#d0c8b8" stroke-width="2"/>
+  <!-- Right panel (inside) -->
+  <rect x="282" y="70" width="220" height="360" rx="2" fill="#fff" filter="url(#shadow)"/>
+  <!-- Inside content -->
+  <rect x="282" y="70" width="220" height="80" fill="url(#accent)" opacity="0.8"/>
+  <text x="392" y="110" font-family="Georgia, serif" font-size="16" fill="#fff" text-anchor="middle">Our Story</text>
+  <text x="392" y="130" font-family="sans-serif" font-size="7" fill="rgba(255,255,255,0.7)" text-anchor="middle">Premium Quality Since 2010</text>
+  <!-- Content blocks -->
+  <rect x="296" y="165" width="90" height="60" rx="2" fill="#f5f5f5"/>
+  <rect x="296" y="165" width="90" height="3" fill="url(#accent)"/>
+  <text x="341" y="200" font-family="sans-serif" font-size="7" fill="#555" text-anchor="middle">Handcrafted</text>
+  <rect x="396" y="165" width="90" height="60" rx="2" fill="#f5f5f5"/>
+  <rect x="396" y="165" width="90" height="3" fill="url(#accent)"/>
+  <text x="441" y="200" font-family="sans-serif" font-size="7" fill="#555" text-anchor="middle">Premium</text>
+  <line x1="296" y1="240" x2="486" y2="240" stroke="#eee" stroke-width="1"/>
+  <text x="296" y="265" font-family="sans-serif" font-size="7" fill="#888">Lorem ipsum dolor sit amet,</text>
+  <text x="296" y="278" font-family="sans-serif" font-size="7" fill="#888">consectetur adipiscing elit. Sed</text>
+  <text x="296" y="291" font-family="sans-serif" font-size="7" fill="#888">do eiusmod tempor incididunt.</text>
+  <!-- Image placeholder block -->
+  <rect x="296" y="310" width="180" height="90" rx="2" fill="#e8e8e8"/>
+  <text x="386" y="360" font-family="sans-serif" font-size="7" fill="#aaa" text-anchor="middle">[ product photography ]</text>
+  <!-- Front cover - right side -->
+  <rect x="510" y="70" width="220" height="360" rx="2" fill="url(#brochCover)" filter="url(#shadow)"/>
+  <rect x="726" y="70" width="4" height="360" fill="url(#accent)"/>
+  <!-- Cover design -->
+  <circle cx="620" cy="200" r="70" fill="none" stroke="rgba(77,185,224,0.3)" stroke-width="1"/>
+  <circle cx="620" cy="200" r="50" fill="none" stroke="rgba(77,185,224,0.2)" stroke-width="1"/>
+  <text x="620" y="185" font-family="Georgia, serif" font-size="20" fill="#fff" text-anchor="middle" font-style="italic">Artisan</text>
+  <text x="620" y="205" font-family="monospace" font-size="7" fill="#4db9e0" text-anchor="middle" letter-spacing="2">COLLECTION</text>
+  <text x="620" y="220" font-family="monospace" font-size="7" fill="#4db9e0" text-anchor="middle" letter-spacing="1">2025</text>
+  <line x1="530" y1="300" x2="710" y2="300" stroke="rgba(77,185,224,0.3)" stroke-width="0.5"/>
+  <text x="620" y="330" font-family="sans-serif" font-size="8" fill="#aaa" text-anchor="middle">Handcrafted for Excellence</text>
+  <!-- Label -->
+  <text x="400" y="478" font-family="monospace" font-size="10" fill="#4db9e0" text-anchor="middle" letter-spacing="2" opacity="0.8">BROCHURE DESIGN / PRINT</text>
+</svg>

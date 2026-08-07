@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f5e6d3"/>
+      <stop offset="100%" style="stop-color:#e8d0b0"/>
+    </linearGradient>
+    <linearGradient id="bottle1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c8a882"/>
+      <stop offset="50%" style="stop-color:#f0dfc0"/>
+      <stop offset="100%" style="stop-color:#b89060"/>
+    </linearGradient>
+    <linearGradient id="bottle2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2a2a2a"/>
+      <stop offset="50%" style="stop-color:#555"/>
+      <stop offset="100%" style="stop-color:#1a1a1a"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c9a84c"/>
+      <stop offset="100%" style="stop-color:#f0d080"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="3" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="shadow"><feDropShadow dx="4" dy="8" stdDeviation="8" flood-color="#5a3a10" flood-opacity="0.3"/></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Subtle texture dots -->
+  <pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse">
+    <circle cx="10" cy="10" r="0.8" fill="#c9a84c" opacity="0.15"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#dots)"/>
+  <!-- Gold divider lines -->
+  <line x1="60" y1="40" x2="740" y2="40" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+  <line x1="60" y1="460" x2="740" y2="460" stroke="url(#gold)" stroke-width="1" opacity="0.5"/>
+  <!-- Serum Bottle 1 (tall, light) -->
+  <rect x="140" y="100" width="70" height="250" rx="8" fill="url(#bottle1)" filter="url(#shadow)"/>
+  <rect x="155" y="90" width="40" height="20" rx="4" fill="#c8a882"/>
+  <rect x="162" y="75" width="26" height="20" rx="3" fill="#b89060"/>
+  <!-- Label on bottle 1 -->
+  <rect x="148" y="160" width="54" height="80" fill="rgba(255,255,255,0.7)"/>
+  <text x="175" y="185" font-family="Georgia, serif" font-size="7" fill="#3d2000" text-anchor="middle" font-style="italic">Luminary</text>
+  <line x1="155" y1="190" x2="195" y2="190" stroke="#c9a84c" stroke-width="0.5"/>
+  <text x="175" y="202" font-family="Arial, sans-serif" font-size="5" fill="#5a3a10" text-anchor="middle" letter-spacing="1">RADIANCE SERUM</text>
+  <text x="175" y="215" font-family="Arial, sans-serif" font-size="5" fill="#8a6a40" text-anchor="middle">30 ML</text>
+  <!-- Highlight on bottle -->
+  <rect x="148" y="105" width="12" height="180" rx="4" fill="rgba(255,255,255,0.4)"/>
+  <!-- Serum Bottle 2 (dark, tall) -->
+  <rect x="240" y="80" width="80" height="290" rx="8" fill="url(#bottle2)" filter="url(#shadow)"/>
+  <rect x="255" y="68" width="50" height="22" rx="5" fill="#333"/>
+  <rect x="264" y="50" width="32" height="24" rx="4" fill="#222"/>
+  <!-- Gold label band -->
+  <rect x="240" y="175" width="80" height="2" fill="url(#gold)"/>
+  <rect x="240" y="250" width="80" height="2" fill="url(#gold)"/>
+  <!-- Label on dark bottle -->
+  <text x="280" y="210" font-family="Georgia, serif" font-size="9" fill="#f0d080" text-anchor="middle" font-style="italic">Luminary</text>
+  <text x="280" y="225" font-family="Arial, sans-serif" font-size="5.5" fill="#c9a84c" text-anchor="middle" letter-spacing="2">NOIR ELIXIR</text>
+  <text x="280" y="240" font-family="Arial, sans-serif" font-size="5" fill="#aaa" text-anchor="middle">50 ML · PREMIUM</text>
+  <!-- Highlight on dark bottle -->
+  <rect x="248" y="85" width="10" height="240" rx="3" fill="rgba(255,255,255,0.1)"/>
+  <!-- Cream Jar -->
+  <ellipse cx="440" cy="330" rx="75" ry="25" fill="url(#bottle1)" filter="url(#shadow)"/>
+  <rect x="365" y="260" width="150" height="70" rx="5" fill="url(#bottle1)" filter="url(#shadow)"/>
+  <ellipse cx="440" cy="260" rx="75" ry="25" fill="#f5e6c0"/>
+  <!-- Jar label -->
+  <text x="440" y="300" font-family="Georgia, serif" font-size="10" fill="#3d2000" text-anchor="middle" font-style="italic">Luminary</text>
+  <text x="440" y="315" font-family="Arial, sans-serif" font-size="6" fill="#5a3a10" text-anchor="middle" letter-spacing="1.5">GLOW CREAM</text>
+  <!-- Loose powder / eyeshadow palette -->
+  <rect x="550" y="200" width="160" height="120" rx="6" fill="#1a1a1a" filter="url(#shadow)"/>
+  <rect x="550" y="200" width="160" height="3" fill="url(#gold)"/>
+  <text x="630" y="240" font-family="Georgia, serif" font-size="9" fill="#f0d080" text-anchor="middle">Luminary</text>
+  <text x="630" y="255" font-family="Arial, sans-serif" font-size="5" fill="#c9a84c" text-anchor="middle" letter-spacing="2">PALETTE NO. 3</text>
+  <!-- Palette circles -->
+  <circle cx="580" cy="290" r="18" fill="#8B4513"/>
+  <circle cx="615" cy="290" r="18" fill="#c9a84c"/>
+  <circle cx="650" cy="290" r="18" fill="#f5deb3"/>
+  <circle cx="685" cy="290" r="18" fill="#3d1a00"/>
+  <!-- Brand label bottom -->
+  <text x="400" y="475" font-family="monospace" font-size="10" fill="#5a3a10" text-anchor="middle" letter-spacing="2" opacity="0.8">PACKAGING DESIGN / BEAUTY</text>
+</svg>

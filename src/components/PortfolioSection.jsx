@@ -14,6 +14,7 @@ const CATEGORIES = [
   "Mobile Development",
   "Graphic Designing",
   "Video Editing",
+  "Design & Video",
 ];
 
 const ALL_PROJECTS = [
@@ -23,7 +24,7 @@ const ALL_PROJECTS = [
   ...VideoEditing,
 ];
 
-const PortfolioSection = ({ limit, initialFilter = "All", itemsPerPage = 6 }) => {
+const PortfolioSection = ({ limit, initialFilter = "All", itemsPerPage = 9 }) => {
   const [activeFilter, setActiveFilter] = useState(initialFilter);
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,6 +36,8 @@ const PortfolioSection = ({ limit, initialFilter = "All", itemsPerPage = 6 }) =>
   const filtered =
     activeFilter === "All"
       ? ALL_PROJECTS
+      : activeFilter === "Design & Video"
+      ? ALL_PROJECTS.filter((p) => p.category === "Graphic Designing" || p.category === "Video Editing")
       : ALL_PROJECTS.filter((p) => p.category === activeFilter);
 
   const displayed = limit ? filtered.slice(0, limit) : filtered.slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);

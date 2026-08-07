@@ -15,6 +15,7 @@ import IndustriesWeServe from '../components/IndustriesWeServe';
 import PortfolioSection from '../components/PortfolioSection';
 import CTASection from '../components/CTASection';
 import OForm from '../components/OForm';
+import { ShiftingDropDown } from '../components/ShiftingDropDown';
 
 const Home = () => {
   return (
@@ -40,7 +41,7 @@ const Home = () => {
       <div className="pt-0 pb-10">
         <IndustriesWeServe />
       </div>
-      
+      <ShiftingDropDown />
        <div className='pt-20'>
         <Testimonials testimonialsData={{ data: testimonialsData }} loading={false} />
       </div>

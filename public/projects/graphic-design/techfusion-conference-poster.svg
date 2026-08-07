@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d0d"/>
+      <stop offset="100%" style="stop-color:#1a1a2e"/>
+    </linearGradient>
+    <linearGradient id="purp" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6c3fc7"/>
+      <stop offset="100%" style="stop-color:#4db9e0"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="4" result="blur"/><feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="800" height="500" fill="url(#bg)"/>
+  <!-- Grid lines -->
+  <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+    <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#fff" stroke-width="0.3" opacity="0.05"/>
+  </pattern>
+  <rect width="800" height="500" fill="url(#grid)"/>
+  <!-- Star/burst decoration -->
+  <circle cx="400" cy="250" r="180" fill="none" stroke="url(#purp)" stroke-width="1" opacity="0.2"/>
+  <circle cx="400" cy="250" r="120" fill="none" stroke="url(#purp)" stroke-width="1" opacity="0.3"/>
+  <!-- Central star burst -->
+  <g filter="url(#glow)">
+    <polygon points="400,100 415,230 460,155 425,270 500,210 420,280 480,340 395,285 410,380 385,285 300,340 365,275 285,215 370,270 335,160 390,245" fill="none" stroke="url(#purp)" stroke-width="1.5" opacity="0.6"/>
+  </g>
+  <!-- Central diamond -->
+  <polygon points="400,180 445,250 400,320 355,250" fill="none" stroke="url(#purp)" stroke-width="2" filter="url(#glow)"/>
+  <polygon points="400,195 430,250 400,305 370,250" fill="url(#purp)" opacity="0.4"/>
+  <!-- Conference badge elements -->
+  <rect x="60" y="160" width="180" height="220" rx="4" fill="rgba(108,63,199,0.15)" stroke="rgba(108,63,199,0.4)" stroke-width="1"/>
+  <rect x="60" y="160" width="180" height="40" fill="url(#purp)" opacity="0.6"/>
+  <text x="150" y="186" font-family="monospace" font-size="11" fill="#fff" text-anchor="middle" font-weight="bold">TECHFUSION</text>
+  <text x="150" y="220" font-family="monospace" font-size="8" fill="#c0a0ff" text-anchor="middle" letter-spacing="2">ANNUAL SUMMIT</text>
+  <text x="150" y="240" font-family="monospace" font-size="20" fill="#fff" text-anchor="middle" font-weight="bold">2025</text>
+  <text x="150" y="265" font-family="sans-serif" font-size="7" fill="#a0a0c0" text-anchor="middle">MARCH 15–17 · DUBAI, UAE</text>
+  <!-- Speaker tags -->
+  <rect x="72" y="295" width="80" height="45" rx="3" fill="rgba(77,185,224,0.2)" stroke="rgba(77,185,224,0.3)" stroke-width="1"/>
+  <text x="112" y="316" font-family="sans-serif" font-size="6" fill="#4db9e0" text-anchor="middle">KEYNOTE</text>
+  <text x="112" y="330" font-family="sans-serif" font-size="5" fill="#a0a0c0" text-anchor="middle">200+ Speakers</text>
+  <rect x="162" y="295" width="65" height="45" rx="3" fill="rgba(108,63,199,0.2)" stroke="rgba(108,63,199,0.3)" stroke-width="1"/>
+  <text x="194" y="316" font-family="sans-serif" font-size="6" fill="#c0a0ff" text-anchor="middle">WORKSHOPS</text>
+  <text x="194" y="330" font-family="sans-serif" font-size="5" fill="#a0a0c0" text-anchor="middle">50+ Sessions</text>
+  <!-- Right side poster frame -->
+  <rect x="550" y="100" width="190" height="300" rx="4" fill="rgba(77,185,224,0.08)" stroke="rgba(77,185,224,0.3)" stroke-width="1"/>
+  <rect x="550" y="100" width="190" height="4" fill="url(#purp)"/>
+  <text x="645" y="155" font-family="monospace" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold" filter="url(#glow)">TECH</text>
+  <text x="645" y="175" font-family="monospace" font-size="16" fill="#4db9e0" text-anchor="middle" font-weight="bold" filter="url(#glow)">FUSION</text>
+  <circle cx="645" cy="240" r="50" fill="none" stroke="url(#purp)" stroke-width="1.5" opacity="0.5"/>
+  <text x="645" y="245" font-family="monospace" font-size="28" fill="#fff" text-anchor="middle" font-weight="bold">25</text>
+  <text x="645" y="310" font-family="sans-serif" font-size="7" fill="#a0a0c0" text-anchor="middle" letter-spacing="1">REGISTER NOW</text>
+  <rect x="585" y="320" width="120" height="25" rx="2" fill="url(#purp)" opacity="0.7"/>
+  <text x="645" y="337" font-family="sans-serif" font-size="7" fill="#fff" text-anchor="middle">TECHFUSION25.COM</text>
+  <!-- Label -->
+  <text x="400" y="478" font-family="monospace" font-size="10" fill="#4db9e0" text-anchor="middle" letter-spacing="2" opacity="0.8">EVENT POSTER / CONFERENCE</text>
+</svg>
