@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, Sun, Moon } from "lucide-react";
 import { useTheme } from "../hooks/useTheme";
+import logo from "../../public/logo.png";
 
 const Navbar = () => {
   const location = useLocation();
@@ -39,7 +40,7 @@ const Navbar = () => {
         <nav className="hidden md:flex w-full items-center justify-between">
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <img
-              src="https://vantage.itnextro.com/wp-content/uploads/2025/11/VP-png-1-1.png"
+              src={logo}
               alt="Logo"
               className={`object-contain ${isHome ? "h-14 md:h-16" : "h-10 md:h-12"}`}
               loading="eager"
@@ -94,7 +95,7 @@ const Navbar = () => {
         <div className="md:hidden flex w-full items-center justify-between">
           <Link to="/" className="flex items-center gap-2 flex-shrink-0">
             <img
-              src="https://vantage.itnextro.com/wp-content/uploads/2025/11/VP-png-1-1.png"
+              src={logo}
               alt="Logo"
               className={`object-contain ${isHome ? "h-10" : "h-8"}`}
               loading="eager"

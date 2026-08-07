@@ -172,7 +172,7 @@ export default function GlobalHero({
           <div className="md:hidden flex w-full items-center justify-between">
             <Link to="/" className="flex items-center gap-2 flex-shrink-0">
               <img
-                src="https://vantage.itnextro.com/wp-content/uploads/2025/11/VP-png-1-1.png"
+                src={logo}
                 alt="Logo"
                 className="h-10 object-contain"
                 loading="eager"
